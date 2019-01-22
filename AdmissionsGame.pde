@@ -82,7 +82,7 @@ void mousePressed() {
 }
 
 void keyPressed() {
-  if (gameState > 0) {
+  if (gameState > 0 && gameState != 70) {
     if (keyCode == RIGHT)
       player.changeVelocity(1);
     else if (keyCode == LEFT)
@@ -103,7 +103,78 @@ void keyPressed() {
       gameState = 10;
       player.position.x = 50;
     }
+    else if (scienceDoor.playerOn == true && keyCode == 'Q') {
+      gameState = 70;
+    }
   }
+  /*else if (gameState == 70) {
+     if (minigameState > 0) {
+      // Controls for player 2
+        if (keyCode == UP) {
+         if (p2velocity.y < 15)
+           p2velocity.add(flap);
+           //swoosh.rewind();
+           //swoosh.play();
+        }
+        if (keyCode == LEFT) {
+          if (p2velocity.x > -6)
+           p2velocity.add(left);
+        }
+        if (keyCode == RIGHT) { 
+          if (p2velocity.x < 6)
+           p2velocity.add(right);
+        }
+        // Controls for player 1
+        if (keyCode == 'W') {
+          if (p2velocity.y < 15)
+           p1velocity.add(flap);
+           //swoosh.rewind();
+           //swoosh.play();
+        }
+        if (keyCode == 'A') {
+          if (p1velocity.x > -6)
+           p1velocity.add(left);
+        }
+        if (keyCode == 'D') {
+          if (p1velocity.x < 6)
+           p1velocity.add(right);
+        }
+        
+        if (keyCode == 'Q') {
+         if (p1isShooting == false) {
+           p1shootLeft = true;
+           p1isShooting = true;
+           p1ShotSpot = new PVector (p1pos.x,p1pos.y);
+           p1shotPos = new PVector(0,0);
+         } 
+        }
+        if (keyCode == 'E') {
+         if (p1isShooting == false) {
+           p1shootLeft = false;
+           p1isShooting = true;
+           p1ShotSpot = new PVector (p1pos.x,p1pos.y);
+           p1shotPos = new PVector(0,0);
+         }
+        }
+        
+        if (keyCode == ',') {
+         if (p2isShooting == false) { 
+           p2shootLeft = true;
+           p2isShooting = true;
+           p2ShotSpot = new PVector (p2pos.x,p2pos.y);
+           p2shotPos = new PVector(0,0);
+         }
+        }
+        if (keyCode == '.') {
+         if (p2isShooting == false) {
+           p2shootLeft = false;
+           p2isShooting = true;
+           p2ShotSpot = new PVector (p2pos.x,p2pos.y);
+           p2shotPos = new PVector(0,0);
+         }
+       }
+    } 
+  }*/
 }
 void keyReleased() {
    if (gameState > 0)
