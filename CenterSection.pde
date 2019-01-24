@@ -15,7 +15,7 @@ void playSectionII() {
    player.display();
    textSize(25);
    fill(#FF0D82);
-   text("Use the left and right arrow keys to move to the door", 50, 50);
+   //text("Use the left and right arrow keys to move to the door", 80, 50);
    
    /*if (player.position.x >= 500 && player.position.x <= 600) {
      textSize(50);

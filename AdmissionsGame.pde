@@ -105,7 +105,7 @@ void keyPressed() {
       gameState = 10;
       player.position.x = 50;
     }
-    else if (scienceDoor.playerOn == true && keyCode == 'Q') {
+    else if (scienceDoor.playerOn == true && keyCode == 'Q') { // mamaaaaaaa, uuuuwuuu
       gameState = 70;
     }
   }

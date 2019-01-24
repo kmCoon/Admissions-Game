@@ -114,6 +114,9 @@ void playGame() {
       time = millis();
       
       gameState = 40;
+      p1life = 3; 
+      p2life = 3;
+      minigameState = 0;
   }
   
   else if (p2life <= 0) {
@@ -130,6 +133,10 @@ void playGame() {
       text("Returning to the homescreen...",width/2,height/2+75);
       
       gameState = 40;
+      gameState = 40;
+      p1life = 3; 
+      p2life = 3;
+      minigameState = 0;
   }
   
   else { 
