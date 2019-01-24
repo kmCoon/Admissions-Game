@@ -1,5 +1,7 @@
 
 void playSectionIII() {
+  stroke(0);
+  strokeWeight(1);
   image(buildingThree,0,0);
   galleryDoor.display();
   galleryDoor.open();

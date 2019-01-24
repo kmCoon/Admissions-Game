@@ -1,5 +1,7 @@
 
 void playSectionI() {
+  stroke(0);
+  strokeWeight(1);
   image(buildingOne,0,0);
   scienceDoor.display();
   scienceDoor.open();

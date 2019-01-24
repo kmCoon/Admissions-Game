@@ -1,5 +1,7 @@
 
 void playSectionII() {
+   stroke(0);
+   strokeWeight(1);
    image(buildingTwo,0,0);
    fill(0,0,255);
   

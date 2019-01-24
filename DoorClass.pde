@@ -21,7 +21,7 @@ class Door {
   void open() {
     if (isDisplayed == true && player.position.x > x && player.position.x < (x+100)) {
       fill(0);
-      text(text,x-70, 420);
+      text(text,x-50, 420);
       playerOn = true;
     }
     else {

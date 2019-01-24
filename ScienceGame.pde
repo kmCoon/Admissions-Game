@@ -1,4 +1,3 @@
-
 int r = 45;
 int minigameState = 0;
 

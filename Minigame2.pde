@@ -1,6 +1,7 @@
 
 void playHistory() {
-  
+    stroke(0);
+    strokeWeight(1);
     background(180,160,20);
     player.display();
     text("Move to the left to complete the minigame!", 100, 200);

@@ -1,5 +1,7 @@
 
 void playGallery() {
+  stroke(0);
+  strokeWeight(1);
   background(255);
   fill(0);
   text("This is the art gallery!", width/2-100,500);
