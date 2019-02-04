@@ -40,19 +40,19 @@ PImage p2keys;
 
 int offset = 20;
 
-AudioPlayer punch;
-AudioPlayer shot;
+//AudioPlayer punch;
+//AudioPlayer shot;
 
 void setupScience() {
   
   //fullScreen();
   
-  minim = new Minim(this);
-  punch = minim.loadFile("Punch.mp3"); 
-  shot = minim.loadFile("Shot.mp3");
+  //minim = new Minim(this);
+  //punch = minim.loadFile("Punch.mp3"); 
+  //shot = minim.loadFile("Shot.mp3");
 
-  shot.setVolume(0.05);
-  punch.setVolume(0.4);
+  //shot.setVolume(0.05);
+  //punch.setVolume(0.4);
   
   p1pos = new PVector(300,height/2); 
   p2pos = new PVector(width-300,height/2);
@@ -250,8 +250,8 @@ void scienceKeys() {
       
       if (keyCode == 'Q') {
        if (p1isShooting == false) {
-         shot.rewind();
-         shot.play();
+         //shot.rewind();
+         //shot.play();
          p1shootLeft = true;
          p1isShooting = true;
          p1ShotSpot = new PVector (p1pos.x,p1pos.y);
@@ -260,8 +260,8 @@ void scienceKeys() {
       }
       if (keyCode == 'E') {
        if (p1isShooting == false) {
-         shot.rewind();
-         shot.play();
+         //shot.rewind();
+         //shot.play();
          p1shootLeft = false;
          p1isShooting = true;
          p1ShotSpot = new PVector (p1pos.x,p1pos.y);
@@ -284,8 +284,8 @@ void p1shoot() {
         if (p2life > 0)
           p2life -= 1;
         image(explosion, p2pos.x-30, p2pos.y-30);
-        punch.rewind(); 
-        punch.play();
+        //punch.rewind(); 
+        //punch.play();
       }
       if (p1ShotSpot.x+p1shotPos.x < 0 || p1ShotSpot.x+p1shotPos.x > width) {
         p1isShooting = false;
@@ -307,8 +307,8 @@ void p2shoot() {
         if (p1life > 0)
           p1life -= 1;
         image(explosion, p1pos.x-30, p1pos.y-30);
-        punch.rewind();
-        punch.play();
+        //punch.rewind();
+        //punch.play();
       }
       if (p2ShotSpot.x+p2shotPos.x < 0 || p2ShotSpot.x+p2shotPos.x > width) {
         p2isShooting = false;

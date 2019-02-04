@@ -18,9 +18,9 @@ Door galleryExit;
 
 Escape escButton;
 
-import ddf.minim.*;
-Minim minim;
-AudioPlayer bells;
+//import ddf.minim.*;
+//Minim minim;
+//AudioPlayer bells;
 
 PImage lunch;
 PImage marlboro;
@@ -37,10 +37,11 @@ void setup() {
   benton = createFont("Benton Sans Bold.otf", 20);
   textFont(benton);
   
-  minim = new Minim(this);
-  bells = minim.loadFile("bells.wav");
+  //minim = new Minim(this);
+  //bells = minim.loadFile("bells.wav");
   
-  fullScreen();
+  //fullScreen();
+  size(600, 400);
   background(150);
   lunch = loadImage("sandsLunch.jpeg");
   lunch.resize(width,height);

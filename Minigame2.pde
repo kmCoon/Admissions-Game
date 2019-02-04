@@ -13,7 +13,7 @@ void playHistory() {
     if (player.position.x >= 0 && player.position.x <= 50) {
       gameState = 10;
       player.position.x = 800;
-      bells.rewind();
-      bells.play();
+      //bells.rewind();
+      //bells.play();
     }
 }

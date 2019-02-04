@@ -12,7 +12,7 @@ float ceiendtime;
 
 void ceisetup()
 {
-  fullScreen();
+  //fullScreen();
   background(255);
   foods = new ArrayList<Food>();
   ibackpack = loadImage("backpack.png");
