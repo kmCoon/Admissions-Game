@@ -1,8 +1,7 @@
 int r = 45;
 int minigameState = 0;
 
-int time;
-int waitTime = 1000;
+float timing;
 
 PVector p1pos;
 PVector p2pos; 
@@ -24,6 +23,8 @@ PVector right = new PVector(.8,0);
 boolean p1shootLeft = false;
 PVector p1ShotSpot;
 PVector p1shotPos;
+
+boolean timeStart;
 
 boolean p2shootLeft = false;
 PVector p2ShotSpot;
@@ -72,6 +73,9 @@ void setupScience() {
 // pew pew
 
 void drawScience() {
+    escButton.display();
+    escButton.checkforHover();
+  
    if (minigameState == 0) {
       image(capillary,0,0);
       fill(200,0,0);
@@ -100,6 +104,10 @@ void drawScience() {
 void playGame() {
   
   if (p1life <= 0) {
+      if (timeStart == false) {
+        timing = millis();
+        timeStart = true;
+      }
       image(capillary,0,0);
       fill(200,0,0);
       textAlign(CENTER, BOTTOM);
@@ -111,15 +119,21 @@ void playGame() {
       textSize(22);
       fill(0);
       text("Returning to the homescreen...",width/2,height/2+75);
-      time = millis();
       
-      gameState = 40;
-      p1life = 3; 
-      p2life = 3;
-      minigameState = 0;
+      println(millis() - timing); 
+      if (millis() - timing >= 2500) {
+         gameState = 40;
+         p1life = 3; 
+         p2life = 3;
+         minigameState = 0;
+      }
   }
   
   else if (p2life <= 0) {
+      if (timeStart == false) {
+        timing = millis();
+        timeStart = true;
+      }
       image(capillary,0,0);
       fill(200,0,0);
       textAlign(CENTER, BOTTOM);
@@ -132,11 +146,12 @@ void playGame() {
       fill(0);
       text("Returning to the homescreen...",width/2,height/2+75);
       
-      gameState = 40;
-      gameState = 40;
-      p1life = 3; 
-      p2life = 3;
-      minigameState = 0;
+      if (millis() - timing >= 2500) {
+         gameState = 40;
+         p1life = 3; 
+         p2life = 3;
+         minigameState = 0;
+      }
   }
   
   else { 

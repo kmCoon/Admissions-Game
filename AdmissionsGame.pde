@@ -14,6 +14,8 @@ Door caswellDoor;
 Door galleryDoor;
 Door galleryExit;
 
+Escape escButton;
+
 import ddf.minim.*;
 Minim minim;
 AudioPlayer bells;
@@ -40,7 +42,7 @@ void setup() {
 
   buildingOne = loadImage("LeftBuilding.png");
   buildingOne.resize(width,height);
-  buildingTwo = loadImage("CenterBuilding.png");
+  buildingTwo = loadImage("MarlboroFront.jpg"); 
   buildingTwo.resize(width,height);
   buildingThree = loadImage("RightBuilding.png");
   buildingThree.resize(width,height);
@@ -54,6 +56,8 @@ void setup() {
   galleryExit = new Door(500, "Press Q to exit the gallery");
   scienceDoor = new Door(width-350, "Press Q to enter the science class");
   ceiDoor = new Door(200, "Press Q to enter the CEI");
+  
+  escButton = new Escape("Click to return to campus!");
   
   setupScience();
 }
@@ -109,7 +113,7 @@ void keyPressed() {
       gameState = 70;
     }
   }
-}
+} 
 
 void keyReleased() {
    if (gameState > 0 && gameState != 70)
@@ -123,5 +127,8 @@ void keyReleased() {
 void mouseClicked() {
   if (gameState == 70) {
     scienceClicking();
+  }
+  if (escButton.mouseOn == true && escButton.isDisplayed == true) {
+    gameState = 10;
   }
 }

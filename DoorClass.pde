@@ -5,8 +5,7 @@ class Door {
   boolean playerOn = false;
   boolean isDisplayed = false;
   
-  Door(float xIn, String display)
-  {
+  Door(float xIn, String display) {
     x = xIn;
     text = display;
   }
