@@ -132,13 +132,10 @@ void keyPressed() {
       gameState = 70;
     }
   }
-<<<<<<< HEAD
-} 
-=======
+
   if (gameState==80)
     ceikeyPressed();
 }
->>>>>>> 0d75f99c49c5cdd26b84194c0a433ef75f18425f
 
 void keyReleased() {
    if (gameState > 0 && gameState != 70)

@@ -45,7 +45,7 @@ AudioPlayer shot;
 
 void setupScience() {
   
-  fullScreen();
+  //fullScreen();
   
   minim = new Minim(this);
   punch = minim.loadFile("Punch.mp3"); 
