@@ -142,6 +142,7 @@ void keyPressed() {
     {
       gameState=90;
       dance=0;
+      danceGameState=0;
     }
   }
 
