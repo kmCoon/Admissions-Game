@@ -41,7 +41,7 @@ void setup() {
   //bells = minim.loadFile("bells.wav");
   
   fullScreen();
-  //size(600, 400);
+  //size(1200, 800);
   background(150);
   lunch = loadImage("sandsLunch.jpeg");
   lunch.resize(width,height);

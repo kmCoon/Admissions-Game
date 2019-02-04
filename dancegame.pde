@@ -59,11 +59,11 @@ void danceEnd()
 
 void danceGame()
 {
-  if (dance==0){dance(normaldance);}
-  else if (dance==1){dance(rightdance);}
-  else if (dance==2){dance(leftdance);}
-  else if (dance==3){dance(updance);}
-  else if (dance==4){dance(downdance);}
+  if (dance==0){showDance(normaldance);}
+  else if (dance==1){showDance(rightdance);}
+  else if (dance==2){showDance(leftdance);}
+  else if (dance==3){showDance(updance);}
+  else if (dance==4){showDance(downdance);}
   timer = (int)(millis()-starttimer)/1000;
   if (timer>=30) {danceGameState=2;}
   text(timer, 30, 30);
@@ -93,7 +93,7 @@ void dancekeyReleased()
 }
 
 
-void dance(PImage image)
+void showDance(PImage img)
 {
-  image(image, width/2, height/2);
+  image(img, width/2, height/2);
 }
