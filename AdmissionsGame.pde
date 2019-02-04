@@ -40,8 +40,8 @@ void setup() {
   //minim = new Minim(this);
   //bells = minim.loadFile("bells.wav");
   
-  //fullScreen();
-  size(600, 400);
+  fullScreen();
+  //size(600, 400);
   background(150);
   lunch = loadImage("sandsLunch.jpeg");
   lunch.resize(width,height);
