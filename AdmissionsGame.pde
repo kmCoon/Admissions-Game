@@ -2,6 +2,8 @@
  // Sports, STEAM section, cafe M, science, match the marlborough slang to the meaning
  // MARLBORO SLANG --> The ARC is the CEI, the cafe for Cafe M, the DUE DATE? more like the DO DATE
 
+PFont benton;
+
 int gameState = 0;
 int screenState = 0;
 Player player;
@@ -29,7 +31,12 @@ PImage buildingThree;
 
 int midlineOffset = 200;
 
+boolean isCEI;
+
 void setup() {
+  benton = createFont("Benton Sans Bold.otf", 20);
+  textFont(benton);
+  
   minim = new Minim(this);
   bells = minim.loadFile("bells.wav");
   
@@ -60,9 +67,13 @@ void setup() {
   escButton = new Escape("Click to return to campus!");
   
   setupScience();
+  ceisetup();
+  isCEI=false;
 }
 
 void draw() {
+  rectMode(CORNER);
+  textAlign(LEFT, TOP);
   //println(gameState);
     if (gameState == 0) 
       mainMenu();
@@ -80,6 +91,11 @@ void draw() {
       playGallery();
     else if (gameState == 70)
       drawScience();
+    else if (gameState == 80)
+    {
+      ceidraw();
+      isCEI=true;
+    }
 } 
 
 void mousePressed() {
@@ -104,6 +120,9 @@ void keyPressed() {
       gameState = 60;
       player.position.x = 500;
     }
+    else if (ceiDoor.playerOn == true && keyCode == 'Q') {
+       gameState = 80;
+     } 
     else if (galleryExit.playerOn == true && keyCode == 'Q') {
       println("You have exited the gallery");
       gameState = 10;
@@ -113,7 +132,13 @@ void keyPressed() {
       gameState = 70;
     }
   }
+<<<<<<< HEAD
 } 
+=======
+  if (gameState==80)
+    ceikeyPressed();
+}
+>>>>>>> 0d75f99c49c5cdd26b84194c0a433ef75f18425f
 
 void keyReleased() {
    if (gameState > 0 && gameState != 70)
@@ -122,6 +147,8 @@ void keyReleased() {
    if (gameState == 70) {
       scienceKeys();
    }
+   if (gameState == 80)
+     ceikeyReleased();
 }
 
 void mouseClicked() {
