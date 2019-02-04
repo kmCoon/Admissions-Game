@@ -69,12 +69,14 @@ void setup() {
   
   setupScience();
   ceisetup();
+  dancesetup();
   isCEI=false;
 }
 
 void draw() {
   rectMode(CORNER);
   textAlign(LEFT, TOP);
+  imageMode(CORNER);
   //println(gameState);
     if (gameState == 0) 
       mainMenu();
@@ -96,6 +98,10 @@ void draw() {
     {
       ceidraw();
       isCEI=true;
+    }
+    else if (gameState == 90)
+    {
+      dancedraw();
     }
 } 
 
@@ -132,10 +138,17 @@ void keyPressed() {
     else if (scienceDoor.playerOn == true && keyCode == 'Q') { // mamaaaaaaa, uuuuwuuu
       gameState = 70;
     }
+    else if (caswellDoor.playerOn == true && keyCode == 'Q')
+    {
+      gameState=90;
+      dance=0;
+    }
   }
 
   if (gameState==80)
     ceikeyPressed();
+  if (gameState==90)
+    dancekeyPressed();
 }
 
 void keyReleased() {
@@ -147,6 +160,8 @@ void keyReleased() {
    }
    if (gameState == 80)
      ceikeyReleased();
+   if (gameState==90)
+     dancekeyReleased();
 }
 
 void mouseClicked() {
