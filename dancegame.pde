@@ -7,6 +7,9 @@ PImage dancestudio;
 
 int dance=0;
 int danceGameState=0;
+int timer=0;
+float starttimer=0;
+int dancemoves=0;
 
 
 void dancesetup()
@@ -61,11 +64,19 @@ void danceGame()
   else if (dance==2){dance(leftdance);}
   else if (dance==3){dance(updance);}
   else if (dance==4){dance(downdance);}
+  timer = (int)(millis()-starttimer)/1000;
+  if (timer>=30) {danceGameState=2;}
+  text(timer, 30, 30);
+  text(dancemoves, width-30, 30);
 }
 
 void dancekeyPressed()
 {
-  if (danceGameState==0 && key=='d'){danceGameState=1;}
+  if (danceGameState==0 && key=='d')
+  {
+    danceGameState=1;
+    starttimer=millis();
+  }
   if (danceGameState==1)
   {
     if (keyCode == RIGHT) {dance=1;}
@@ -78,6 +89,7 @@ void dancekeyPressed()
 void dancekeyReleased()
 {
   dance=0;
+  if (danceGameState==1){dancemoves++;}
 }
 
 
