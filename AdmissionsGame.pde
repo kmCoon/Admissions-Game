@@ -50,7 +50,7 @@ void setup() {
 
   buildingOne = loadImage("LeftBuilding.png");
   buildingOne.resize(width,height);
-  buildingTwo = loadImage("MarlboroFront.jpg"); 
+  buildingTwo = loadImage("CenterScreen.png"); 
   buildingTwo.resize(width,height);
   buildingThree = loadImage("RightBuilding.png");
   buildingThree.resize(width,height);
