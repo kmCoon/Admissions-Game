@@ -1,6 +1,7 @@
 
 void playSectionI() {
   
+  textSize(25);
   stroke(0);
   strokeWeight(1);
   image(buildingOne,0,0);

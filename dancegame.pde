@@ -76,6 +76,7 @@ void dancekeyPressed()
   {
     danceGameState=1;
     starttimer=millis();
+    dancemoves=0;
   }
   if (danceGameState==1)
   {
@@ -89,7 +90,8 @@ void dancekeyPressed()
 void dancekeyReleased()
 {
   dance=0;
-  if (danceGameState==1){dancemoves++;}
+  if (danceGameState==1 && (keyCode==RIGHT || keyCode==LEFT || keyCode==UP || keyCode==DOWN))
+    {dancemoves++;}
 }
 
 

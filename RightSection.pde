@@ -1,5 +1,6 @@
 
 void playSectionIII() {
+  textSize(25);
   stroke(0);
   strokeWeight(1);
   image(buildingThree,0,0);

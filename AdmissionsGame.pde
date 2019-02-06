@@ -34,7 +34,6 @@ PImage buildingThree;
 
 int midlineOffset = 200;
 
-boolean isCEI;
 
 void setup() {
   benton = createFont("Benton Sans Bold.otf", 20);
@@ -73,7 +72,6 @@ void setup() {
   setupScience();
   ceisetup();
   dancesetup();
-  isCEI=false;
 }
 
 void draw() {
@@ -98,14 +96,9 @@ void draw() {
     else if (gameState == 70)
       drawScience();
     else if (gameState == 80)
-    {
       ceidraw();
-      isCEI=true;
-    }
     else if (gameState == 90)
-    {
       dancedraw();
-    }
 } 
 
 void mousePressed() {

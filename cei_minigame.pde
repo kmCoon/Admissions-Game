@@ -67,7 +67,7 @@ void drawceiStart()
   text("Catch as many snacks and drinks as you can " +
        "in the next thirty seconds to see how many points you can earn! " + 
        "Use the arrow keys to move your backpack back and forth. " + 
-       "Press any key to start.", width/2, height/2, 800, 600);
+       "Press space to start.", width/2, height/2, 800, 600);
 }
 
 void drawceiEnd()
@@ -78,13 +78,9 @@ void drawceiEnd()
   rect(width/2, height/2, 820, 580);
   fill(255);
   textSize(45);
-  text("Time's up. You earned " + backpack.getPoints() + " points. Good job!"
+  text("Time's up. You earned " + backpack.getPoints() + " points. Good job! Press space to play again, or press E to leave."
         , width/2, height/2, 800, 600);
-  if (millis()>ceiendtime+5000)
-  {
-    gameState=30;
-    isCEI = false;
-  }
+  
 }
 
 void ceidraw()
@@ -99,10 +95,21 @@ void ceidraw()
 
 void ceikeyPressed()
 {
-  if (ceigameState==0 && isCEI)
+  if (ceigameState==0 && gameState==80 && key==' ')
   {
     ceigameState=1;
     ceistart=millis();
+    backpack.resetbackpack();
+    for (Food a : foods) {a.reset();}
+  }
+  if (ceigameState==2 && gameState==80 && key==' ')
+  {
+    ceigameState=0;
+  }
+  if (ceigameState==2 && gameState==80 && key=='e')
+  {
+    gameState=30;
+    ceigameState=0;
   }
   else if (keyCode == RIGHT && ceigameState==1){backpack.moveR();}
   else if (keyCode == LEFT && ceigameState==1){backpack.moveL();}

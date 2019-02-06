@@ -59,6 +59,12 @@ class Backpack
   }
   
   int getPoints(){return pointTotal;}
+  
+  void resetbackpack()
+  {
+    x=width/2;
+    pointTotal=0;
+  }
 
   
 }
