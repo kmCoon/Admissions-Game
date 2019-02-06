@@ -2,6 +2,9 @@
  // Sports, STEAM section, cafe M, science, match the marlborough slang to the meaning
  // MARLBORO SLANG --> The ARC is the CEI, the cafe for Cafe M, the DUE DATE? more like the DO DATE
 
+/* @pjs preload="CenterScreen.png"; */
+// annoyance: processing.js doesn't seem to load files from 'data'
+
 PFont benton;
 
 int gameState = 0;
@@ -41,7 +44,7 @@ void setup() {
   //bells = minim.loadFile("bells.wav");
   
   fullScreen();
-  //size(600, 400);
+  //size(1200, 800);
   background(150);
   lunch = loadImage("sandsLunch.jpeg");
   lunch.resize(width,height);
@@ -69,12 +72,14 @@ void setup() {
   
   setupScience();
   ceisetup();
+  dancesetup();
   isCEI=false;
 }
 
 void draw() {
   rectMode(CORNER);
   textAlign(LEFT, TOP);
+  imageMode(CORNER);
   //println(gameState);
     if (gameState == 0) 
       mainMenu();
@@ -96,6 +101,10 @@ void draw() {
     {
       ceidraw();
       isCEI=true;
+    }
+    else if (gameState == 90)
+    {
+      dancedraw();
     }
 } 
 
@@ -132,10 +141,18 @@ void keyPressed() {
     else if (scienceDoor.playerOn == true && keyCode == 'Q') { // mamaaaaaaa, uuuuwuuu
       gameState = 70;
     }
+    else if (caswellDoor.playerOn == true && keyCode == 'Q')
+    {
+      gameState=90;
+      dance=0;
+      danceGameState=0;
+    }
   }
 
   if (gameState==80)
     ceikeyPressed();
+  if (gameState==90)
+    dancekeyPressed();
 }
 
 void keyReleased() {
@@ -147,6 +164,8 @@ void keyReleased() {
    }
    if (gameState == 80)
      ceikeyReleased();
+   if (gameState==90)
+     dancekeyReleased();
 }
 
 void mouseClicked() {
