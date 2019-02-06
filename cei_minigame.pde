@@ -1,5 +1,9 @@
 //game state is 30 for this minigame
 
+/* @pjs preload="data/CEI.JPG"; */
+/* @pjs preload="data/backpack.png"; */
+/* @pjs preload="data/backpackfront.png"; */
+
 int ceigameState;
 
 ArrayList<Food> foods;
@@ -15,12 +19,12 @@ void ceisetup()
   //fullScreen();
   background(255);
   foods = new ArrayList<Food>();
-  ibackpack = loadImage("backpack.png");
+  ibackpack = loadImage("data/backpack.png");
   ibackpack.resize(0, 200);
-  backpackfront = loadImage("backpackfront.png");
+  backpackfront = loadImage("data/backpackfront.png");
   backpackfront.resize(0, 200);
   backpack = new Backpack();
-  cei = loadImage("CEI.JPG");
+  cei = loadImage("data/CEI.JPG");
   cei.resize(width, 0);
   ceigameState=0;
   textAlign(CENTER, CENTER);

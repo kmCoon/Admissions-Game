@@ -2,8 +2,9 @@
  // Sports, STEAM section, cafe M, science, match the marlborough slang to the meaning
  // MARLBORO SLANG --> The ARC is the CEI, the cafe for Cafe M, the DUE DATE? more like the DO DATE
 
-/* @pjs preload="CenterScreen.png"; */
-// annoyance: processing.js doesn't seem to load files from 'data'
+/* @pjs preload="data/CenterScreen.png"; */
+/* @pjs preload="data/Marlborough.jpg"; */
+
 
 PFont benton;
 
@@ -52,7 +53,7 @@ void setup() {
 
   buildingOne = loadImage("LeftBuilding.png");
   buildingOne.resize(width,height);
-  buildingTwo = loadImage("CenterScreen.png"); 
+  buildingTwo = loadImage("data/CenterScreen.png"); 
   buildingTwo.resize(width,height);
   buildingThree = loadImage("RightBuilding.png");
   buildingThree.resize(width,height);
