@@ -1,3 +1,14 @@
+//
+// Science Game
+//
+
+
+/* @pjs preload="data/capillary.png"; */
+/* @pjs preload="data/Explosion.png"; */
+/* @pjs preload="data/p1keys.png"; */
+/* @pjs preload="data/p2keys.png"; */
+
+
 int r = 45;
 int minigameState = 0;
 
@@ -57,11 +68,11 @@ void setupScience() {
   p1pos = new PVector(300,height/2); 
   p2pos = new PVector(width-300,height/2);
   coinpos = new PVector(random(50,width-50),random(50,height-80));
-  capillary = loadImage("capillary.png");
+  capillary = loadImage("data/capillary.png");
   
-  explosion = loadImage("Explosion.png");
-  p1keys = loadImage("p1keys.png");
-  p2keys = loadImage("p2keys.png");
+  explosion = loadImage("data/Explosion.png");
+  p1keys = loadImage("data/p1keys.png");
+  p2keys = loadImage("data/p2keys.png");
   explosion.resize(95, 95);
   p1keys.resize(500,500);
   p2keys.resize(500,500);
