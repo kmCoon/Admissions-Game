@@ -14,11 +14,11 @@ int dancemoves=0;
 
 void dancesetup()
 {
-  normaldance = loadImage("defaultdance.png");
-  rightdance = loadImage("rightdance.png");
-  leftdance = loadImage("leftdance.png");
-  updance = loadImage("updance.png");
-  downdance = loadImage("downdance.png");
+  normaldance = loadImage("default dance.png");
+  rightdance = loadImage("right dance.png");
+  leftdance = loadImage("left dance.png");
+  updance = loadImage("up dance.png");
+  downdance = loadImage("down dance.png");
   dancestudio = loadImage("dancestudio.jpg");
   normaldance.resize(0, height);
   rightdance.resize(0, height);
@@ -54,7 +54,13 @@ void danceStart()
 
 void danceEnd()
 {
-  
+  fill(0, 80);
+  noStroke();
+  rect(width/2, height/2, 800, 500);
+  fill(255);
+  textSize(30);
+  text("Great job! You did " + dancemoves + " dance moves in 30 seconds."
+        + "To play again, press D. To exit this game, press E.", width/2, height/2, 600, 400);
 }
 
 void danceGame()
@@ -84,6 +90,11 @@ void dancekeyPressed()
     if (keyCode == LEFT) {dance=2;}
     if (keyCode == UP) {dance=3;}
     if (keyCode == DOWN) {dance=4;}
+  }
+  if (danceGameState==2)
+  {
+    if (key == 'd') {danceGameState=0;}
+    if (key == 'e') {gameState=10;}
   }
 }
 

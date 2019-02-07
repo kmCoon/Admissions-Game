@@ -25,7 +25,7 @@ void ceisetup()
   backpackfront.resize(0, 200);
   backpack = new Backpack();
   cei = loadImage("data/CEI.JPG");
-  cei.resize(width, 0);
+  cei.resize(width, height);
   ceigameState=0;
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
@@ -39,7 +39,7 @@ void ceisetup()
 void drawceiGame()
 {
   
-  image(cei, 0, -(cei.height-height));
+  image(cei, 0, 0);
   backpack.display();
   for (Food a : foods)
   {
