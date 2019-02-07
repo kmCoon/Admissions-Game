@@ -13,7 +13,7 @@ class Door {
   void display()
   {
     fill(66, 38, 8);
-    rect(x, height/2-10, 100, 200);
+    rect(x, height/2+60, 100, 200);
     isDisplayed = true;
   }
   

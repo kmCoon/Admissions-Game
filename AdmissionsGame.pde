@@ -51,21 +51,21 @@ void setup() {
   marlboro = loadImage("Marlborough.jpg");
   marlboro.resize(width,height);
 
-  buildingOne = loadImage("LeftBuilding.png");
+  buildingOne = loadImage("LeftScreen.png");
   buildingOne.resize(width,height);
-  buildingTwo = loadImage("data/CenterScreen.png"); 
+  buildingTwo = loadImage("CenterScreen.png"); 
   buildingTwo.resize(width,height);
-  buildingThree = loadImage("RightBuilding.png");
+  buildingThree = loadImage("RightScreen.png");
   buildingThree.resize(width,height);
  
-  PVector startPos = new PVector(width/2,height/2+160);
+  PVector startPos = new PVector(width/2,height/2+230);
   player = new Player(startPos); //100 so 50
   historyDoor = new Door((width/2)-50, "Press Q to enter the history class");
   englishDoor = new Door((width/2)-475, "Press Q to enter the english class");
-  caswellDoor = new Door((width/2)+375, "Press Q to enter caswell");
+  caswellDoor = new Door((width/2)+360, "Press Q to enter caswell");
   galleryDoor = new Door(800, "Press Q to enter the gallery");
   galleryExit = new Door(500, "Press Q to exit the gallery");
-  scienceDoor = new Door(width-350, "Press Q to enter the science class");
+  scienceDoor = new Door(width-390, "Press Q to enter the science class");
   ceiDoor = new Door(200, "Press Q to enter the CEI");
   
   escButton = new Escape("Click to return to campus!");
