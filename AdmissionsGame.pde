@@ -22,10 +22,6 @@ Door galleryExit;
 
 Escape escButton;
 
-//import ddf.minim.*;
-//Minim minim;
-//AudioPlayer bells;
-
 PImage lunch;
 PImage marlboro;
 
@@ -39,9 +35,9 @@ int midlineOffset = 200;
 void setup() {
   benton = createFont("Benton Sans Bold.otf", 20);
   textFont(benton);
+  soundSetup();
   
-  //minim = new Minim(this);
-  //bells = minim.loadFile("bells.wav");
+  // put all of the sound stuff in a single tab with functions that play certain sounds and one setup function
   
   fullScreen();
   //size(1200, 800);
@@ -73,6 +69,7 @@ void setup() {
   setupScience();
   ceisetup();
   dancesetup();
+  setupGallery();
 }
 
 void draw() {
