@@ -52,6 +52,7 @@ void englishdrawGame()
   }
   
   books.get(currentBook).display();
+  fill(0);
   text("Score: " + score, width-100, 30);
   
   
@@ -105,11 +106,20 @@ void englishmouseClicked()
 void englishkeyPressed()
 {
   if (key==' ' && englishgameState==0){englishgameState=1;}
-  if (key==' ' && englishgameState==2){englishgameState=0;}
+  if (key==' ' && englishgameState==2)
+  {
+    Collections.shuffle(books);
+    Collections.shuffle(authors);
+    currentBook=0;
+    englishgameState=0;
+  }
   if (key=='e' && englishgameState==2)
   {
     gameState=10;
     englishgameState=0;
+    Collections.shuffle(books);
+    Collections.shuffle(authors);
+    currentBook=0;
   }
   
 }

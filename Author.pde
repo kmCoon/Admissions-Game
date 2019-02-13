@@ -14,11 +14,11 @@ class Author
   void display(int yIn)
   {
     y = yIn;
-    fill(255, 230, 230);
+    fill(88, 23, 145);
     if (mouseOn()) {strokeWeight(3);}
     else {strokeWeight(1);}
     rect(170, y, 320, 50);
-    fill(0);
+    fill(255);
     text(name, 170, y);
   }
   
