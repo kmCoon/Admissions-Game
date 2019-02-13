@@ -70,6 +70,7 @@ void setup() {
   ceisetup();
   dancesetup();
   setupGallery();
+  englishsetup();
 }
 
 void draw() {
@@ -88,7 +89,7 @@ void draw() {
     else if (gameState == 40)
       playSectionI();
     else if (gameState == 50)
-      playEnglish(); 
+      englishdraw(); 
     else if (gameState == 60)
       playGallery();
     else if (gameState == 70)
@@ -142,12 +143,15 @@ void keyPressed() {
       dance=0;
       danceGameState=0;
     }
+    
   }
 
   if (gameState==80)
     ceikeyPressed();
   if (gameState==90)
     dancekeyPressed();
+  if (gameState==50)
+    englishkeyPressed();
 }
 
 void keyReleased() {
@@ -171,4 +175,5 @@ void mouseClicked() {
   if (escButton.mouseOn == true && escButton.isDisplayed == true) {
     gameState = 10;
   }
+  if (gameState == 50) {englishmouseClicked();}
 }
