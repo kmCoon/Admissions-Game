@@ -56,13 +56,13 @@ void setup() {
  
   PVector startPos = new PVector(width/2,height/2+230);
   player = new Player(startPos); //100 so 50
-  historyDoor = new Door((width/2)-50, "Press Q to enter the history class");
-  englishDoor = new Door((width/2)-475, "Press Q to enter the english class");
-  caswellDoor = new Door((width/2)+360, "Press Q to enter caswell");
-  galleryDoor = new Door(800, "Press Q to enter the gallery");
-  galleryExit = new Door(500, "Press Q to exit the gallery");
-  scienceDoor = new Door(width-390, "Press Q to enter the science class");
-  ceiDoor = new Door(200, "Press Q to enter the CEI");
+  historyDoor = new Door((width/2)-50, "Press space to enter the mystery space");
+  englishDoor = new Door((width/2)-475, "Press space to enter the english class");
+  caswellDoor = new Door((width/2)+360, "Press space to enter caswell");
+  galleryDoor = new Door(800, "Press space to enter the gallery");
+  galleryExit = new Door(500, "Press space to exit the gallery");
+  scienceDoor = new Door(width-390, "Press space to enter the science class");
+  ceiDoor = new Door(200, "Press space to enter the CEI");
   
   escButton = new Escape("Click to return to campus!");
   
@@ -100,40 +100,44 @@ void draw() {
       dancedraw();
 } 
 
-void mousePressed() {
-  if (gameState == 0)
-    gameState = 10;
-}
 
 void keyPressed() {
-  if (gameState > 0 && gameState != 70) {
+  if (gameState==0 && key==' ')
+  {
+    gameState=10;
+  }
+  
+  if (gameState==50){
+    englishkeyPressed(); } 
+  else if (gameState > 0 && gameState != 70) {
     if (keyCode == RIGHT)
       player.changeVelocity(1);
     else if (keyCode == LEFT)
       player.changeVelocity(-1);
-    else if (englishDoor.playerOn == true && keyCode == 'Q') {
-       gameState = 50;
+    else if (englishDoor.playerOn == true && keyCode == ' ') {
+        englishgameState=0;
+        gameState = 50; 
      } 
-    else if (historyDoor.playerOn == true && keyCode == 'Q') {
+    else if (historyDoor.playerOn == true && keyCode == ' ') {
        gameState = 20;
        player.position.x = width/2;
     }
-    else if (galleryDoor.playerOn == true && keyCode == 'Q') {
+    else if (galleryDoor.playerOn == true && keyCode == ' ') {
       gameState = 60;
       player.position.x = 500;
     }
-    else if (ceiDoor.playerOn == true && keyCode == 'Q') {
+    else if (ceiDoor.playerOn == true && keyCode == ' ') {
        gameState = 80;
      } 
-    else if (galleryExit.playerOn == true && keyCode == 'Q') {
+    else if (galleryExit.playerOn == true && keyCode == ' ') {
       println("You have exited the gallery");
       gameState = 10;
       player.position.x = 50;
     }
-    else if (scienceDoor.playerOn == true && keyCode == 'Q') { // mamaaaaaaa, uuuuwuuu
+    else if (scienceDoor.playerOn == true && keyCode == ' ') { // mamaaaaaaa, uuuuwuuu
       gameState = 70;
     }
-    else if (caswellDoor.playerOn == true && keyCode == 'Q')
+    else if (caswellDoor.playerOn == true && keyCode == ' ')
     {
       gameState=90;
       dance=0;
@@ -141,13 +145,12 @@ void keyPressed() {
     }
     
   }
+  
+  if (gameState==80){
+    ceikeyPressed();}
+  if (gameState==90){
+    dancekeyPressed();}
 
-  if (gameState==80)
-    ceikeyPressed();
-  if (gameState==90)
-    dancekeyPressed();
-  if (gameState==50)
-    englishkeyPressed();
 }
 
 void keyReleased() {

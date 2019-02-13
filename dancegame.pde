@@ -49,7 +49,7 @@ void danceStart()
   fill(255);
   textSize(30);
   text("Press the arrow keys to perform different dance moves. "
-        + "You have 30 seconds. Press D to begin.", width/2, height/2, 600, 400);
+        + "You have 30 seconds. Press space to begin.", width/2, height/2, 600, 400);
 }
 
 void danceEnd()
@@ -60,7 +60,7 @@ void danceEnd()
   fill(255);
   textSize(30);
   text("Great job! You did " + dancemoves + " dance moves in 30 seconds."
-        + "To play again, press D. To exit this game, press E.", width/2, height/2, 600, 400);
+        + "To play again, press space. To exit this game, press E.", width/2, height/2, 600, 400);
 }
 
 void danceGame()
@@ -78,7 +78,7 @@ void danceGame()
 
 void dancekeyPressed()
 {
-  if (danceGameState==0 && key=='d')
+  if (danceGameState==0 && key==' ')
   {
     danceGameState=1;
     starttimer=millis();
@@ -93,7 +93,7 @@ void dancekeyPressed()
   }
   if (danceGameState==2)
   {
-    if (key == 'd') {danceGameState=0;}
+    if (key == ' ') {danceGameState=0;}
     if (key == 'e') {gameState=10;}
   }
 }

@@ -105,6 +105,7 @@ void englishmouseClicked()
 
 void englishkeyPressed()
 {
+
   if (key==' ' && englishgameState==0){englishgameState=1;}
   if (key==' ' && englishgameState==2)
   {
@@ -121,5 +122,4 @@ void englishkeyPressed()
     Collections.shuffle(authors);
     currentBook=0;
   }
-  
 }
