@@ -106,10 +106,14 @@ void mousePressed() {
 
 void keyPressed() {
   if (gameState > 0 && gameState != 70) {
-    if (keyCode == RIGHT)
+    if (keyCode == RIGHT) {
+      player.applyAcc(1);
       player.changeVelocity(1);
-    else if (keyCode == LEFT)
+    }
+    else if (keyCode == LEFT) {
+      player.applyAcc(-1);
       player.changeVelocity(-1);
+    }
     else if (englishDoor.playerOn == true && keyCode == 'Q') {
        gameState = 50;
      } 
@@ -149,6 +153,7 @@ void keyPressed() {
 void keyReleased() {
    if (gameState > 0 && gameState != 70)
      player.changeVelocity(0);
+     player.applyAcc(0);
      
    if (gameState == 70) {
       scienceKeys();

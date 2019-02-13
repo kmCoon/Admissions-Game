@@ -4,6 +4,7 @@ class Player {
   PVector velocity = new PVector(0,0);
   int r = 50;
   int velMult = 4;
+  PVector acceleration = new PVector(5,0);
   
   Player(PVector positionIn) {
     position = positionIn;
@@ -17,6 +18,16 @@ class Player {
   
   void changeVelocity(int direction) {
      velocity.x = velMult*direction;
+  }
+  
+  void applyAcc(int direction) {
+    if (direction == 0) {
+      velMult = 4;
+    }
+     acceleration.x = acceleration.x*direction;
+     if (velocity.x <= 10 || velocity.x >= -10) {
+       velMult += acceleration.x;
+     }
   }
   
 }

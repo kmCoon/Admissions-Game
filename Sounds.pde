@@ -10,6 +10,16 @@ void playBells() {
   bells.play();
 }
 
+void playShot() {
+   shot.rewind();
+   shot.play();
+}
+
+void playPunch() {
+   punch.rewind();
+   punch.play();
+}
+
 void soundSetup() {
   minim = new Minim(this);
   bells = minim.loadFile("bells.wav");

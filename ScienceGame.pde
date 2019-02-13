@@ -80,8 +80,6 @@ void setupScience() {
 
 // I SAW U hangin out with caiTLYN YESTERDAY!
 // RE- REBECCA IT'S NOT WHAT U THINK
-// i won't hESITATE, *****
-// pew pew
 
 void drawScience() {
     escButton.display();
