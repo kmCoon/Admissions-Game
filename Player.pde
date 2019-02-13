@@ -30,5 +30,4 @@ class Player {
       velMult += acceleration.x;
     }
   }
-  
 }
