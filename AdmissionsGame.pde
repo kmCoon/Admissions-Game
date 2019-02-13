@@ -102,6 +102,7 @@ void draw() {
 
 
 void keyPressed() {
+
   if (gameState==0 && key==' ')
   {
     gameState=10;
@@ -111,13 +112,19 @@ void keyPressed() {
     englishkeyPressed(); } 
   else if (gameState > 0 && gameState != 70) {
     if (keyCode == RIGHT)
+    {
       player.changeVelocity(1);
-    else if (keyCode == LEFT)
+      player.applyAcc(1);
+    }
+    else if (keyCode == LEFT) {
+      player.applyAcc(-1);
       player.changeVelocity(-1);
+    }
     else if (englishDoor.playerOn == true && keyCode == ' ') {
         englishgameState=0;
         gameState = 50; 
-     } 
+
+    }
     else if (historyDoor.playerOn == true && keyCode == ' ') {
        gameState = 20;
        player.position.x = width/2;
@@ -143,19 +150,20 @@ void keyPressed() {
       dance=0;
       danceGameState=0;
     }
-    
   }
   
   if (gameState==80){
     ceikeyPressed();}
-  if (gameState==90){
-    dancekeyPressed();}
+  if (gameState==90)
+    dancekeyPressed();
 
 }
 
 void keyReleased() {
-   if (gameState > 0 && gameState != 70)
+   if (gameState > 0 && gameState != 70) {
      player.changeVelocity(0);
+     player.applyAcc(0);      
+   }
      
    if (gameState == 70) {
       scienceKeys();

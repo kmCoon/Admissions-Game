@@ -13,7 +13,6 @@ void playEnglish() {
     if (player.position.x >= width-200 && player.position.x <= width) {
       gameState = 10;
       player.position.x = 500;
-      //bells.rewind();
-      //bells.play();
+      playBells();
     }
 }
