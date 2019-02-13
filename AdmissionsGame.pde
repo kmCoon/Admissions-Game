@@ -108,8 +108,8 @@ void mousePressed() {
 void keyPressed() {
   if (gameState > 0 && gameState != 70) {
     if (keyCode == RIGHT) {
-      player.applyAcc(1);
       player.changeVelocity(1);
+      player.applyAcc(1);
     }
     else if (keyCode == LEFT) {
       player.applyAcc(-1);
@@ -143,7 +143,6 @@ void keyPressed() {
       dance=0;
       danceGameState=0;
     }
-    
   }
 
   if (gameState==80)
@@ -155,9 +154,10 @@ void keyPressed() {
 }
 
 void keyReleased() {
-   if (gameState > 0 && gameState != 70)
+   if (gameState > 0 && gameState != 70) {
      player.changeVelocity(0);
-     player.applyAcc(0);
+     player.applyAcc(0);      
+   }
      
    if (gameState == 70) {
       scienceKeys();

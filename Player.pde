@@ -4,7 +4,7 @@ class Player {
   PVector velocity = new PVector(0,0);
   int r = 50;
   int velMult = 4;
-  PVector acceleration = new PVector(5,0);
+  PVector acceleration = new PVector(1,0);
   
   Player(PVector positionIn) {
     position = positionIn;
@@ -21,13 +21,14 @@ class Player {
   }
   
   void applyAcc(int direction) {
+    println("Apply acceleration called");
     if (direction == 0) {
       velMult = 4;
+      println("regular mult called");
     }
-     acceleration.x = acceleration.x*direction;
-     if (velocity.x <= 10 || velocity.x >= -10) {
-       velMult += acceleration.x;
-     }
+    if (velMult <= 8) {
+      velMult += acceleration.x;
+    }
   }
   
 }
