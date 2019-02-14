@@ -12,7 +12,7 @@ int gameState = 0;
 int screenState = 0;
 Player player;
 Door englishDoor;
-Door historyDoor;
+Door roboDoor;
 Door scienceDoor;
 Door ceiDoor;
 Door caswellDoor;
@@ -56,7 +56,7 @@ void setup() {
  
   PVector startPos = new PVector(width/2,height/2+230);
   player = new Player(startPos); //100 so 50
-  historyDoor = new Door((width/2)-50, "Press space to enter the mystery space");
+  roboDoor = new Door((width/2)-50, "Press space to enter the SPARC");
   englishDoor = new Door((width/2)-475, "Press space to enter the english class");
   caswellDoor = new Door((width/2)+360, "Press space to enter caswell");
   galleryDoor = new Door(800, "Press space to enter the gallery");
@@ -74,6 +74,7 @@ void setup() {
   setupGallery();
   englishsetup();
   trackSetup();
+  robotsetup();
 }
 
 void draw() {
@@ -86,7 +87,7 @@ void draw() {
     else if (gameState == 10)
       playSectionII();
     else if (gameState == 20)
-      playHistory();
+      robotdraw();
     else if (gameState == 30)
       playSectionIII();
     else if (gameState == 40)
@@ -121,6 +122,9 @@ void keyPressed() {
     
   if (gameState==90){
     dancekeyPressed();}
+  
+  if (gameState==20){
+    robotkeyPressed();}
     
   else if (gameState > 0 && gameState != 70 && gameState != 100) {
     if (keyCode == RIGHT)
@@ -137,9 +141,9 @@ void keyPressed() {
         gameState = 50; 
 
     }
-    else if (historyDoor.playerOn == true && keyCode == ' ') {
+    else if (roboDoor.playerOn == true && keyCode == ' ') {
        gameState = 20;
-       player.position.x = width/2;
+       robotstate=0;
     }
     else if (galleryDoor.playerOn == true && keyCode == ' ') {
       gameState = 60;
@@ -188,6 +192,8 @@ void keyReleased() {
      dancekeyReleased();
    if (gameState==100){
      trackKeys();}
+   if (gameState==20){
+     robotkeyReleased();}
 }
 
 void mouseClicked() {

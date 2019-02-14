@@ -7,8 +7,8 @@ void playSectionII() {
         
    englishDoor.display();
    englishDoor.open();
-   historyDoor.display();
-   historyDoor.open();
+   roboDoor.display();
+   roboDoor.open();
    caswellDoor.display();
    caswellDoor.open();
    
