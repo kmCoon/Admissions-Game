@@ -20,6 +20,8 @@ Door caswellDoor;
 Door galleryDoor;
 Door galleryExit;
 
+Door trackDoor;
+
 Escape escButton;
 
 PImage lunch;
@@ -36,8 +38,6 @@ void setup() {
   benton = createFont("Benton Sans Bold.otf", 20);
   textFont(benton);
   soundSetup();
-  
-  // put all of the sound stuff in a single tab with functions that play certain sounds and one setup function
   
   fullScreen();
   //size(1200, 800);
@@ -64,6 +64,8 @@ void setup() {
   scienceDoor = new Door(width-390, "Press space to enter the science class");
   ceiDoor = new Door(200, "Press space to enter the CEI");
   
+  trackDoor = new Door(100, "Press space to begin track practice");
+  
   escButton = new Escape("Click to return to campus!");
   
   setupScience();
@@ -71,6 +73,7 @@ void setup() {
   dancesetup();
   setupGallery();
   englishsetup();
+  trackSetup();
 }
 
 void draw() {
@@ -98,6 +101,8 @@ void draw() {
       ceidraw();
     else if (gameState == 90)
       dancedraw();
+    else if (gameState == 100) 
+      trackDraw();
 } 
 
 
@@ -110,7 +115,14 @@ void keyPressed() {
   
   if (gameState==50){
     englishkeyPressed(); } 
-  else if (gameState > 0 && gameState != 70) {
+    
+  if (gameState==80){
+    ceikeyPressed();}
+    
+  if (gameState==90){
+    dancekeyPressed();}
+    
+  else if (gameState > 0 && gameState != 70 && gameState != 100) {
     if (keyCode == RIGHT)
     {
       player.changeVelocity(1);
@@ -150,12 +162,12 @@ void keyPressed() {
       dance=0;
       danceGameState=0;
     }
+    else if (trackDoor.playerOn == true && keyCode == ' ') {
+      player.position.x = 300; 
+      gameState = 100;
+      trackState = 0;
+    } 
   }
-  
-  if (gameState==80){
-    ceikeyPressed();}
-  if (gameState==90)
-    dancekeyPressed();
 
 }
 
@@ -168,10 +180,14 @@ void keyReleased() {
    if (gameState == 70) {
       scienceKeys();
    }
+   if (gameState == 100)
+     trackKeys();
    if (gameState == 80)
      ceikeyReleased();
    if (gameState==90)
      dancekeyReleased();
+   if (gameState==100){
+     trackKeys();}
 }
 
 void mouseClicked() {
