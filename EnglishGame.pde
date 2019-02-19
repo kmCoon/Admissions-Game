@@ -19,8 +19,6 @@ void englishsetup()
   Collections.shuffle(books);
   Collections.shuffle(authors);
   currentBook=0;
-  
-  
 }
 
 void englishdrawStart()
@@ -36,8 +34,7 @@ void englishdrawStart()
        "Press space to start.", width/2, height/2, width/1.25, height/2);
 }
 
-void englishdrawGame()
-{
+void englishdrawGame() {
   textSize(30);
   background(255);
   if (mouseOver())
