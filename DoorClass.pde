@@ -5,15 +5,20 @@ class Door {
   boolean playerOn = false;
   boolean isDisplayed = false;
   
+  float floorVal;
+  int doorHeight = 200;
+  
   Door(float xIn, String display) {
     x = xIn;
     name = display;
   }
   
-  void display()
-  {
+  void display() {
+    
+    floorVal = ((height*scaleMult)-doorHeight);
+    
     fill(66, 38, 8);
-    rect(x, height/2+60, 100, 200);
+    rect(x, floorVal, 100, doorHeight);
     isDisplayed = true;
   }
   

@@ -2,6 +2,9 @@
 int trackState = 0;
 boolean visible = true;
 
+boolean trackTiming;
+float trackClock;
+
 PImage img;
 
 int currentX;
@@ -29,12 +32,25 @@ void trackSetup() {
 
 
 void trackDraw() {
+   println(trackTiming);
+   println(trackState);
+   if (trackTiming) {
+     if (millis() - trackClock >= 3000)
+       trackState = 0;
+       gameState = 40;
+       trackTiming = false;
+   }
+  
    if (trackState == 0)
      drawStart();
    else if (trackState == 1)
      drawGame();
-   else
+   else {
      drawEnd();
+     if (trackTiming == false) {
+       trackClock = millis();
+       trackTiming = true;}
+   }
 }
 
 void drawStart() {
@@ -50,7 +66,7 @@ void drawEnd() {
   background(0);
   fill(255);
   text("The end", 450, 300);
-  text("Press any key to play again", 325, 350);
+  text("Returning to campus...", 325, 350);
 }
 
 void drawGame() {
@@ -109,17 +125,19 @@ void drawPerson(float x, float y) {
 }
 
 void trackKeys() {
-  if (trackState == 0)
-  {
-    trackState = 1;
-  }
-  else if (trackState == 1) {
-    if (key == ' ') {
-      vyPerson = vyPerson - 25;
+  if (!trackTiming) {
+    if (trackState == 0) 
+    {
+      trackState = 1;
     }
-  }
-  else {
-    trackState = 0; 
-    xRect = 400;
+    else if (trackState == 1) {
+      if (key == ' ') {
+        vyPerson = vyPerson - 25;
+      }
+    }
+    else {
+      trackState = 0; 
+      xRect = 400;
+    }
   }
 }

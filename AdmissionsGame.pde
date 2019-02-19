@@ -32,6 +32,7 @@ PImage buildingTwo;
 PImage buildingThree;
 
 int midlineOffset = 200;
+float scaleMult = .79;
 
 
 void setup() {

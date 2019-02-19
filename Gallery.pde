@@ -4,6 +4,8 @@ PImage ponytail;
 PImage landscape;
 PImage patterns;
 
+PImage background;
+
 void setupGallery() {
    
    pipe = loadImage("Kyrapipe.jpg");
@@ -17,12 +19,15 @@ void setupGallery() {
    
    patterns = loadImage("sidneybae.png");
    patterns.resize(200,200);
+   
+   background = loadImage("Gallery.png");
+   background.resize(width,height);
 }
 
 void playGallery() {
   stroke(0);
   strokeWeight(1);
-  background(255); 
+  image(background,0,0);
   
   image(pipe, 20,20);
   image(ponytail, width/2,50);
