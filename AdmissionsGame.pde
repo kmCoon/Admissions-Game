@@ -12,7 +12,7 @@ int gameState = 0;
 int screenState = 0;
 Player player;
 Door englishDoor;
-Door roboDoor;
+Door roboDoor; 
 Door scienceDoor;
 Door ceiDoor;
 Door caswellDoor;

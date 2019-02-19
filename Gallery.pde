@@ -4,7 +4,7 @@ PImage ponytail;
 PImage landscape;
 PImage patterns;
 
-PImage background;
+PImage galBack;
 
 void setupGallery() {
    
@@ -20,14 +20,14 @@ void setupGallery() {
    patterns = loadImage("sidneybae.png");
    patterns.resize(200,200);
    
-   background = loadImage("Gallery.png");
-   background.resize(width,height);
+   galBack = loadImage("Gallery.png");
+   galBack.resize(width,height);
 }
 
 void playGallery() {
   stroke(0);
   strokeWeight(1);
-  image(background,0,0);
+  image(galBack,0,0);
   
   image(pipe, width/20,height/2);
   image(ponytail, 5*width/20,height/2);
