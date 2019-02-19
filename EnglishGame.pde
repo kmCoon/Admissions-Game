@@ -12,7 +12,7 @@ int score = 0;
 
 void englishsetup()
 {
-  fullScreen();
+  
   books = new ArrayList<Book>();
   authors = new ArrayList<Author>();
   initializePairs();
