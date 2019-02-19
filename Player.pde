@@ -21,10 +21,8 @@ class Player {
   }
   
   void applyAcc(int direction) {
-    //println("Apply acceleration called");
     if (direction == 0) {
       velMult = 4;
-      //println("regular mult called");
     }
     if (velMult <= 9) {
       velMult += acceleration.x;

@@ -6,11 +6,12 @@ class Door {
   boolean isDisplayed = false;
   
   float floorVal;
-  int doorHeight = 200;
+  int doorHeight = int(height*yScaleMult);
+  int doorWidth = int(width*xScaleMult);
   
   Door(float xIn, String display) {
     x = xIn;
-    name = display;
+    name = display; 
   }
   
   void display() {
@@ -18,7 +19,7 @@ class Door {
     floorVal = ((height*scaleMult)-doorHeight);
     
     fill(66, 38, 8);
-    rect(x, floorVal, 100, doorHeight);
+    rect(x, floorVal, doorWidth, doorHeight);
     isDisplayed = true;
   }
   

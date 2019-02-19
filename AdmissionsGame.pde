@@ -34,6 +34,9 @@ PImage buildingThree;
 int midlineOffset = 200;
 float scaleMult = .79;
 
+float xScaleMult = .069;
+float yScaleMult = .22;
+
 
 void setup() {
   benton = createFont("Benton Sans Bold.otf", 20);
@@ -55,7 +58,7 @@ void setup() {
   buildingThree = loadImage("RightScreen.png");
   buildingThree.resize(width,height);
  
-  PVector startPos = new PVector(width/2,height/2+230);
+  PVector startPos = new PVector(width/2,((height*scaleMult)-25)); //900
   player = new Player(startPos); //100 so 50
   roboDoor = new Door((width/2)-50, "Press space to enter the SPARC");
   englishDoor = new Door((width/2)-475, "Press space to enter the english class");
@@ -79,6 +82,7 @@ void setup() {
 }
 
 void draw() {
+  
   rectMode(CORNER);
   textAlign(LEFT, TOP);
   imageMode(CORNER);
@@ -194,7 +198,7 @@ void keyReleased() {
    if (gameState==100){
      trackKeys();}
    if (gameState==20){
-     robotkeyReleased();}
+     robotkeyReleased();} 
 }
 
 void mouseClicked() {
