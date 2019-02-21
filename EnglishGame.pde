@@ -52,6 +52,7 @@ void englishdrawGame() {
   text("Score: " + score, width-100, 30);
   
   
+  
 }
 
 boolean mouseOver()
@@ -88,6 +89,8 @@ void englishdraw()
   if (englishgameState==2)
     englishdrawEnd();
   
+  
+  escButton.display();
 }
 
 void englishmouseClicked()
@@ -142,5 +145,3 @@ void englishkeyPressed()
         swap(things, i, index);
     }
 }
-
-

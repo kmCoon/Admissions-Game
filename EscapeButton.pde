@@ -4,33 +4,39 @@ class Escape {
   String text;
   boolean mouseOn = false;
   boolean isDisplayed = false;
-  int length = 80;
-  int w = 40;
+  int l = 120;
+  int w = 60;
   
   Escape(String display) {
-    x = 20;
-    y = 20;
+    x = width-20-l;
+    y = height-20-w;
     text = display;
   }
   
   void display() {
     rectMode(CORNER);
-    fill(255,0,0);
-    rect(x,y,length,w);
+    checkforHover();
+    fill(255);
+    rect(x,y,l,w);
     isDisplayed = true;
+    textSize(15);
+    fill(0);
+    textAlign(CENTER, CENTER);
+    rectMode(CORNERS);
+    text(text, x+2, y+2, x+l-2, y+w-2);
   }
   
   void checkforHover() {
-     if (mouseX >= x && mouseX <= (x+length) && mouseY >= y && mouseY <= y+w) {
-        mouseOn = true; 
-        displayText();
+     if (mouseX >= x && mouseX <= (x+l) && mouseY >= y && mouseY <= y+w) {
+        mouseOn = true;
+        strokeWeight(3);
      }
      else 
+     {
        mouseOn = false;
+       strokeWeight(1);
+     }
   }
   
-  void displayText() {
-    text(text, x+length+30,y);
-  }
   
 }

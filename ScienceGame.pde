@@ -108,6 +108,7 @@ void drawScience() {
    if (minigameState > 0 && minigameState < 10) {
       playGame(); 
    }
+   escButton.display();
 } 
 
 void playGame() {

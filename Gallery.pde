@@ -46,4 +46,5 @@ void playGallery() {
   else if (player.position.x >= width) {
      player.position.x = 1;
   }
+  escButton.display();
 }

@@ -57,6 +57,7 @@ void robotdraw()
   if(robotstate ==2)
   robotdraw_end(); 
   
+  escButton.display();
 } 
 
 void robotdraw_start()

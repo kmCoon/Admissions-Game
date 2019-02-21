@@ -38,6 +38,7 @@ void dancedraw()
   if (danceGameState==0) {danceStart();}
   else if (danceGameState==1) {danceGame();}
   else if (danceGameState==2) {danceEnd();}
+  escButton.display();
   
 }
 

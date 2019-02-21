@@ -94,6 +94,7 @@ void ceidraw()
   if (ceigameState==0) {drawceiStart();}
   if (ceigameState==1) {drawceiGame();}
   if (ceigameState==2) {drawceiEnd();}
+  escButton.display();
  
 }
 
