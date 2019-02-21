@@ -2,6 +2,10 @@
 void playSectionII() {
    stroke(0);
    strokeWeight(1);
+
+   if (buildingTwo.width != width)
+     buildingTwo.resize(width,height);
+
    image(buildingTwo,0,0);
    fill(0,0,255);
         
