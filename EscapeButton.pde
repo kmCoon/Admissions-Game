@@ -1,7 +1,7 @@
 class Escape {
   float x;
   float y;
-  String text;
+  String escapeText;
   boolean mouseOn = false;
   boolean isDisplayed = false;
   int l = 120;
@@ -10,7 +10,7 @@ class Escape {
   Escape(String display) {
     x = width-20-l;
     y = height-20-w;
-    text = display;
+    escapeText = display;
   }
   
   void display() {
@@ -23,7 +23,7 @@ class Escape {
     fill(0);
     textAlign(CENTER, CENTER);
     rectMode(CORNERS);
-    text(text, x+2, y+2, x+l-2, y+w-2);
+    text(escapeText, x+2, y+2, x+l-2, y+w-2);
   }
   
   void checkforHover() {
