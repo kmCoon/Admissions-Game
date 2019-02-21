@@ -8,6 +8,10 @@
 /* @pjs preload="data/Marlborough.jpg"; */
 /* @pjs preload="data/sandsLunch.jpeg"; */
 
+
+// x and door width
+
+
 PFont benton;
 
 int gameState = 0;
@@ -64,6 +68,7 @@ void setup() {
  
   PVector startPos = new PVector(width/2,((height*scaleMult)-25)); //900
   player = new Player(startPos); //100 so 50
+  
   roboDoor = new Door((width/2)-50, "Press space to enter the SPARC");
   englishDoor = new Door((width/2)-475, "Press space to enter the english class");
   caswellDoor = new Door((width/2)+360, "Press space to enter caswell");
@@ -71,7 +76,6 @@ void setup() {
   galleryExit = new Door(500, "Press space to exit the gallery");
   scienceDoor = new Door(width-390, "Press space to enter the science class");
   ceiDoor = new Door(200, "Press space to enter the CEI");
-  
   trackDoor = new Door(100, "Press space to begin track practice");
   
   escButton = new Escape("Click to return to campus!");

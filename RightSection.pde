@@ -1,5 +1,4 @@
 
-//gateScale
 void playSectionIII() {
   
   int playerGate = int(player.r/2);
@@ -20,4 +19,5 @@ void playSectionIII() {
     gameState = 10;
     player.position.x = width-1;
   }
+  
 }

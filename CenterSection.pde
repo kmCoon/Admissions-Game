@@ -12,15 +12,14 @@ void playSectionII() {
    caswellDoor.display();
    caswellDoor.open();
    
+   println("Englishdoor: " + englishDoor.x + " " + englishDoor.doorWidth);
+   println("Robodoor: " + roboDoor.x + " " + roboDoor.doorWidth);        
+   println("Caswell: " + caswellDoor.x + " " + caswellDoor.doorWidth);
+   
    player.display(); 
    textSize(25);
    fill(#FF0D82);
-   //text("Use the left and right arrow keys to move to the door", 80, 50);
-   
-   /*if (player.position.x >= 500 && player.position.x <= 600) {
-     textSize(50);
-     text("Press Q to enter the classroom", 450,height/2-60);  
-   }  */
+
    if (player.position.x >= width) {
      gameState = 30; 
      player.position.x = 1;
