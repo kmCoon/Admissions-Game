@@ -92,26 +92,26 @@ void robotkeyPressed()
     
   if(keyCode==' ' && robotstate==2)
     {
-      gameState=20;
+      gameState=10;
       robotstate=0;
     }
   
-  if(keyCode == LEFT)
+  else if(keyCode == LEFT)
   {
     robot1.moveLeft(); 
   }
   
-  if(keyCode == RIGHT)
+  else if(keyCode == RIGHT)
   {
     robot1.moveRight(); 
   }
   
-   if(keyCode == UP)
+   else if(keyCode == UP)
   {
     robot1.moveForward();
   }
   
-  if(keyCode == DOWN) 
+  else if(keyCode == DOWN) 
   {
     robot1.moveBackward(); 
   }

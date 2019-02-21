@@ -49,7 +49,7 @@ void danceStart()
   fill(255);
   textSize(30);
   text("Press the arrow keys to perform different dance moves. "
-        + "You have 30 seconds. Press space to begin.", width/2, height/2, 600, 400);
+        + "You have 10 seconds. Press space to begin.", width/2, height/2, 600, 400);
 }
 
 void danceEnd()
@@ -59,7 +59,7 @@ void danceEnd()
   rect(width/2, height/2, 800, 500);
   fill(255);
   textSize(30);
-  text("Great job! You did " + dancemoves + " dance moves in 30 seconds."
+  text("Great job! You did " + dancemoves + " dance moves in 10 seconds."
         + "To play again, press space. To exit this game, press E.", width/2, height/2, 600, 400);
 }
 
@@ -71,9 +71,11 @@ void danceGame()
   else if (dance==3){showDance(updance);}
   else if (dance==4){showDance(downdance);}
   timer = (int)(millis()-starttimer)/1000;
-  if (timer>=30) {danceGameState=2;}
-  text(timer, 30, 30);
-  text(dancemoves, width-30, 30);
+  if (timer>=10) {danceGameState=2;}
+  textAlign(LEFT);
+  text("Time Left: " + (10-timer), 10, 30);
+  textAlign(RIGHT);
+  text("Dance Moves: " + dancemoves, width-10, 30);
 }
 
 void dancekeyPressed()

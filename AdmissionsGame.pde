@@ -123,15 +123,17 @@ void keyPressed() {
   
   if (gameState==50){
     englishkeyPressed(); } 
+  
+  else if (gameState==20){
+    robotkeyPressed();}
     
-  if (gameState==80){
+  else if (gameState==90){
+    dancekeyPressed();}
+    
+  else if (gameState==80){
     ceikeyPressed();}
     
-  if (gameState==90){
-    dancekeyPressed();}
   
-  if (gameState==20){
-    robotkeyPressed();}
     
   else if (gameState > 0 && gameState != 70 && gameState != 100) {
     if (keyCode == RIGHT)
@@ -179,6 +181,12 @@ void keyPressed() {
       trackState = 0;
     } 
   }
+  
+  
+    
+  
+  
+  
 
 }
 
