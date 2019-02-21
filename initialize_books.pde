@@ -1,4 +1,16 @@
 
+/* @pjs preload="data/catcher.jpg"; */
+/* @pjs preload="data/gatsby.jpg"; */
+/* @pjs preload="data/jane.jpg"; */
+/* @pjs preload="data/macbeth.jpg"; */
+/* @pjs preload="data/room.jpg"; */
+/* @pjs preload="data/scarletletter.jpg"; */
+/* @pjs preload="data/streetcar.jpg"; */
+/* @pjs preload="data/theireyes.jpg"; */
+/* @pjs preload="data/mockingbird.jpg"; */
+/* @pjs preload="data/twelve.jpg"; */
+
+
 Book catcher;
 Book gatsby;
 Book jane;
