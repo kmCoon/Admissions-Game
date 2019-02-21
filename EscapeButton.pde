@@ -5,7 +5,7 @@ class Escape {
   boolean mouseOn = false;
   boolean isDisplayed = false;
   int length = 80;
-  int width = 40;
+  int w = 40;
   
   Escape(String display) {
     x = 20;
@@ -14,13 +14,14 @@ class Escape {
   }
   
   void display() {
+    rectMode(CORNER);
     fill(255,0,0);
-    rect(x,y,length,width);
+    rect(x,y,length,w);
     isDisplayed = true;
   }
   
   void checkforHover() {
-     if (mouseX >= x && mouseX <= (x+length) && mouseY >= y && mouseY <= y+width) {
+     if (mouseX >= x && mouseX <= (x+length) && mouseY >= y && mouseY <= y+w) {
         mouseOn = true; 
         displayText();
      }
