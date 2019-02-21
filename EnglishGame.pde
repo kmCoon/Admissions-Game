@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 ArrayList<Book> books;
 ArrayList<Author> authors;
@@ -16,8 +15,8 @@ void englishsetup()
   books = new ArrayList<Book>();
   authors = new ArrayList<Author>();
   initializePairs();
-  Collections.shuffle(books);
-  Collections.shuffle(authors);
+  shuffle(books);
+  shuffle(authors);
   currentBook=0;
 }
 
@@ -106,8 +105,8 @@ void englishkeyPressed()
   if (key==' ' && englishgameState==0){englishgameState=1;}
   if (key==' ' && englishgameState==2)
   {
-    Collections.shuffle(books);
-    Collections.shuffle(authors);
+    shuffle(books);
+    shuffle(authors);
     currentBook=0;
     englishgameState=0;
   }
@@ -115,8 +114,33 @@ void englishkeyPressed()
   {
     gameState=10;
     englishgameState=0;
-    Collections.shuffle(books);
-    Collections.shuffle(authors);
+    shuffle(books);
+    shuffle(authors);
     currentBook=0;
   }
 }
+
+
+//
+// shuffle implementation, to avoid Collections for processing.js
+//
+
+
+<T> void swap(ArrayList<T> things, int i, int j)
+{
+    T temp = things.get(i);
+    things.set(i, things.get(j));
+    things.set(j, temp);
+}
+
+
+<T> void shuffle(ArrayList<T> things)
+{
+    for (int i=0; i<things.size()-1; i++)
+    {
+        int index = (int)random(i, things.size());
+        swap(things, i, index);
+    }
+}
+
+
