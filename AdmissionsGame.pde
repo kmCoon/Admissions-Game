@@ -2,9 +2,11 @@
  // Sports, STEAM section, cafe M, science, match the marlborough slang to the meaning
  // MARLBORO SLANG --> The ARC is the CEI, the cafe for Cafe M, the DUE DATE? more like the DO DATE
 
+/* @pjs preload="data/LeftScreen.png"; */
 /* @pjs preload="data/CenterScreen.png"; */
+/* @pjs preload="data/RightScreen.png"; */
 /* @pjs preload="data/Marlborough.jpg"; */
-
+/* @pjs preload="data/sandsLunch.jpeg"; */
 
 PFont benton;
 
@@ -46,16 +48,16 @@ void setup() {
   fullScreen();
   //size(1200, 800);
   background(150);
-  lunch = loadImage("sandsLunch.jpeg");
+  lunch = loadImage("data/sandsLunch.jpeg");
   lunch.resize(width,height);
-  marlboro = loadImage("Marlborough.jpg");
+  marlboro = loadImage("data/Marlborough.jpg");
   marlboro.resize(width,height);
 
-  buildingOne = loadImage("LeftScreen.png");
+  buildingOne = loadImage("data/LeftScreen.png");
   buildingOne.resize(width,height);
-  buildingTwo = loadImage("CenterScreen.png"); 
+  buildingTwo = loadImage("data/CenterScreen.png"); 
   buildingTwo.resize(width,height);
-  buildingThree = loadImage("RightScreen.png");
+  buildingThree = loadImage("data/RightScreen.png");
   buildingThree.resize(width,height);
  
   PVector startPos = new PVector(width/2,((height*scaleMult)-25)); //900
