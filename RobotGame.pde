@@ -19,7 +19,8 @@ void robotdraw_game()
   rect(width/100 + 50, height/20 - 15, 130, 50);
   fill(purple);
   textSize(20);
-  text("Start", width/100, height/20); 
+  textAlign(CENTER, CENTER);
+  text("Start", width/100 + 50, height/20 - 15, 130, 50); 
   
   robot1.display(); 
   for(Block b : blocks)
@@ -33,5 +34,5 @@ void robotdraw_game()
   robot1.winCheck(winX, winY); 
  
   fill(purple);
-  text("End", width - 150, height/100 + 40);
+  text("End", winX, winY, 100, 50);
 }

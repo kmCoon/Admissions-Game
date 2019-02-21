@@ -140,7 +140,13 @@ class Robot
   {
     
     if(position.x - 40 < x && x < position.x + 40 && position.y - 15 < y && y < position.y + 15)
-    robotstate ++; 
+    {
+      robotstate ++;
+      position.x=width/10;
+      position.y=height/10;
+      heading = 0;
+    }
+    
     
   }
   

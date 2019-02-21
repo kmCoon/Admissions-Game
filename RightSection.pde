@@ -6,7 +6,12 @@ void playSectionIII() {
   textSize(25);
   stroke(0);
   strokeWeight(1);
+
+  if (buildingThree.width != width)
+      resizeImages();
+
   image(buildingThree,0,0);
+
   galleryDoor.display();
   galleryDoor.open();
   ceiDoor.display();

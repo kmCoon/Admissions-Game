@@ -37,8 +37,8 @@ void playGallery() {
   fill(0);
   text("This is the art gallery!", width/2-100,500);
   
-  galleryExit.display();
-  galleryExit.open();
+  //galleryExit.display();
+  //galleryExit.open();
   
   player.display();
   if (player.position.x <= 0)
@@ -46,4 +46,5 @@ void playGallery() {
   else if (player.position.x >= width) {
      player.position.x = 1;
   }
+  escButton.display();
 }
