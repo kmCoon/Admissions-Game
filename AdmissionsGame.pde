@@ -42,6 +42,16 @@ float yScaleMult = .22;
 float gateScale = .959;
 
 
+void resizeImages()
+{
+  lunch.resize(width,height);
+  marlboro.resize(width,height);
+  buildingOne.resize(width,height);
+  buildingTwo.resize(width,height);
+  buildingThree.resize(width,height);
+}
+
+
 void setup() {
   benton = createFont("Benton Sans Bold.otf", 20);
   textFont(benton);
@@ -50,17 +60,12 @@ void setup() {
   fullScreen();
   //size(1200, 800);
   background(150);
-  lunch = loadImage("data/sandsLunch.jpeg");
-  lunch.resize(width,height);
-  marlboro = loadImage("data/Marlborough.jpg");
-  marlboro.resize(width,height);
 
+  lunch = loadImage("data/sandsLunch.jpeg");
+  marlboro = loadImage("data/Marlborough.jpg");
   buildingOne = loadImage("data/LeftScreen.png");
-  buildingOne.resize(width,height);
   buildingTwo = loadImage("data/CenterScreen.png"); 
-  buildingTwo.resize(width,height);
   buildingThree = loadImage("data/RightScreen.png");
-  buildingThree.resize(width,height);
  
   PVector startPos = new PVector(width/2,((height*scaleMult)-25)); //900
   player = new Player(startPos); //100 so 50
@@ -83,6 +88,8 @@ void setup() {
   englishsetup();
   trackSetup();
   robotsetup();
+
+  resizeImages();
 }
 
 void draw() {

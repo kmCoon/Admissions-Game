@@ -8,7 +8,7 @@ class Book
   
   Book(String coverIn, int numIn, String titleIn)
   {
-    cover = loadImage(coverIn + ".jpg");
+    cover = loadImage("data/" + coverIn + ".jpg");
     cover.resize((int)(1.7*width/5), (int)(1.7*height/2));
     num = numIn;
     title = titleIn;
