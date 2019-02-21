@@ -1,3 +1,11 @@
+/* @pjs preload="data/normaldance.jpg"; */
+/* @pjs preload="data/rightdance.jpg"; */
+/* @pjs preload="data/leftdance.jpg"; */
+/* @pjs preload="data/updance.jpg"; */
+/* @pjs preload="data/downdance.jpg"; */
+/* @pjs preload="data/dancestudio.jpg"; */
+
+
 PImage normaldance;
 PImage rightdance;
 PImage leftdance;
@@ -20,13 +28,17 @@ void dancesetup()
   updance = loadImage("up dance.png");
   downdance = loadImage("down dance.png");
   dancestudio = loadImage("dancestudio.jpg");
+  resizeDanceImages();
+}
+
+void resizeDanceImages()
+{
   normaldance.resize(0, height);
   rightdance.resize(0, height);
   leftdance.resize(0, height);
   updance.resize(0, height);
   downdance.resize(0, height);
   dancestudio.resize(width, height);
-  
 }
 
 void dancedraw()
