@@ -39,6 +39,8 @@ float scaleMult = .79;
 float xScaleMult = .069;
 float yScaleMult = .22;
 
+float gateScale = .959;
+
 
 void setup() {
   benton = createFont("Benton Sans Bold.otf", 20);

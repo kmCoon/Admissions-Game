@@ -142,5 +142,3 @@ void englishkeyPressed()
         swap(things, i, index);
     }
 }
-
-
