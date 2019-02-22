@@ -45,6 +45,7 @@ void resizeCEIImages()
   ibackpack.resize(0, 200);
   backpackfront.resize(0, 200);
   cei.resize(width, height);
+  backpack.resize();
 }
 
 
@@ -90,11 +91,12 @@ void drawceiStart()
   noStroke();
   rect(width/2, height/2, 820, 580);
   fill(255);
-  textSize(45);
-  text("Catch as many snacks and drinks as you can " +
-       "in the next thirty seconds to see how many points you can earn! " + 
-       "Use the arrow keys to move your backpack back and forth. " + 
-       "Press space to start.", width/2, height/2, 800, 600);
+  textSize(35);
+  textAlign(CENTER, CENTER);
+  text("Catch as many snacks and drinks as you can\n" +
+       "in the next thirty seconds to see how many points you can earn!\n" + 
+       "Use the arrow keys to move your backpack back and forth.\n" + 
+       "Press space to start.", width/2, height/2);
 }
 
 void drawceiEnd()

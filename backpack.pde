@@ -66,5 +66,9 @@ class Backpack
     pointTotal=0;
   }
 
-  
+  void resize()
+  {
+    w=ibackpack.width;
+    h=ibackpack.width;
+  }
 }
