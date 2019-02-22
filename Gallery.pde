@@ -1,30 +1,47 @@
+//
+// Gallery
+//
+
+//
+// preload directives for processing.js
+//
+
+/* @pjs preload="data/Kyrapipe.jpg"; */
+/* @pjs preload="data/kyraponytail.jpg"; */
+/* @pjs preload="data/gabi.png"; */
+/* @pjs preload="data/sidney.png"; */
+/* @pjs preload="data/Gallery.png"; */
+
 
 PImage pipe;
 PImage ponytail;
 PImage landscape;
 PImage patterns;
-
 PImage galBack;
 
+
 void setupGallery() {
-   
-   pipe = loadImage("Kyrapipe.jpg");
+   pipe = loadImage("data/Kyrapipe.jpg");
+   ponytail = loadImage("data/kyraponytail.jpg");
+   landscape = loadImage("data/gabi.png");
+   patterns = loadImage("data/sidney.png");
+   galBack = loadImage("data/Gallery.png");
+
+   resizeGalleryImages();
+}
+
+void resizeGalleryImages() {
    pipe.resize(200,140);
-   
-   ponytail = loadImage("kyraponytail.jpg");
    ponytail.resize(120,200);
-   
-   landscape = loadImage("GabrielaBecher.png");
    landscape.resize(300,140);
-   
-   patterns = loadImage("sidneybae.png");
    patterns.resize(200,200);
-   
-   galBack = loadImage("Gallery.png");
    galBack.resize(width,height);
 }
 
 void playGallery() {
+  if (galBack.width != width)
+    resizeGalleryImages();
+
   stroke(0);
   strokeWeight(1);
   image(galBack,0,0);
@@ -35,7 +52,6 @@ void playGallery() {
   image(patterns,4*width/5,height/2);
   
   fill(0);
-  text("This is the art gallery!", width/2-100,500);
   
   //galleryExit.display();
   //galleryExit.open();
