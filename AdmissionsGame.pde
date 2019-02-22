@@ -224,12 +224,22 @@ void keyReleased() {
      robotkeyReleased();} 
 }
 
-void mouseClicked() {
-  if (gameState == 70) {
-    scienceClicking();
-  }
+void mouseClicked() 
+{
   if (escButton.mouseOn == true && escButton.isDisplayed == true) {
     gameState = 10;
   }
-  if (gameState == 50) {englishmouseClicked();}
+
+  if (gameState==0)
+  {
+    gameState=10;
+  }
+  else if (gameState == 70) 
+  {
+    scienceClicking();
+  }
+  else if (gameState == 50) 
+  { 
+    englishmouseClicked();
+  }
 }

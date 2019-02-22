@@ -8,3 +8,9 @@ Bug fixes
 
 - remove all console output -- this appears in the browser with processing.js
 
+- add this text to the school navigation screen:
+   text("Use the arrow keys to move around the school.\n" +
+       "Move to the edges of the screen to access more areas.\n" +
+       "Have fun!"
+
+
