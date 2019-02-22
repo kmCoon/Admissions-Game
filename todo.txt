@@ -15,4 +15,5 @@ Bug fixes
        "Move to the edges of the screen to access more areas.\n" +
        "Have fun!"
 
+- escape button hover effect not working in all minigames 
 

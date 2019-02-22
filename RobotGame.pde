@@ -37,5 +37,5 @@ void robotdraw_game()
   robot1.winCheck(winX, winY); 
  
   fill(purple);
-  text("End", winX, winY, 100, 50);
+  text("End", winX, winY);
 }
