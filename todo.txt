@@ -4,16 +4,19 @@ Bug fixes
 
 - (!) navigation issue:  going to Caswell, then CEI, then Caswell takes you to CEI instead.
 
+- remove all console output -- this appears in the browser with processing.js
+
 - navigation to science and track games goes to gallery instead
 
 - cei minigame:  should reset before entering the game a 2nd time
-
-- remove all console output -- this appears in the browser with processing.js
 
 - add this text to the school navigation screen:
    text("Use the arrow keys to move around the school.\n" +
        "Move to the edges of the screen to access more areas.\n" +
        "Have fun!"
 
+- gallery images should have artist names (e.g. Kyra '19, Gabi '20)
+
 - escape button hover effect not working in all minigames 
+
 
