@@ -6,4 +6,5 @@ Bug fixes
 
 - cei minigame:  should reset before entering the game a 2nd time
 
+- remove all console output -- this appears in the browser with processing.js
 
