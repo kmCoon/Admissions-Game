@@ -61,8 +61,8 @@ void setup() {
   textFont(benton);
   soundSetup();
   
-  fullScreen();
-  //size(1200, 800);
+  //fullScreen();
+  size(1200, 800);
   background(150);
 
   lunch = loadImage("data/sandsLunch.jpeg");
