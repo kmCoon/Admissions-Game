@@ -11,7 +11,6 @@ int score = 0;
 
 void englishsetup()
 {
-  
   books = new ArrayList<Book>();
   authors = new ArrayList<Author>();
   initializePairs();
@@ -22,19 +21,22 @@ void englishsetup()
 
 void englishdrawStart()
 {
+  for (Book b : books)
+    b.resize();
+
   cursor(ARROW);
   background(255);
   fill(0);
-  textSize(40);
+  textSize(30);
   score=0;
-  text("Select the author/playwright who wrote the given book/play. " + 
-       "You will gain one point for every correct answer, " + 
-       "and lose one point for every wrong answer. " + 
-       "Press space to start.", width/2, height/2, width/1.25, height/2);
+  text("Select the author/playwright who wrote the given book/play.\n" + 
+       "You will gain one point for every correct answer,\n" + 
+       "and lose one point for every wrong answer.\n\n" + 
+       "Press space to start.", width/2, height/2);
 }
 
 void englishdrawGame() {
-  textSize(30);
+  textSize(20);
   background(255);
   if (mouseOver())
     cursor(HAND);
