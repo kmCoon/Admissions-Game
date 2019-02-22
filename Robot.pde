@@ -35,7 +35,7 @@ class Robot
     popMatrix();
     
     
-    PVector newPos = position.copy();
+    PVector newPos = new PVector(position.x, position.y);
     newPos.add(velocity);
     
     if (isValidCorner(40, 15) && isValidCorner(40, -15) && isValidCorner(-40, 15) && isValidCorner(-40, -15))
@@ -46,7 +46,7 @@ class Robot
   
   boolean isValidCorner(float x, float y)
   {
-    PVector newPos = position.copy();
+    PVector newPos = new PVector(position.x, position.y);
     newPos.add(velocity);
     
     PVector corner = new PVector(x, y);
@@ -59,7 +59,7 @@ class Robot
   
    boolean isValidRotate(float x, float y)
   {
-    PVector newPos = position.copy();
+    PVector newPos = new PVector(position.x, position.y);
     newPos.add(velocity);
     
     PVector corner = new PVector(x, y);
