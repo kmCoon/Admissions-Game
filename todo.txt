@@ -1,0 +1,9 @@
+TODO:
+
+Bug fixes
+
+- navigation to science and track games goes to gallery instead
+
+- cei minigame:  should reset before entering the game a 2nd time
+
+
