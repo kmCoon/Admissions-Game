@@ -47,7 +47,7 @@ class Backpack
   
   void collision(Food food)
   {
-    PVector spot = food.spot().copy();
+    PVector spot = food.spot();
     float wIn = food.w();
     int p = food.p();
     

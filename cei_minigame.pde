@@ -1,8 +1,17 @@
-//game state is 30 for this minigame
+//
+// cei_minigame
+//
+
+// game state is 30 for this minigame
+
+//
+// preload directives for processing.js
+//
 
 /* @pjs preload="data/CEI.JPG"; */
 /* @pjs preload="data/backpack.png"; */
 /* @pjs preload="data/backpackfront.png"; */
+
 
 int ceigameState;
 
@@ -16,29 +25,37 @@ float ceiendtime;
 
 void ceisetup()
 {
-  //fullScreen();
   background(255);
   foods = new ArrayList<Food>();
   ibackpack = loadImage("data/backpack.png");
-  ibackpack.resize(0, 200);
   backpackfront = loadImage("data/backpackfront.png");
-  backpackfront.resize(0, 200);
   backpack = new Backpack();
   cei = loadImage("data/CEI.JPG");
-  cei.resize(width, height);
   ceigameState=0;
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
   
   initializefood();
-  
-  
+  resizeCEIImages();
+}
+
+
+void resizeCEIImages()
+{
+  ibackpack.resize(0, 200);
+  backpackfront.resize(0, 200);
+  cei.resize(width, height);
 }
 
 
 void drawceiGame()
 {
-  
+  if (cei.width != width)
+  {
+    resizeCEIImages();
+    resizeFoodImages();
+  }
+
   image(cei, 0, 0);
   backpack.display();
   for (Food a : foods)
@@ -52,7 +69,7 @@ void drawceiGame()
   fill(0);
   textSize(30);
   text("Points: " + backpack.getPoints(), 100, 50);
-  text("Time: " + ceisec, width-200, 50);
+  text("Time: " + (int)ceisec, width-200, 50);
   if (ceisec >30)
   {
     ceigameState=2;
@@ -62,6 +79,12 @@ void drawceiGame()
 
 void drawceiStart()
 {
+  if (cei.width != width)
+  {
+    resizeCEIImages();
+    resizeFoodImages();
+  }
+
   image(cei, 0, height-cei.height);
   fill(0, 80);
   noStroke();
