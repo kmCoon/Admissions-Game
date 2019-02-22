@@ -6,6 +6,9 @@ Bug fixes
   more generally, going to CEI or Gallery messes up the navigation to anywhere else, including 
   Science and Track
 
+- (!) Track game is impossible, and doesn't play a 2nd time.  The game needs to be easier to
+  play.
+
 - remove all console output -- this appears in the browser with processing.js
 
 - cei minigame:  should reset before entering the game a 2nd time
