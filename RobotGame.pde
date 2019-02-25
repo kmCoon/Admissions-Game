@@ -1,7 +1,10 @@
+//
+// RobotGame
+//
+
 
 float winX;
 float winY;
-
 
 
 void initialize_game()
@@ -34,5 +37,5 @@ void robotdraw_game()
   robot1.winCheck(winX, winY); 
  
   fill(purple);
-  text("End", winX, winY, 100, 50);
+  text("End", winX, winY);
 }

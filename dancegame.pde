@@ -1,3 +1,19 @@
+//
+// dancegame
+//
+
+//
+// preload directives for processing.js
+//
+
+/* @pjs preload="data/normaldance.jpg"; */
+/* @pjs preload="data/rightdance.jpg"; */
+/* @pjs preload="data/leftdance.jpg"; */
+/* @pjs preload="data/updance.jpg"; */
+/* @pjs preload="data/downdance.jpg"; */
+/* @pjs preload="data/dancestudio.jpg"; */
+
+
 PImage normaldance;
 PImage rightdance;
 PImage leftdance;
@@ -14,23 +30,30 @@ int dancemoves=0;
 
 void dancesetup()
 {
-  normaldance = loadImage("default dance.png");
-  rightdance = loadImage("right dance.png");
-  leftdance = loadImage("left dance.png");
-  updance = loadImage("up dance.png");
-  downdance = loadImage("down dance.png");
-  dancestudio = loadImage("dancestudio.jpg");
+  normaldance = loadImage("data/default dance.png");
+  rightdance = loadImage("data/right dance.png");
+  leftdance = loadImage("data/left dance.png");
+  updance = loadImage("data/up dance.png");
+  downdance = loadImage("data/down dance.png");
+  dancestudio = loadImage("data/dancestudio.jpg");
+  resizeDanceImages();
+}
+
+void resizeDanceImages()
+{
   normaldance.resize(0, height);
   rightdance.resize(0, height);
   leftdance.resize(0, height);
   updance.resize(0, height);
   downdance.resize(0, height);
   dancestudio.resize(width, height);
-  
 }
 
 void dancedraw()
 {
+  if (normaldance.height != height)
+    resizeDanceImages();
+
   textAlign(CENTER, CENTER);
   imageMode(CENTER);
   rectMode(CENTER);
@@ -74,7 +97,7 @@ void danceGame()
   timer = (int)(millis()-starttimer)/1000;
   if (timer>=10) {danceGameState=2;}
   textAlign(LEFT);
-  text("Time Left: " + (10-timer), 10, 30);
+  text("Time Left: " + (int)(10-timer), 10, 30);
   textAlign(RIGHT);
   text("Dance Moves: " + dancemoves, width-10, 30);
 }

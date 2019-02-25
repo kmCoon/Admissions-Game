@@ -1,6 +1,6 @@
 class Food
 {
-  PImage image;
+  PImage img;
   float x;
   float vy;
   float y;
@@ -9,7 +9,7 @@ class Food
   
   Food(PImage imageIn, int pointIn)
   {
-    image = imageIn;
+    img = imageIn;
     pointValue = pointIn;
     x=random(0, width);
     vy=random(3, 10);
@@ -18,7 +18,7 @@ class Food
   
   void display()
   {
-    image(image, x, y);
+    image(img, x, y);
     y+=vy;
     if (y>height+100){reset();}
   }
@@ -31,6 +31,6 @@ class Food
   }
   
   PVector spot(){return new PVector(x, y);}
-  float w(){return image.width;}
+  float w(){return img.width;}
   int p(){return pointValue;}
 }

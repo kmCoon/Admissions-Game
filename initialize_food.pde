@@ -33,78 +33,87 @@ PImage iyogurtpretzels;
 
 void initializefood()
 {
-  imush = loadImage("mush.png");
-  imush.resize(50, 0);
+  imush = loadImage("data/mush.png");
   mush = new Food(imush, 5);
   foods.add(mush);
   
-  icheetos = loadImage("cheetos.png");
-  icheetos.resize(50, 0);
+  icheetos = loadImage("data/cheetos.png");
   cheetos = new Food(icheetos, 5);
   foods.add(cheetos);
   
-  icompletecookie = loadImage("completecookie.png");
-  icompletecookie.resize(50, 0);
+  icompletecookie = loadImage("data/completecookie.png");
   completecookie = new Food(icompletecookie, 1);
   foods.add(completecookie);
   
-  ihint = loadImage("hint.png");
-  ihint.resize(50, 0);
+  ihint = loadImage("data/hint.png");
   hint = new Food(ihint, 3);
   foods.add(hint);
   
-  iizze = loadImage("izze.png");
-  iizze.resize(50, 0);
+  iizze = loadImage("data/izze.png");
   izze = new Food(iizze, 15);
   foods.add(izze);
   
-  ikettlecookedchips = loadImage("kettlecookedchips.png");
-  ikettlecookedchips.resize(50, 0);
+  ikettlecookedchips = loadImage("data/kettlecookedchips.png");
   kettlecookedchips = new Food(ikettlecookedchips, 5);
   foods.add(kettlecookedchips);
   
-  imash = loadImage("mash.png");
-  imash.resize(50, 0);
+  imash = loadImage("data/mash.png");
   mash = new Food(imash, 3);
   foods.add(mash);
   
-  imissvickies = loadImage("missvickies.png");
-  imissvickies.resize(50, 0);
+  imissvickies = loadImage("data/missvickies.png");
   missvickies = new Food(imissvickies, 30);
   foods.add(missvickies);
   
-  iperrier = loadImage("perrier.png");
-  iperrier.resize(50, 0);
+  iperrier = loadImage("data/perrier.png");
   perrier = new Food(iperrier, 15);
   foods.add(perrier);
   
-  ipurity = loadImage("purity.png");
-  ipurity.resize(50, 0);
+  ipurity = loadImage("data/purity.png");
   purity = new Food(ipurity, 10);
   foods.add(purity);
   
-  iricekrispies = loadImage("ricekrispies.png");
-  iricekrispies.resize(50, 0);
+  iricekrispies = loadImage("data/ricekrispies.png");
   ricekrispies = new Food(iricekrispies, 10);
   foods.add(ricekrispies);
   
-  ispindrift = loadImage("spindrift.png");
-  ispindrift.resize(50, 0);
+  ispindrift = loadImage("data/spindrift.png");
   spindrift = new Food(ispindrift, 5);
   foods.add(spindrift);
   
-  itea = loadImage("tea.png");
-  itea.resize(50, 0);
+  itea = loadImage("data/tea.png");
   tea = new Food(itea, 15);
   foods.add(tea);
   
-  itrailmix = loadImage("trailmix.png");
-  itrailmix.resize(50, 0);
+  itrailmix = loadImage("data/trailmix.png");
   trailmix = new Food(itrailmix, 1);
   foods.add(trailmix);
   
-  iyogurtpretzels = loadImage("yogurtpretzels.png");
-  iyogurtpretzels.resize(50, 0);
+  iyogurtpretzels = loadImage("data/yogurtpretzels.png");
   yogurtpretzels = new Food(iyogurtpretzels, 5);
   foods.add(yogurtpretzels);
+
+  resizeFoodImages();
 }
+
+
+void resizeFoodImages()
+{
+  imush.resize(50, 0);
+  icheetos.resize(50, 0);
+  icompletecookie.resize(50, 0);
+  ihint.resize(50, 0);
+  iizze.resize(50, 0);
+  ikettlecookedchips.resize(50, 0);
+  imash.resize(50, 0);
+  imissvickies.resize(50, 0);
+  iperrier.resize(50, 0);
+  ipurity.resize(50, 0);
+  iricekrispies.resize(50, 0);
+  ispindrift.resize(50, 0);
+  itea.resize(50, 0);
+  itrailmix.resize(50, 0);
+  iyogurtpretzels.resize(50, 0);
+}
+
+

@@ -1,3 +1,7 @@
+//
+// robot_game
+//
+
 
 int robotstate = 0; 
 Robot robot1;  
@@ -66,12 +70,12 @@ void robotdraw_start()
 {
   background(purple);
   fill(255);
-  textSize(40); 
+  textSize(30); 
   rectMode(CENTER);
   textAlign(CENTER, CENTER);
-  text("Use up and down arrow keys to move your robot forward and backward, " + 
-       "and use the left and right arrow keys to rotate. Try to get to the end block. " +
-       "Press space to begin.", width/2, height/2, 2*width/3, 2*height/3);
+  text("Use the arrow keys to move your robot\n" + 
+       "to the end block\n\n" +
+       "Press space to begin.", width/2, height/2);
 }
 
 void robotdraw_end()
@@ -82,9 +86,8 @@ void robotdraw_end()
   
   rectMode(CENTER);
   textAlign(CENTER, CENTER);
-  text("Congratulations, you WIN! Press space to leave the SPARC.", width/2, height/2, 2*width/3, 2*height/3); 
-  
-  
+  text("Congratulations, you WIN!\n\nPress space to leave the SPARC.", 
+        width/2, height/2); 
 }
 
 

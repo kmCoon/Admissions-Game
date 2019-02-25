@@ -36,7 +36,6 @@ Author rose;
 
 void initializePairs()
 {
-  
   catcher = new Book("catcher", 0, "The Catcher in the Rye");
   gatsby = new Book("gatsby", 1, "The Great Gatsby");
   jane = new Book("jane", 2, "Jane Eyre");
@@ -80,6 +79,4 @@ void initializePairs()
   authors.add(hurston);
   authors.add(lee);
   authors.add(rose);
- 
-  
 }
