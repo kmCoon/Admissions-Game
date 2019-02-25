@@ -19,9 +19,9 @@ PImage landscape;
 PImage patterns;
 PImage galBack;
 
-String kyra = "By Kyra Kraft '19";
-String sid = "By Sidney Bae '21";
-String gab = "By Gabriela Becher '20";
+String kyra = "By Kyra '19";
+String sid = "By Sidney '21";
+String gab = "By Gabi '20";
 
 void setupGallery() {
    pipe = loadImage("data/Kyrapipe.jpg");
