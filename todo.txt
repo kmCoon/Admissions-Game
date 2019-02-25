@@ -2,18 +2,13 @@ TODO:
 
 Bug fixes
 
-- (!) navigation issue:  going to Caswell, then CEI, then Caswell takes you to
-  CEI instead; more generally, going to CEI or Gallery messes up the navigation
-  to anywhere else, including Science and Track
-
-- (!) Track game is impossible, and doesn't play a 2nd time.  The game needs to
-  be easier to play.
-
-
 - (!) Science game is difficult to play.  Here's a suggestion:  arrow keys for
   movement, and space bar shoots in both directions (simultaneously).  Also,
   use an array list so the user can shoot a lot (and in both directions at
   once).
+
+- Make track game more natural.  Reset state when game is over, so it can be played again.
+    Add escape button.
 
 - remove all console output -- this appears in the browser with processing.js
 

@@ -49,6 +49,8 @@ PImage explosion;
 PImage p1keys;
 PImage p2keys;
 
+//ArrayList<>() bullets;
+
 int offset = 20;
 
 //AudioPlayer punch;
@@ -112,6 +114,8 @@ void drawScience() {
 } 
 
 void playGame() {
+  
+  stopQuicksand();
   
   if (p1life <= 0) {
       if (timeStart == false) {
@@ -304,7 +308,7 @@ void p1shoot() {
   }
 }
 
-void p2shoot() {
+/*void p2shoot() {
   if(p2isShooting) {
       fill(0);
       ellipse(p2ShotSpot.x+p2shotPos.x,p2ShotSpot.y, 10, 10);
@@ -324,6 +328,12 @@ void p2shoot() {
         p2isShooting = false;
         p2shotPos = new PVector(0,0);
     }  
+  }
+} */
+
+void stopQuicksand() {
+  if (p1pos.y > (height-90)) { // height - 90
+    p1pos.y = height-89;
   }
 }
 
