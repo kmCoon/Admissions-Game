@@ -1,5 +1,7 @@
 
 int trackState = 0;
+int trackScore = 0;
+
 boolean visible = true;
 
 boolean trackTiming;
@@ -83,7 +85,11 @@ void drawGame() {
   
   xRect = xRect + vxRect;
   
-  if (xRect == -50) {
+  if (xRect <= -50) {
+
+    if (xPerson > xRect)
+      trackScore++;
+
     xRect = width+20;
     //xRect = random(500, 800); -->trying to change pos so they come at unpredictable intervals
     hRect2 = 400;
@@ -108,9 +114,17 @@ void drawGame() {
   
   vyPerson = vyPerson + ayPerson;
    
+
+  fill(255);
+  text("Score: " + trackScore, width*.8, height*.1);
+
+  /*
    if (xPerson + 87 > xRect && yPerson > yRect2) 
      trackState=2;
+     */
 
+  if (trackScore > 5)
+        trackState = 2;
 }
 
 void drawPerson(float x, float y) {
@@ -132,7 +146,7 @@ void trackKeys() {
     }
     else if (trackState == 1) {
       if (key == ' ') {
-        vyPerson = vyPerson - 25;
+        vyPerson = vyPerson - 15;
       }
     }
     else {
