@@ -7,6 +7,7 @@
 /* @pjs preload="data/RightScreen.png"; */
 /* @pjs preload="data/Marlborough.jpg"; */
 /* @pjs preload="data/sandsLunch.jpeg"; */
+/* @pjs preload="data/default dance.png"; */
 
 
 // x and door width
@@ -59,6 +60,7 @@ void resizeImages()
   buildingOne.resize(width,height);
   buildingTwo.resize(width,height);
   buildingThree.resize(width,height);
+  sally.resize(200, 300);
 }
 
 
@@ -77,8 +79,7 @@ void setup() {
   buildingTwo = loadImage("data/CenterScreen.png"); 
   buildingThree = loadImage("data/RightScreen.png");
   
-  sally = loadImage("default dance.png");
-  sally.resize(200, 0);
+  sally = loadImage("data/default dance.png");
  
   PVector startPos = new PVector(width/2,((height*scaleMult)-25)); //900
   player = new Player(startPos); //100 so 50
@@ -107,6 +108,8 @@ void setup() {
 }
 
 void draw() {
+  if (lunch.width != width)
+    resizeImages();
   
   rectMode(CORNER);
   textAlign(LEFT, TOP);
