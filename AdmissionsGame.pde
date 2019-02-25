@@ -76,9 +76,13 @@ void setup() {
   buildingOne = loadImage("data/LeftScreen.png");
   buildingTwo = loadImage("data/CenterScreen.png"); 
   buildingThree = loadImage("data/RightScreen.png");
+  
+  sally = loadImage("default dance.png");
+  sally.resize(200, 0);
  
   PVector startPos = new PVector(width/2,((height*scaleMult)-25)); //900
   player = new Player(startPos); //100 so 50
+  
   
   roboDoor = new Door((width/2)-50, "Press space to enter the SPARC");
   englishDoor = new Door((width*englishScale), "Press space to enter the english class"); 
@@ -194,6 +198,8 @@ void keyPressed() {
       player.position.x = 300; 
       gameState = 100;
       trackState = 0;
+      trackScore=0;
+      trackClock=0;
     } 
   }
   

@@ -1,3 +1,5 @@
+PImage sally;
+
 
 class Player {
   PVector position;
@@ -12,7 +14,7 @@ class Player {
   
   void display() {
     fill(255,255,0);
-    ellipse(position.x,position.y,r,r);
+    image(sally, position.x-(sally.width/2), position.y-2*(sally.height/3));
     position.add(velocity);
   }
   
