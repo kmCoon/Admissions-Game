@@ -45,11 +45,12 @@ float yScaleMult = .22;
 
 float gateScale = .959;
 
-float englishScale = .329;
-float caswellScale = .26;
+float englishScale = .171; 
+float caswellScale = .76; 
 float sparcScale = .46;
 float gallMult = .555;
-float sciMult = .271;
+float sciMult = .675;
+float ceiMult = .167;
 
 void resizeImages()
 {
@@ -80,12 +81,12 @@ void setup() {
   player = new Player(startPos); //100 so 50
   
   roboDoor = new Door((width/2)-50, "Press space to enter the SPARC");
-  englishDoor = new Door(((width/2)-(width*englishScale)), "Press space to enter the english class");
-  caswellDoor = new Door(((width/2)+(width*caswellScale)), "Press space to enter caswell");
+  englishDoor = new Door((width*englishScale), "Press space to enter the english class"); 
+  caswellDoor = new Door((width*caswellScale), "Press space to enter caswell"); 
   galleryDoor = new Door((width*gallMult), "Press space to enter the gallery");
   galleryExit = new Door(500, "Press space to exit the gallery");
-  scienceDoor = new Door(width-390, "Press space to enter the science class");
-  ceiDoor = new Door(200, "Press space to enter the CEI");
+  scienceDoor = new Door((width*sciMult), "Press space to enter the science class");
+  ceiDoor = new Door((width*ceiMult), "Press space to enter the CEI");
   trackDoor = new Door(100, "Press space to begin track practice");
   
   escButton = new Escape("Click to return to campus!");

@@ -7,19 +7,14 @@ void playSectionII() {
      buildingTwo.resize(width,height);
 
    image(buildingTwo,0,0);
-   fill(0,0,255);
-        
+   fill(0,0,255);  
+    
    englishDoor.display();
    englishDoor.open();
    roboDoor.display();
    roboDoor.open();
    caswellDoor.display();
    caswellDoor.open();
-   
-   println("Englishdoor: " + englishDoor.x + " " + englishDoor.doorWidth);
-   println("Robodoor: " + roboDoor.x + " " + roboDoor.doorWidth);        
-   println("Caswell: " + caswellDoor.x + " " + caswellDoor.doorWidth);
-   println("Width: " + width);
    
    player.display(); 
    textSize(25);
