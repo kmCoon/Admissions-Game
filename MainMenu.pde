@@ -10,4 +10,3 @@ void mainMenu() {
    textSize(20);
    text("Click to start", width/2, height*.6);
 } 
-

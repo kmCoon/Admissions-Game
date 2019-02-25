@@ -19,6 +19,9 @@ PImage landscape;
 PImage patterns;
 PImage galBack;
 
+String kyra = "By Kyra Kraft '19";
+String sid = "By Sidney Bae '21";
+String gab = "By Gabriela Becher '20";
 
 void setupGallery() {
    pipe = loadImage("data/Kyrapipe.jpg");
@@ -31,10 +34,10 @@ void setupGallery() {
 }
 
 void resizeGalleryImages() {
-   pipe.resize(200,140);
-   ponytail.resize(120,200);
-   landscape.resize(300,140);
-   patterns.resize(200,200);
+   pipe.resize(245,185);
+   ponytail.resize(165,245);
+   landscape.resize(345,185);  
+   patterns.resize(245,245);
    galBack.resize(width,height);
 }
 
@@ -46,10 +49,15 @@ void playGallery() {
   strokeWeight(1);
   image(galBack,0,0);
   
-  image(pipe, width/20,height/2);
-  image(ponytail, 5*width/20,height/2);
-  image(landscape,width/2,height/2);
-  image(patterns,4*width/5,height/2);
+  image(pipe, (width/20)-20,height/2);
+  image(ponytail, (5*width/17),(height/2)-50);
+  image(landscape,(width/2)-20,(height/2));
+  image(patterns,(4*width/5)-20,(height/2)-50);
+  
+  text(kyra,(width/20)-20,(height/2)+pipe.height+2);
+  text(kyra,(5*width/17),(height/2)-50+ponytail.height+2);
+  text(gab,(width/2)-20,(height/2)+landscape.height+2);
+  text(sid,(4*width/5)-20,(height/2)-50+patterns.height+2);
   
   fill(0);
   
