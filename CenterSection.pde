@@ -19,6 +19,7 @@ void playSectionII() {
    println("Englishdoor: " + englishDoor.x + " " + englishDoor.doorWidth);
    println("Robodoor: " + roboDoor.x + " " + roboDoor.doorWidth);        
    println("Caswell: " + caswellDoor.x + " " + caswellDoor.doorWidth);
+   println("Width: " + width);
    
    player.display(); 
    textSize(25);

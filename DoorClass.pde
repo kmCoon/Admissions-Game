@@ -11,7 +11,7 @@ class Door {
   
   Door(float xIn, String display) {
     x = xIn;
-    name = display; 
+    name = display;                   
   }
   
   void display() {
