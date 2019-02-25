@@ -2,7 +2,6 @@ class Door {
   float x;
   PImage inside;
   String name;
-  boolean playerOn = false;
   boolean isDisplayed = false;
   
   float floorVal;
@@ -24,13 +23,19 @@ class Door {
   }
   
   void open() {
-    if (isDisplayed == true && player.position.x > x && player.position.x < (x+100)) {
+    if (playerOn()) {
       fill(0);
       text(name,x-50, 420);
-      playerOn = true;
     }
-    else {
-       playerOn = false; 
+  }
+  
+  boolean playerOn()
+  {
+    if (isDisplayed == true && player.position.x > x && player.position.x < (x+100))
+    {
+      return true;
     }
+    else
+      return false;
   }
 }
