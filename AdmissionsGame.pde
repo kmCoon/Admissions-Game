@@ -164,37 +164,33 @@ void keyPressed() {
       player.applyAcc(-1);
       player.changeVelocity(-1);
     }
-    else if (englishDoor.playerOn == true && keyCode == ' ') {
+    else if (englishDoor.playerOn() == true && keyCode == ' ' && gameState==10) {
         englishgameState=0;
         gameState = 50; 
-
+        println("going to english");
     }
-    else if (roboDoor.playerOn == true && keyCode == ' ') {
+    else if (roboDoor.playerOn() == true && keyCode == ' ' && gameState==10) {
        gameState = 20;
        robotstate=0;
     }
-    else if (galleryDoor.playerOn == true && keyCode == ' ') {
+    else if (galleryDoor.playerOn() == true && keyCode == ' ' && gameState==30) {
       gameState = 60;
       player.position.x = 500;
     }
-    else if (ceiDoor.playerOn == true && keyCode == ' ') {
+    else if (ceiDoor.playerOn() == true && keyCode == ' ' && gameState==30) {
        gameState = 80;
+       println("entering cei");
      } 
-    else if (galleryExit.playerOn == true && keyCode == ' ') {
-      println("You have exited the gallery");
-      gameState = 10;
-      player.position.x = 50;
-    }
-    else if (scienceDoor.playerOn == true && keyCode == ' ') { // mamaaaaaaa, uuuuwuuu
+    else if (scienceDoor.playerOn() == true && keyCode == ' ' && gameState==40) { // mamaaaaaaa, uuuuwuuu
       gameState = 70;
     }
-    else if (caswellDoor.playerOn == true && keyCode == ' ')
+    else if (caswellDoor.playerOn() == true && keyCode == ' ' && gameState==10)
     {
       gameState=90;
       dance=0;
       danceGameState=0;
     }
-    else if (trackDoor.playerOn == true && keyCode == ' ') {
+    else if (trackDoor.playerOn() == true && keyCode == ' ' && gameState==40) {
       player.position.x = 300; 
       gameState = 100;
       trackState = 0;
@@ -232,10 +228,15 @@ void keyReleased() {
 
 void mouseClicked() 
 {
-  if (escButton.mouseOn == true && escButton.isDisplayed == true) {
+  if (escButton.mouseOn == true && escButton.isDisplayed == true && (gameState==50 || gameState==90 || gameState==20)) {
     gameState = 10;
   }
-
+  if (escButton.mouseOn == true && escButton.isDisplayed == true && (gameState==60 || gameState==80)){
+    gameState=30;
+  }
+  if (escButton.mouseOn == true && escButton.isDisplayed == true && (gameState==70 || gameState==100)){
+    gameState=40;
+  }
   if (gameState==0)
   {
     gameState=10;
