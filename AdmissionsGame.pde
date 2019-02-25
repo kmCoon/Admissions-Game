@@ -108,7 +108,7 @@ void setup() {
 }
 
 void draw() {
-  if (lunch.width != width)
+  if (sally.width != 200)
     resizeImages();
   
   rectMode(CORNER);
