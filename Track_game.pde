@@ -1,3 +1,10 @@
+//
+// Track_game
+//
+
+// preload directives for processing.js
+/* @pjs preload="data/TrackField.jpg"; */
+
 
 int trackState = 0;
 int trackScore = 0;
@@ -28,7 +35,7 @@ float hRect2 = 50;
 
 void trackSetup() {
   
-  img = loadImage("TrackField.jpg");
+  img = loadImage("data/TrackField.jpg");
   img.resize(width, height);
 }
 
