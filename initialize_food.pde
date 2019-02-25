@@ -115,5 +115,3 @@ void resizeFoodImages()
   itrailmix.resize(50, 0);
   iyogurtpretzels.resize(50, 0);
 }
-
-

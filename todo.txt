@@ -28,5 +28,4 @@ Bug fixes
 
 - escape button hover effect not working in all minigames 
 
-- what's the red dot on the left screen?
 
