@@ -4,13 +4,12 @@ class Food
   float x;
   float vy;
   float y;
-  int pointValue;
+  int pointValue=5;
   
   
-  Food(PImage imageIn, int pointIn)
+  Food(PImage imageIn)
   {
     img = imageIn;
-    pointValue = pointIn;
     x=random(0, width);
     vy=random(3, 10);
     y=random(-5*height, -100);
