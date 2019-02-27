@@ -191,22 +191,13 @@ void mouseClicked()
   if (escButton.mouseOn == true && escButton.isDisplayed == true) {
     gameState = 10;
   }
-  /*if (escButton.mouseOn == true && escButton.isDisplayed == true && (gameState==60 || gameState==80)){
-    gameState=30;
-  }
-  if (escButton.mouseOn == true && escButton.isDisplayed == true && (gameState==70 || gameState==100)){
-    gameState=40;
-  } */
-  if (gameState==0)
-  {
+  if (gameState==0) {
     gameState=10;
   }
-  else if (gameState == 70) 
-  {
+  else if (gameState == 70) {
     scienceClicking();
   }
-  else if (gameState == 50) 
-  { 
+  else if (gameState == 50) {
     englishmouseClicked();
   }
 }
