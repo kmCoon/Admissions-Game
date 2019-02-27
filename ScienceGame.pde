@@ -49,7 +49,7 @@ PImage explosion;
 PImage p1keys;
 PImage p2keys;
 
-//ArrayList<>() bullets;
+ArrayList<Bullet> bullets;
 
 int offset = 20;
 
@@ -78,10 +78,19 @@ void setupScience() {
   explosion.resize(95, 95);
   p1keys.resize(500,500);
   p2keys.resize(500,500);
+  
+  bullets = new ArrayList<Bullet>();
+  Bullet bullet = createBullet();
+  
 }
 
 // I SAW U hangin out with caiTLYN YESTERDAY!
 // RE- REBECCA IT'S NOT WHAT U THINK
+
+Bullet createBullet() {
+  Bullet bullet = new Bullet();
+  return bullet;
+}
 
 void drawScience() {
     escButton.display();
@@ -235,35 +244,53 @@ void playGame() {
         p1life -= 1;
      }
      
-     if (p1isShooting && p1ShotSpot.x+p1shotPos.x >= coinpos.x-coinRad && p1ShotSpot.x+p1shotPos.x <= coinpos.x+coinRad && p1ShotSpot.y >= coinpos.y-coinRad && p1ShotSpot.y <= coinpos.y+coinRad) { 
-       coinpos = new PVector(random(50,width-100),random(50,height-100));
-       p1isShooting = false;
-       if (p2life > 0) 
-         p2life -= 1;
+     // forloop for coin detection
+     
+     for (Bullet bullet : bullets) { 
+       if (p1isShooting && bullet.startingPos.x+bullet.currentPos.x >= coinpos.x-coinRad && p1ShotSpot.x+bullet.startingPos.x <= coinpos.x+coinRad && bullet.startingPos.y >= coinpos.y-coinRad && bullet.startingPos.y <= coinpos.y+coinRad) { 
+         coinpos = new PVector(random(50,width-100),random(50,height-100));
+         p1isShooting = false;
+         bullet.isOffscreen();
+         bullets.remove(0);
+         if (p2life > 0) 
+           p2life -= 1;
+       }
      }
      
-     if(p1isShooting)
-       p1shoot();
+     if(p1isShooting) {
+       //p1shoot();
+       if (bullets.size() > 0 && bullets.size() < 1) {
+         for (Bullet bullet : bullets) { 
+           bullet.isShot();
+           bullet.shooting(); 
+         }
+       }
+     }
   }
 }
 
 void scienceKeys() {
   if (minigameState > 0) {
-      if (keyCode == 'W') {
+      if (keyCode == UP) {
         if (p2velocity.y < 15)
          p1velocity.add(flap);
       }
-      if (keyCode == 'A') {
+      if (keyCode == LEFT) {
         if (p1velocity.x > -6)
          p1velocity.add(left);
       }
-      if (keyCode == 'D') {
+      if (keyCode == RIGHT) {
         if (p1velocity.x < 6)
          p1velocity.add(right);
       }
       
-      if (keyCode == 'Q') {
+      if (keyCode == ',') {
        if (p1isShooting == false) {
+         Bullet b = createBullet();
+         bullets.add(b);
+         for (Bullet bullet : bullets) {
+           bullet.setStartingPos(p1pos);
+         }
          //shot.rewind();
          //shot.play();
          p1shootLeft = true;
@@ -272,8 +299,13 @@ void scienceKeys() {
          p1shotPos = new PVector(0,0);
        } 
       }
-      if (keyCode == 'E') {
+      if (keyCode == '.') {
        if (p1isShooting == false) {
+         Bullet b = createBullet();
+         bullets.add(b);
+         for (Bullet bullet : bullets) {
+           bullet.setStartingPos(p1pos);
+         }
          //shot.rewind();
          //shot.play();
          p1shootLeft = false;
@@ -282,7 +314,7 @@ void scienceKeys() {
          p1shotPos = new PVector(0,0);
        }
       }
-     }
+    }
 }
 
 void p1shoot() {
@@ -307,29 +339,6 @@ void p1shoot() {
     }  
   }
 }
-
-/*void p2shoot() {
-  if(p2isShooting) {
-      fill(0);
-      ellipse(p2ShotSpot.x+p2shotPos.x,p2ShotSpot.y, 10, 10);
-      if (p2shootLeft)
-        p2shotPos.x -= 5;
-      if (!p2shootLeft)
-        p2shotPos.x += 5; 
-      if (p2isShooting && p2ShotSpot.x+p2shotPos.x >= p1pos.x-r && p2ShotSpot.x+p2shotPos.x <= p1pos.x+r && p2ShotSpot.y >= p1pos.y-r && p2ShotSpot.y <= p1pos.y+r) {
-        p2isShooting = false;
-        if (p1life > 0)
-          p1life -= 1;
-        image(explosion, p1pos.x-30, p1pos.y-30);
-        //punch.rewind();
-        //punch.play();
-      }
-      if (p2ShotSpot.x+p2shotPos.x < 0 || p2ShotSpot.x+p2shotPos.x > width) {
-        p2isShooting = false;
-        p2shotPos = new PVector(0,0);
-    }  
-  }
-} */
 
 void stopQuicksand() {
   if (p1pos.y > (height-90)) { // height - 90
