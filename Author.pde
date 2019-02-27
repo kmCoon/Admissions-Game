@@ -24,12 +24,12 @@ class Author
   
   void isClicked()
   {
-    if (num==books.get(currentBook).getNum() && currentBook==9)
+    if (num==books.get(currentBook).getNum() && currentBook==4)
     {
       score++;
       englishgameState=2;
     }
-    else if (num==books.get(currentBook).getNum() && currentBook<books.size())
+    else if (num==books.get(currentBook).getNum() && currentBook<4)
     {
       score++;
       currentBook++;
