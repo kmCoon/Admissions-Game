@@ -70,8 +70,8 @@ void drawceiGame()
   fill(0);
   textSize(30);
   text("Points: " + backpack.getPoints(), 100, 50);
-  text("Time: " + (int)ceisec, width-200, 50);
-  if (ceisec >30)
+  text("Time left: " + (15-(int)ceisec), 100, 100);
+  if (ceisec >15)
   {
     ceigameState=2;
     ceiendtime=millis();
@@ -89,14 +89,14 @@ void drawceiStart()
   image(cei, 0, height-cei.height);
   fill(0, 80);
   noStroke();
-  rect(width/2, height/2, 820, 580);
+  rect(width/2, height/2, 3*width/4, 3*height/4);
   fill(255);
   textSize(35);
   textAlign(CENTER, CENTER);
-  text("Catch as many snacks and drinks as you can\n" +
-       "in the next thirty seconds to see how many points you can earn!\n" + 
-       "Use the arrow keys to move your backpack back and forth.\n" + 
-       "Press space to start.", width/2, height/2);
+  text("Catch as many snacks and drinks as you can " +
+       "in the next 15 seconds to see how many points you can earn! " + 
+       "Use the arrow keys to move your backpack back and forth. " + 
+       "Press space to start.", width/2, height/2, 2*width/3, 2*height/3);
 }
 
 void drawceiEnd()

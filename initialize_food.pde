@@ -34,63 +34,63 @@ PImage iyogurtpretzels;
 void initializefood()
 {
   imush = loadImage("data/mush.png");
-  mush = new Food(imush, 5);
+  mush = new Food(imush);
   foods.add(mush);
   
   icheetos = loadImage("data/cheetos.png");
-  cheetos = new Food(icheetos, 5);
+  cheetos = new Food(icheetos);
   foods.add(cheetos);
   
   icompletecookie = loadImage("data/completecookie.png");
-  completecookie = new Food(icompletecookie, 1);
+  completecookie = new Food(icompletecookie);
   foods.add(completecookie);
   
   ihint = loadImage("data/hint.png");
-  hint = new Food(ihint, 3);
+  hint = new Food(ihint);
   foods.add(hint);
   
   iizze = loadImage("data/izze.png");
-  izze = new Food(iizze, 15);
+  izze = new Food(iizze);
   foods.add(izze);
   
   ikettlecookedchips = loadImage("data/kettlecookedchips.png");
-  kettlecookedchips = new Food(ikettlecookedchips, 5);
+  kettlecookedchips = new Food(ikettlecookedchips);
   foods.add(kettlecookedchips);
   
   imash = loadImage("data/mash.png");
-  mash = new Food(imash, 3);
+  mash = new Food(imash);
   foods.add(mash);
   
   imissvickies = loadImage("data/missvickies.png");
-  missvickies = new Food(imissvickies, 30);
+  missvickies = new Food(imissvickies);
   foods.add(missvickies);
   
   iperrier = loadImage("data/perrier.png");
-  perrier = new Food(iperrier, 15);
+  perrier = new Food(iperrier);
   foods.add(perrier);
   
   ipurity = loadImage("data/purity.png");
-  purity = new Food(ipurity, 10);
+  purity = new Food(ipurity);
   foods.add(purity);
   
   iricekrispies = loadImage("data/ricekrispies.png");
-  ricekrispies = new Food(iricekrispies, 10);
+  ricekrispies = new Food(iricekrispies);
   foods.add(ricekrispies);
   
   ispindrift = loadImage("data/spindrift.png");
-  spindrift = new Food(ispindrift, 5);
+  spindrift = new Food(ispindrift);
   foods.add(spindrift);
   
   itea = loadImage("data/tea.png");
-  tea = new Food(itea, 15);
+  tea = new Food(itea);
   foods.add(tea);
   
   itrailmix = loadImage("data/trailmix.png");
-  trailmix = new Food(itrailmix, 1);
+  trailmix = new Food(itrailmix);
   foods.add(trailmix);
   
   iyogurtpretzels = loadImage("data/yogurtpretzels.png");
-  yogurtpretzels = new Food(iyogurtpretzels, 5);
+  yogurtpretzels = new Food(iyogurtpretzels);
   foods.add(yogurtpretzels);
 
   resizeFoodImages();
