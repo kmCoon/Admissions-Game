@@ -10,73 +10,72 @@
 /* @pjs preload="data/mockingbird.jpg"; */
 /* @pjs preload="data/twelve.jpg"; */
 
-
-Book catcher;
-Book gatsby;
-Book jane;
-Book macbeth;
-Book room;
-Book scarletletter;
-Book streetcar;
-Book theireyes;
+Book midsummer;
 Book mockingbird;
-Book twelve;
+Book mango;
+Book diary;
+Book jane;
+Book catcher;
+Book joyluck;
+Book theireyes;
+Book gatsby;
+Book outsiders;
 
-Author salinger;
-Author fitzgerald;
-Author bronte;
 Author shakespeare;
-Author forster;
-Author hawthorne;
-Author williams;
-Author hurston;
 Author lee;
-Author rose;
+Author cisneros;
+Author alexie;
+Author bronte;
+Author salinger;
+Author tan;
+Author hurston;
+Author fitzgerald;
+Author hinton;
 
 
 void initializePairs()
 {
-  catcher = new Book("catcher", 0, "The Catcher in the Rye");
-  gatsby = new Book("gatsby", 1, "The Great Gatsby");
-  jane = new Book("jane", 2, "Jane Eyre");
-  macbeth = new Book("macbeth", 3, "MacBeth");
-  room = new Book("room", 4, "A Room with a View");
-  scarletletter = new Book("scarletletter", 5, "The Scarlet Letter");
-  streetcar = new Book("streetcar", 6, "A Streetcar Named Desire");
+  midsummer = new Book("midsummer", 0, "A Midsummer Night's Dream");
+  mockingbird = new Book("mockingbird", 1, "To Kill a Mockingbird");
+  mango = new Book("mango", 2, "House on Mango Street");
+  diary = new Book("diary", 3, "The Absolute True Diary of a Part-time Indian");
+  jane = new Book("jane", 4, "Jane Eyre");
+  catcher = new Book("catcher", 5, "The Catcher in the Rye");
+  joyluck = new Book("joyluck", 6, "The Joy Luck Club");
   theireyes = new Book("theireyes", 7, "Their Eyes Were Watching God");
-  mockingbird = new Book("mockingbird", 8, "To Kill a Mockingbird");
-  twelve = new Book("twelve", 9, "Twelve Angry Men");
+  gatsby = new Book("gatsby", 8, "The Great Gatsby");
+  outsiders = new Book("outsiders", 9, "The Outsiders");
   
-  books.add(catcher);
-  books.add(gatsby);
-  books.add(jane);
-  books.add(macbeth);
-  books.add(room);
-  books.add(scarletletter);
-  books.add(streetcar);
-  books.add(theireyes);
-  books.add(mockingbird);
-  books.add(twelve);
+  books.add(midsummer);      //0
+  books.add(mockingbird);      //1
+  books.add(mango);      //2
+  books.add(diary);      //3
+  books.add(jane);      //4
+  books.add(catcher);      //5
+  books.add(joyluck);      //6
+  books.add(theireyes);      //7
+  books.add(gatsby);      //8
+  books.add(outsiders);      //9
   
-  salinger = new Author("J.D. Salinger", 0);
-  fitzgerald = new Author("F. Scott Fitzgerald", 1);
-  bronte = new Author("Charlotte Bronte", 2);
-  shakespeare = new Author("William Shakespeare", 3);
-  forster = new Author("E. M. Forster", 4);
-  hawthorne = new Author("Nathaniel Hawthorne", 5);
-  williams = new Author("Tennessee Williams", 6);
+  shakespeare = new Author("William Shakespeare", 0);
+  lee = new Author("Harper Lee", 1);
+  cisneros = new Author("Sandra Cisneros", 2);
+  alexie = new Author("Sherman Alexie", 3);
+  bronte = new Author("Charlotte Bronte", 4);
+  salinger = new Author("J.D. Salinger", 5);
+  tan = new Author("Amy Tan", 6);
   hurston = new Author("Zora Neale Hurston", 7);
-  lee = new Author("Harper Lee", 8);
-  rose = new Author("Reginald Rose", 9);
+  fitzgerald = new Author("F. Scott Fitzgerald", 8);
+  hinton = new Author("S. E. Hinton", 9);
   
-  authors.add(salinger);
-  authors.add(fitzgerald);
-  authors.add(bronte);
   authors.add(shakespeare);
-  authors.add(forster);
-  authors.add(hawthorne);
-  authors.add(williams);
-  authors.add(hurston);
   authors.add(lee);
-  authors.add(rose);
+  authors.add(cisneros);
+  authors.add(alexie);
+  authors.add(bronte);
+  authors.add(salinger);
+  authors.add(tan);
+  authors.add(hurston);
+  authors.add(fitzgerald);
+  authors.add(hinton);
 }
