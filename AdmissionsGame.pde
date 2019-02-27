@@ -143,6 +143,9 @@ void keyPressed() {
     }
     else if (englishDoor.playerOn() == true && keyCode == ' ' && gameState==10) {
         englishgameState=0;
+        shuffle(books);
+        shuffle(authors);
+        currentBook=0;
         gameState = 50; 
         println("going to english");
     }
