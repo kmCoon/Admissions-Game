@@ -13,8 +13,12 @@ void playSectionII() {
    englishDoor.open();
    roboDoor.display();
    roboDoor.open();
-   caswellDoor.display();
-   caswellDoor.open();
+   //caswellDoor.display();
+   //caswellDoor.open();
+   scienceDoor.display();
+   scienceDoor.open();
+   ceiDoor.display();
+   ceiDoor.open();
    
    player.display(); 
    textSize(25);
