@@ -3,10 +3,10 @@ void playSectionII() {
    stroke(0);
    strokeWeight(1);
 
-   if (buildingTwo.width != width)
-     buildingTwo.resize(width,height);
+   if (centerBuilding.width != width)
+     centerBuilding.resize(width,height);
 
-   image(buildingTwo,0,0);
+   image(centerBuilding,0,0);
    fill(0,0,255);  
     
    englishDoor.display();
@@ -20,12 +20,10 @@ void playSectionII() {
    textSize(25);
    fill(#FF0D82);
 
-   if (player.position.x >= width) {
-     gameState = 30; 
-     player.position.x = 1;
+   if (player.position.x >= width-r) {
+     player.position.x = width-r;
    }
-   if (player.position.x <= 0) { 
-     gameState = 40;
-     player.position.x = width-1;
+   if (player.position.x <= r) { 
+     player.position.x = r;
    }
 }

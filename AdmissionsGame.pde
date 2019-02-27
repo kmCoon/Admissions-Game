@@ -34,9 +34,9 @@ Escape escButton;
 PImage lunch;
 PImage marlboro;
 
-PImage buildingOne;
-PImage buildingTwo;
-PImage buildingThree;
+//PImage buildingOne;
+PImage centerBuilding;
+//PImage buildingThree;
 
 int midlineOffset = 200;
 float scaleMult = .79;
@@ -57,9 +57,9 @@ void resizeImages()
 {
   lunch.resize(width,height);
   marlboro.resize(width,height);
-  buildingOne.resize(width,height);
-  buildingTwo.resize(width,height);
-  buildingThree.resize(width,height);
+  //buildingOne.resize(width,height);
+  centerBuilding.resize(width,height);
+  //buildingThree.resize(width,height);
   sally.resize(200, 300);
 }
 
@@ -75,9 +75,9 @@ void setup() {
 
   lunch = loadImage("data/sandsLunch.jpeg");
   marlboro = loadImage("data/Marlborough.jpg");
-  buildingOne = loadImage("data/LeftScreen.png");
-  buildingTwo = loadImage("data/CenterScreen.png"); 
-  buildingThree = loadImage("data/RightScreen.png");
+  //buildingOne = loadImage("data/LeftScreen.png");
+  centerBuilding = loadImage("data/CenterScreen.png"); 
+  //buildingThree = loadImage("data/RightScreen.png");
   
   sally = loadImage("data/default dance.png");
  
@@ -88,20 +88,15 @@ void setup() {
   roboDoor = new Door((width/2)-50, "Press space to enter the SPARC");
   englishDoor = new Door((width*englishScale), "Press space to enter the english class"); 
   caswellDoor = new Door((width*caswellScale), "Press space to enter caswell"); 
-  galleryDoor = new Door((width*gallMult), "Press space to enter the gallery");
-  galleryExit = new Door(500, "Press space to exit the gallery");
   scienceDoor = new Door((width*sciMult), "Press space to enter the science class");
   ceiDoor = new Door((width*ceiMult), "Press space to enter the CEI");
-  trackDoor = new Door(100, "Press space to begin track practice");
   
   escButton = new Escape("Click to return to campus!");
   
   setupScience();
   ceisetup();
   dancesetup();
-  setupGallery();
-  englishsetup();
-  trackSetup();
+  englishsetup(); 
   robotsetup();
 
   resizeImages();
@@ -121,22 +116,18 @@ void draw() {
       playSectionII();
     else if (gameState == 20)
       robotdraw();
-    else if (gameState == 30)
-      playSectionIII();
-    else if (gameState == 40)
-      playSectionI();
+    /*else if (gameState == 30)
+      playSectionIII(); */
+    /*else if (gameState == 40)
+      playSectionI(); */
     else if (gameState == 50)
       englishdraw(); 
-    else if (gameState == 60)
-      playGallery();
     else if (gameState == 70)
       drawScience();
     else if (gameState == 80)
       ceidraw();
     else if (gameState == 90)
       dancedraw();
-    else if (gameState == 100) 
-      trackDraw();
 } 
 
 
@@ -180,10 +171,7 @@ void keyPressed() {
        gameState = 20;
        robotstate=0;
     }
-    else if (galleryDoor.playerOn() == true && keyCode == ' ' && gameState==30) {
-      gameState = 60;
-      player.position.x = 500;
-    }
+
     else if (ceiDoor.playerOn() == true && keyCode == ' ' && gameState==30) {
        gameState = 80;
        println("entering cei");
@@ -197,21 +185,8 @@ void keyPressed() {
       dance=0;
       danceGameState=0;
     }
-    else if (trackDoor.playerOn() == true && keyCode == ' ' && gameState==40) {
-      player.position.x = 300; 
-      gameState = 100;
-      trackState = 0;
-      trackScore=0;
-      trackClock=0;
-    } 
   }
   
-  
-    
-  
-  
-  
-
 }
 
 void keyReleased() {
@@ -223,14 +198,10 @@ void keyReleased() {
    if (gameState == 70) {
       scienceKeys();
    }
-   if (gameState == 100)
-     trackKeys();
    if (gameState == 80)
      ceikeyReleased();
    if (gameState==90)
      dancekeyReleased();
-   if (gameState==100){
-     trackKeys();}
    if (gameState==20){
      robotkeyReleased();} 
 }
