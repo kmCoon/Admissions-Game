@@ -29,10 +29,8 @@ class Door {
     }
   }
   
-  boolean playerOn()
-  {
-    if (isDisplayed == true && player.position.x > x && player.position.x < (x+100))
-    {
+  boolean playerOn() {
+    if (isDisplayed == true && player.position.x > x && player.position.x < (x+100)) {
       return true;
     }
     else
