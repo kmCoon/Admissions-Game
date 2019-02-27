@@ -53,22 +53,10 @@ ArrayList<Bullet> bullets;
 
 int offset = 20;
 
-//AudioPlayer punch;
-//AudioPlayer shot;
-
 void setupScience() {
   
-  //fullScreen();
-  
-  //minim = new Minim(this);
-  //punch = minim.loadFile("Punch.mp3"); 
-  //shot = minim.loadFile("Shot.mp3");
-
-  //shot.setVolume(0.05);
-  //punch.setVolume(0.4);
-  
   p1pos = new PVector(300,height/2); 
-  p2pos = new PVector(width-300,height/2);
+  //p2pos = new PVector(width-300,height/2);
   coinpos = new PVector(random(50,width-50),random(50,height-80));
   capillary = loadImage("data/capillary.png");
   
@@ -143,7 +131,6 @@ void playGame() {
       fill(0);
       text("Returning to the homescreen...",width/2,height/2+75);
       
-      println(millis() - timing); 
       if (millis() - timing >= 2500) {
          gameState = 40;
          p1life = 3; 
@@ -170,7 +157,7 @@ void playGame() {
       text("Returning to the homescreen...",width/2,height/2+75);
       
       if (millis() - timing >= 2500) {
-         gameState = 40;
+         gameState = 10;
          p1life = 3; 
          p2life = 3;
          minigameState = 0;
@@ -205,9 +192,6 @@ void playGame() {
        p1velocity.y = 0;
        p1velocity.add(acceleration);
      }
-       
-      //textSize(20);
-      //text("P1 Velocity: " + p1velocity, 800, 800);
       
       p1pos.add(p1velocity); 
       if(p1velocity.y < 9.5) {
@@ -232,9 +216,9 @@ void playGame() {
       
       //p2 stuff
       
-     if (p2pos.x < 0) {
+     /*if (p2pos.x < 0) {
        p2pos.x = p2pos.x+width;
-    }
+    } */
     
     // Coin collision detection
     
@@ -246,11 +230,13 @@ void playGame() {
      
      // forloop for coin detection
      
+     
+     // Old if statement: bullet.startingPos.x+bullet.currentPos.x >= coinpos.x-coinRad && p1ShotSpot.x+bullet.startingPos.x <= coinpos.x+coinRad && bullet.startingPos.y >= coinpos.y-coinRad && bullet.startingPos.y <= coinpos.y+coinRad
      for (Bullet bullet : bullets) { 
-       if (p1isShooting && bullet.startingPos.x+bullet.currentPos.x >= coinpos.x-coinRad && p1ShotSpot.x+bullet.startingPos.x <= coinpos.x+coinRad && bullet.startingPos.y >= coinpos.y-coinRad && bullet.startingPos.y <= coinpos.y+coinRad) { 
+       if (bullet.currentPos.x >= coinpos.x-coinRad && bullet.currentPos.x <= coinpos.x+coinRad && bullet.currentPos.y >= coinpos.y-coinRad && bullet.currentPos.y <= coinpos.y+coinRad) { 
          coinpos = new PVector(random(50,width-100),random(50,height-100));
          p1isShooting = false;
-         bullet.isOffscreen();
+         bullet.isOffscreen();  
          bullets.remove(0);
          if (p2life > 0) 
            p2life -= 1;
@@ -285,8 +271,8 @@ void scienceKeys() {
       }
       
       if (keyCode == ',') {
-       if (p1isShooting == false) {
          Bullet b = createBullet();
+         b.setStartingPos(p1pos);
          bullets.add(b);
          for (Bullet bullet : bullets) {
            bullet.setStartingPos(p1pos);
@@ -300,21 +286,16 @@ void scienceKeys() {
        } 
       }
       if (keyCode == '.') {
-       if (p1isShooting == false) {
          Bullet b = createBullet();
          bullets.add(b);
-         for (Bullet bullet : bullets) {
+         for (Bullet bullet : bullets) { 
            bullet.setStartingPos(p1pos);
          }
-         //shot.rewind();
-         //shot.play();
          p1shootLeft = false;
          p1isShooting = true;
-         p1ShotSpot = new PVector (p1pos.x,p1pos.y);
-         p1shotPos = new PVector(0,0);
+         //p1ShotSpot = new PVector (p1pos.x,p1pos.y);
+         //p1shotPos = new PVector(0,0);
        }
-      }
-    }
 }
 
 void p1shoot() {
@@ -330,8 +311,6 @@ void p1shoot() {
         if (p2life > 0)
           p2life -= 1;
         image(explosion, p2pos.x-30, p2pos.y-30);
-        //punch.rewind(); 
-        //punch.play();
       }
       if (p1ShotSpot.x+p1shotPos.x < 0 || p1ShotSpot.x+p1shotPos.x > width) {
         p1isShooting = false;
