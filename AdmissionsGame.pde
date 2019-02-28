@@ -61,7 +61,7 @@ void setup() {
   soundSetup();
   
   //fullScreen();
-  size(1200, 800);
+  size(800, 600);
   background(150);
 
   lunch = loadImage("data/sandsLunch.jpeg");
