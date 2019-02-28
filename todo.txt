@@ -1,26 +1,31 @@
 TODO:
 
-Bug fixes
+- All mini games: consistent splash screen when you enter
+    - Marlborough purple background and font, consistent sizes
+    - title (Marlbots Maze, Dancing Queen, Snack Attack...)
+    - instructions
+    - start game with either spacebar or mouse click
 
-- (!) Science game is difficult to play.  Here's a suggestion:  arrow keys for
-  movement, and space bar shoots in both directions (simultaneously).  Also,
-  use an array list so the user can shoot a lot (and in both directions at
-  once).
+- Science game: 
+    - finish fixes
+    - "cell" images
 
-- Make track game more natural.  Reset state when game is over, so it can be played again.
-    Add escape button.
+- English game:
+    - display score as a large number in the big white space on the right
+    - advance to next book on a bad guess (?)
+
+- Maze game:
+    - add timer
 
 - remove all console output -- this appears in the browser with processing.js
 
-- cei minigame:  should reset before entering the game a 2nd time
+- navigation screen:
+    - instructions
+    - mini-game titles on doors
 
-- add this text to the school navigation screen:
-   text("Use the arrow keys to move around the school.\n" +
-       "Move to the edges of the screen to access more areas.\n" +
-       "Have fun!"
+- alternate key press: q for escape button
 
-- gallery images should have artist names (e.g. Kyra '19, Gabi '20)
-
-- escape button hover effect not working in all minigames 
-
+- mobile device support (Dr. Kessner will investigate)
+    - handle mouse press, but handle as arrow keys and space bar
+        (sides of screen, center for space bar)
 
