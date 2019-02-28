@@ -16,6 +16,11 @@ TODO:
 
 - Maze game:
     - add timer
+    - center the yellow bar
+
+- Main page:
+    - get text from Admissions
+    - add confetti
 
 - remove all console output -- this appears in the browser with processing.js
 
