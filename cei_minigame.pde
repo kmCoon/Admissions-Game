@@ -132,14 +132,15 @@ void ceikeyPressed()
     backpack.resetbackpack();
     for (Food a : foods) {a.reset();}
   }
-  if (ceigameState==2 && gameState==80 && key==' ')
+  else if (ceigameState==2 && gameState==80 && key==' ')
   {
     ceigameState=0;
   }
-  if (ceigameState==2 && gameState==80 && key=='e')
+  else if (ceigameState==2 && gameState==80 && key=='e')
   {
-    gameState=30;
+    gameState=10;
     ceigameState=0;
+    println("leaving cei");
   }
   else if (keyCode == RIGHT && ceigameState==1){backpack.moveR();}
   else if (keyCode == LEFT && ceigameState==1){backpack.moveL();}

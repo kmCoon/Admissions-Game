@@ -38,8 +38,8 @@ class Backpack
     image(backpackfront, x, height-150);
   }
   
-  void moveR(){vx=10;}
-  void moveL(){vx=-10;}
+  void moveR(){vx=15;}
+  void moveL(){vx=-15;}
   void stopMove(){vx=0;}
   
   float getX(){return x;}
