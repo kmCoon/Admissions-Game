@@ -21,6 +21,7 @@ TODO:
 - Maze game:
     - add timer
     - center the yellow bar
+    - scale size of rectangles based on screen resolution
 
 - Main page:
     - get text from Admissions
