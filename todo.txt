@@ -5,6 +5,10 @@ TODO:
     - title (Marlbots Maze, Dancing Queen, Snack Attack...)
     - instructions
     - start game with either spacebar or mouse click
+    - calculate text size based on screen resolution
+
+- CEI game
+    - purple box background for score/time to make it easier to read
 
 - Science game: 
     - finish fixes
