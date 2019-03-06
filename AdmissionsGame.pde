@@ -90,11 +90,11 @@ void setup() {
   PVector startPos = new PVector(width/2,((height*scaleMult)-25)); //900
   player = new Player(startPos); //100 so 50
   
-  roboDoor = new Door((width*sparcMult), "Press space to enter the SPARC"); //width/2-175
-  englishDoor = new Door((width*englishScale), "Press space to enter the english class"); 
-  caswellDoor = new Door((width*caswellScale), "Press space to enter caswell"); 
-  scienceDoor = new Door((width*sciMult), "Press space to enter the science class"); //width/2+100
-  ceiDoor = new Door((width*ceiMult), "Press space to enter the CEI");
+  roboDoor = new Door((width*sparcMult), "SPARC"); //width/2-175
+  englishDoor = new Door((width*englishScale), "English"); 
+  caswellDoor = new Door((width*caswellScale), "Caswell"); 
+  scienceDoor = new Door((width*sciMult), "Science"); //width/2+100
+  ceiDoor = new Door((width*ceiMult), "CEI");
   
   escButton = new Escape("Click to return to campus!");
   

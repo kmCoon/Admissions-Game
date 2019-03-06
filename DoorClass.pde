@@ -19,13 +19,17 @@ class Door {
     
     fill(66, 38, 8);
     rect(x, floorVal, doorWidth, doorHeight);
+    fill(255);
+    textSize(10);
+    textAlign(CENTER, CENTER);
+    text(name, x, floorVal, doorWidth, doorHeight);
     isDisplayed = true;
   }
   
   void open() {
     if (playerOn()) {
-      fill(0);
-      text(name,x-50, 420);
+      //fill(0);
+      //text(name,x-50, 420);
     }
   }
   

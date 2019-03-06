@@ -87,15 +87,15 @@ void drawceiStart()
   }
 
   image(cei, 0, height-cei.height);
-  fill(0, 80);
+  fill(38, 8, 89, 200);
   noStroke();
   rect(width/2, height/2, 3*width/4, 3*height/4);
   fill(255);
   textSize(35);
   textAlign(CENTER, CENTER);
-  text("Catch as many snacks and drinks as you can " +
-       "in the next 15 seconds to see how many points you can earn! " + 
-       "Use the arrow keys to move your backpack back and forth. " + 
+  text("Catch as many snacks as you can " +
+       "before time runs out!\n\n" + 
+       "Use the arrow keys to move your backpack.\n\n\n" + 
        "Press space to start.", width/2, height/2, 2*width/3, 2*height/3);
 }
 

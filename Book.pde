@@ -16,7 +16,7 @@ class Book
   
   void display()
   {
-    image(cover, width/2, height/2);
+    image(cover, 2*width/3, height/2);
   }
   
   int getNum() {return num;}
@@ -24,6 +24,6 @@ class Book
   
   void resize() 
   {
-    cover.resize((int)(1.7*width/5), (int)(1.7*height/2));
+    cover.resize((int)(1.7*width/5), 0);
   }
 }

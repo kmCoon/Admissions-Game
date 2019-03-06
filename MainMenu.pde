@@ -1,16 +1,12 @@
 
 void mainMenu() {
+
+   background(38, 8, 89);
+
   
    
-   //ArrayList<Confetti> confettiList = new ArrayList<Confetti>();
+ 
    
-   //for (int i = 0; i< 100; i ++){
-   // confettiList.add(createConfetti());
-   // confettiList.get(i).display();
-   //}
-   
-   //background(88, 23, 145);
-   background(38, 8, 89);
    fill(255);
    textAlign(CENTER);
    
@@ -36,7 +32,7 @@ void mainMenu() {
 Confetti createConfetti(){
   
   int r = (int)random(5, 10);
-  PVector position = new PVector(random(r, width+50), random(r, height+100));
+  PVector position = new PVector(random(r, width+50), random(-20, height+100));
   float theta = random(11*PI/8, 13*PI/8);
   PVector velocity = new PVector(cos(theta), sin(theta));
   velocity.setMag(random(3, 7));
@@ -66,7 +62,6 @@ class Confetti {
     this.r = random(5, 10);
     this.position = position;
     this.velocity = velocity;
-    this.c = c;
     this.startX = startX;
     this.startY = startY;
     acceleration = new PVector (0, .08);
@@ -84,6 +79,9 @@ class Confetti {
     
     if (frameCount%20 ==0){
       randomizeColor();
+    }
+    
+    if(position.y> height){
     }
   }
   

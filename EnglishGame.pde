@@ -25,14 +25,17 @@ void englishdrawStart()
     b.resize();
 
   cursor(ARROW);
-  background(255);
-  fill(0);
+  background(38, 8, 89);
+  fill(255);
   textSize(30);
   score=0;
-  text("Select the author/playwright who wrote the given book/play.\n" + 
-       "You will gain one point for every correct answer,\n" + 
+  
+  text("Match each book with its author.\n\nPress space to start.", width/2, height/2);
+  
+  /*text("Select the author/playwright who wrote the given book/play. " + 
+       "You will gain one point for every correct answer, " + 
        "and lose one point for every wrong answer.\n\n" + 
-       "Press space to start.", width/2, height/2);
+       "Press space to start.", width/2, height/2, 5*width/6, height/2);*/
 }
 
 void englishdrawGame() {
