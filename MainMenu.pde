@@ -65,9 +65,9 @@ class Confetti {
     this.startX = startX;
     this.startY = startY;
     acceleration = new PVector (0, .08);
-    white = color(255);
-    yellow = color(255, random(210, 230), random(0, 20));
-    purple = color(random(160, 170), random(136, 146), random(189, 199));
+    white = color(255, 255, 255, random(170, 250));
+    yellow = color(255, random(210, 230), random(0, 20), random (170, 250));
+    purple = color(random(160, 170), random(136, 146), random(189, 199), random(170, 250));
      randomizeColor();
   }
   
