@@ -56,6 +56,19 @@ void resizeImages() {
 
 
 void setup() {
+  
+  
+   
+   for (int i = 0; i< 100; i ++){
+    confettiList.add(createConfetti());
+   }
+   
+   
+   
+   
+   
+   
+   
   benton = createFont("Benton Sans Bold.otf", 20);
   textFont(benton);
   soundSetup();
@@ -91,6 +104,10 @@ void setup() {
 }
 
 void draw() {
+  
+  
+  
+  
   if (sally.width != 200)
     resizeImages();
   
