@@ -1,6 +1,6 @@
 
 void mainMenu() {
-   background(88, 23, 145);
+   background(38, 8, 89);
    fill(255);
    textAlign(CENTER);
 
