@@ -32,7 +32,7 @@ void mainMenu() {
 Confetti createConfetti(){
   
   int r = (int)random(5, 10);
-  PVector position = new PVector(random(r, width+50), random(-20, height+100));
+  PVector position = new PVector(random(r, width+50), random(-30, height+10));
   float theta = random(11*PI/8, 13*PI/8);
   PVector velocity = new PVector(cos(theta), sin(theta));
   velocity.setMag(random(3, 7));
@@ -81,7 +81,12 @@ class Confetti {
       randomizeColor();
     }
     
-    if(position.y> height){
+    if(velocity.y > 0 && (position.y> 3*height/4+100 && random(0, 1) < .1)){
+      position.y = random(0, height/2);
+      float theta = random(11*PI/8, 13*PI/8);
+      //velocity = new PVector(cos(theta), sin(theta));
+      velocity.setMag(random(3, 7));
+  
     }
   }
   
