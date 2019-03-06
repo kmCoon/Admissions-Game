@@ -9,7 +9,8 @@ void mainMenu() {
    // confettiList.get(i).display();
    //}
    
-   background(88, 23, 145);
+   //background(88, 23, 145);
+   background(38, 8, 89);
    fill(255);
    textAlign(CENTER);
    
@@ -30,21 +31,28 @@ void mainMenu() {
 } 
 
  ArrayList<Confetti> confettiList = new ArrayList<Confetti>();
+ //int count = frameCount;
  
 Confetti createConfetti(){
+  
   int r = (int)random(5, 10);
-  PVector position = new PVector(random(r, width-r), random(r, height-r));
-  PVector velocity = PVector.random2D();
-  velocity.setMag(1);
-  int c = color(255);
+  PVector position = new PVector(random(r, width+50), random(r, height+100));
+  float theta = random(11*PI/8, 13*PI/8);
+  PVector velocity = new PVector(cos(theta), sin(theta));
+  velocity.setMag(random(3, 7));
+ 
+
+  //int c = white;
+  
+  
   noStroke();
-  Confetti con = new Confetti(r, position, velocity, c, position.x, position.y);
+  Confetti con = new Confetti(r, position, velocity, position.x, position.y);
   return con;
 }
 
 class Confetti {
  
-   float r;
+  float r;
   PVector position;
   PVector velocity;
   PVector acceleration;
@@ -52,21 +60,39 @@ class Confetti {
   float startY;
   int c;
   
-  public Confetti(float r, PVector position, PVector velocity, int c, float startX, float startY){
-    r = random(5, 10);
+  int white, yellow, purple;
+    
+  public Confetti(float r, PVector position, PVector velocity, float startX, float startY){
+    this.r = random(5, 10);
     this.position = position;
     this.velocity = velocity;
     this.c = c;
     this.startX = startX;
     this.startY = startY;
-    acceleration = new PVector (0, .1);
-    
+    acceleration = new PVector (0, .08);
+    white = color(255);
+    yellow = color(255, random(210, 230), random(0, 20));
+    purple = color(random(160, 170), random(136, 146), random(189, 199));
+     randomizeColor();
   }
   
   void display(){
     fill(c);
     rect(position.x, position.y, r, r);
-    //position.add(velocity);
+    position.add(velocity);
+    velocity.add(acceleration);
+    
+    if (frameCount%20 ==0){
+      randomizeColor();
+    }
+  }
+  
+  void randomizeColor()
+  {
+    int rand = (int)random(0, 3);
+   if(rand == 0) c = white;
+    else if(rand == 1) c = yellow;
+    else if(rand == 2) c = purple;  
   }
   
 }

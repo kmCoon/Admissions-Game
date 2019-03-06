@@ -60,7 +60,11 @@ void setup() {
   
    
    for (int i = 0; i< 100; i ++){
+     
+
     confettiList.add(createConfetti());
+       
+     
    }
    
    
