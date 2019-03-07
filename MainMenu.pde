@@ -1,24 +1,24 @@
+//
+// MainMenu
+//
+
 
 void mainMenu() {
 
    background(38, 8, 89);
 
-  
-   
- 
    
    fill(255);
    textAlign(CENTER);
    
    for (Confetti c: confettiList){
-    c.display();
-  }
-   
+     c.display();
+   }
 
    textSize(50);
    fill(255);
    text("Welcome to", width/2, height*.4);
-    fill(255, 210, 0);
+   fill(255, 210, 0);
    text("Marlborough!", width/2, height*.4+ 55);
 
    textSize(17);
@@ -26,9 +26,18 @@ void mainMenu() {
    text("Click to start", width/2, height-60);
 } 
 
- ArrayList<Confetti> confettiList = new ArrayList<Confetti>();
- //int count = frameCount;
- 
+
+ArrayList<Confetti> confettiList = new ArrayList<Confetti>();
+
+
+void setupConfetti()
+{
+   for (int i = 0; i< 300; i ++){
+      confettiList.add(createConfetti());
+   }
+}
+   
+  
 Confetti createConfetti(){
   
   int r = (int)random(5, 10);
@@ -37,14 +46,11 @@ Confetti createConfetti(){
   PVector velocity = new PVector(cos(theta), sin(theta));
   velocity.setMag(random(3, 7));
  
-
-  //int c = white;
-  
-  
   noStroke();
   Confetti con = new Confetti(r, position, velocity, position.x, position.y);
   return con;
 }
+
 
 class Confetti {
  

@@ -59,15 +59,7 @@ void setup() {
   
   
    
-   for (int i = 0; i< 300; i ++){
-     
-
-    confettiList.add(createConfetti());
-       
-     
-   }
-   
-   
+  
    
   benton = createFont("Benton Sans Bold.otf", 20);
   textFont(benton);
@@ -99,6 +91,7 @@ void setup() {
   dancesetup();
   englishsetup(); 
   robotsetup();
+  setupConfetti();
 
   resizeImages();
 }
