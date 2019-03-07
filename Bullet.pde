@@ -44,8 +44,7 @@ class Bullet {
            p1isShooting = false;
            p2life -= 1;
            image(explosion, p2pos.x-30, p2pos.y-30);
-           punch.rewind(); 
-           punch.play();
+           playPunch();
         }
       } 
       if (currentPos.x < 0 || currentPos.x > width) {

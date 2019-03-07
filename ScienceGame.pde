@@ -262,13 +262,13 @@ void scienceKeys() {
          p1velocity.add(right);
       }
       
-      if (keyCode == ',') {
+      if (key == ',') {
         p1ShotSpot = new PVector(p1pos.x,p1pos.y);
         Bullet bullet = createBullet(p1ShotSpot);
         bullets.add(bullet);
         bullet.setDirection("Left");
       }
-      if (keyCode == '.') {
+      if (key == '.') {
         p1ShotSpot = new PVector(p1pos.x,p1pos.y);
         Bullet bullet = createBullet(p1ShotSpot);
         bullets.add(bullet);
