@@ -9,8 +9,8 @@ float winY;
 
 void initialize_game()
 {
-  winX = width - 100;
-  winY = height/100 + 25; 
+  winX = width * .93;
+  winY = height * .05; 
 }
  
 
@@ -18,8 +18,10 @@ void robotdraw_game()
 {
   background(255);
   rectMode(CORNER);
+
   fill(yellow); 
-  rect(width/100 + 5, height/20 - 0.15*blockheight, 1.3*blockwidth, 0.5*blockheight);
+  //rect(width/100 + 5, height/20 - 0.15*blockheight, 1.3*blockwidth, 0.5*blockheight);
+
   fill(purple);
   textSize(20);
   textAlign(CENTER, CENTER);
@@ -32,7 +34,7 @@ void robotdraw_game()
   }
  
   rectMode(CENTER); 
-  rect(winX, winY, 100, 50); 
+  rect(winX, winY, blockwidth, blockheight); 
  
   robot1.winCheck(winX, winY); 
  
