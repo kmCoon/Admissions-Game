@@ -30,6 +30,7 @@ void englishdrawStart()
   textSize(30);
   score=0;
   
+  textAlign(CENTER, CENTER);
   text("Match each book with its author.\n\nPress space to start.", width/2, height/2);
   
   /*text("Select the author/playwright who wrote the given book/play. " + 
