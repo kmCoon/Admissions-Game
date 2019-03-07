@@ -97,7 +97,7 @@ void robotdraw_end()
 
 void robotkeyPressed()
 {
-  if(keyCode == ' ' && robotstate==0)
+  if(key == ' ' && robotstate==0)
   {
     robot1.position.x=width/10;
     robot1.position.y=height/10;
@@ -105,7 +105,7 @@ void robotkeyPressed()
     robotstate = 1; 
   }
     
-  if(keyCode==' ' && robotstate==2)
+  if(key == ' ' && robotstate==2)
     {
       gameState=10;
       robotstate=0;

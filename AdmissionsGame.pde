@@ -151,25 +151,23 @@ void keyPressed() {
       player.applyAcc(-1);
       player.changeVelocity(-1);
     }
-    else if (englishDoor.playerOn() == true && keyCode == ' ' && gameState==10) {
+    else if (englishDoor.playerOn() == true && key == ' ' && gameState==10) {
         englishgameState=0;
         shuffle(books);
         shuffle(authors);
         currentBook=0;
         gameState = 50; 
-        println("going to english");
     }
-    else if (roboDoor.playerOn() == true && keyCode == ' ' && gameState==10) {
+    else if (roboDoor.playerOn() == true && key == ' ' && gameState==10) {
        gameState = 20;
        robotstate=0;
     }
 
-    else if (ceiDoor.playerOn() == true && keyCode == ' ' && gameState==10) {
+    else if (ceiDoor.playerOn() == true && key == ' ' && gameState==10) {
        gameState = 80;
-       println("entering cei");
      } 
      
-    else if (scienceDoor.playerOn() == true && keyCode == ' ' && gameState==10) { // mamaaaaaaa, uuuuwuuu
+    else if (scienceDoor.playerOn() == true && key == ' ' && gameState==10) { // mamaaaaaaa, uuuuwuuu
       gameState = 70;
     }
     /*else if (caswellDoor.playerOn() == true && keyCode == ' ' && gameState==10)
@@ -201,10 +199,10 @@ void keyReleased() {
 
 void mouseClicked() 
 {
-  if (escButton.mouseOn == true && escButton.isDisplayed == true) {
+  if (escButton.mouseOn() && escButton.isActive()) {
     gameState = 10;
   }
-  if (gameState==0) {
+  else if (gameState==0) {
     gameState=10;
   }
   else if (gameState == 70) {
@@ -212,5 +210,11 @@ void mouseClicked()
   }
   else if (gameState == 50) {
     englishmouseClicked();
+  }
+  else
+  {
+    key = ' ';
+    keyCode = 0;
+    keyPressed();
   }
 }

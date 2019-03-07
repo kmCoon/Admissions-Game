@@ -6,7 +6,6 @@ void playHistory() {
     player.display();
     
     escButton.display();
-    escButton.checkforHover();
     
     text("Move to the left to complete the minigame!", 100, 200);
     

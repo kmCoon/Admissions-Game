@@ -2,10 +2,9 @@ class Escape {
   float x;
   float y;
   String escapeText;
-  boolean mouseOn = false;
-  boolean isDisplayed = false;
   int l = 120;
   int w = 60;
+  boolean active = false;
   
   Escape(String display) {
     x = width-20-l;
@@ -15,11 +14,9 @@ class Escape {
   
   void display() {
     rectMode(CORNER);
-    checkforHover();
     fill(255);
-    strokeWeight(mouseOn ? 3 : 1);
+    strokeWeight(mouseOn() ? 3 : 1);
     rect(x,y,l,w);
-    isDisplayed = true;
     textSize(15);
     fill(0);
     textAlign(CENTER, CENTER);
@@ -28,14 +25,17 @@ class Escape {
     //text(escapeText, x+2, y+2, x+l-2, y+w-2);
 
     text(escapeText, x+2, y+2, l-2, w-2);
+    setActive(true);
   }
   
-  void checkforHover() {
-     if (mouseX >= x && mouseX <= (x+l) && mouseY >= y && mouseY <= y+w) {
-        mouseOn = true;
-     }
-     else {
-       mouseOn = false;
-     }
+  boolean mouseOn() 
+  {
+     return mouseX >= x && 
+            mouseX <= (x+l) && 
+            mouseY >= y && 
+            mouseY <= y+w;
   }
+
+  boolean isActive() {return active;}
+  void setActive(boolean value) {active = value;}
 }

@@ -98,7 +98,6 @@ void drawScience() {
       resizeScienceImages();
 
     escButton.display();
-    escButton.checkforHover();
   
    if (minigameState == 0) {
       image(capillary,0,0);

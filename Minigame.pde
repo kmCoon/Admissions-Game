@@ -6,7 +6,6 @@ void playEnglish() {
     player.display();
     
     escButton.display();
-    escButton.checkforHover();
     
     text("Move to the right to complete the minigame!", 100, 200);
     
