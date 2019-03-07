@@ -167,7 +167,7 @@ void keyPressed() {
        gameState = 80;
      } 
      
-    else if (scienceDoor.playerOn() == true && key == ' ' && gameState==10) { // mamaaaaaaa, uuuuwuuu
+    else if (/*scienceDoor.playerOn() == true &&*/ key == ' ' && gameState==10) { // mamaaaaaaa, uuuuwuuu
       gameState = 70;
     }
     /*else if (caswellDoor.playerOn() == true && keyCode == ' ' && gameState==10)
