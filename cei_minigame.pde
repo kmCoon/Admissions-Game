@@ -67,7 +67,9 @@ void drawceiGame()
   backpack.front();
   
   ceisec = (int)(millis()-ceistart)/1000;
-  fill(0);
+  fill(38, 8, 89, 200);
+  rect(100, 75, 200, 100);
+  fill(255);
   textSize(30);
   text("Points: " + backpack.getPoints(), 100, 50);
   text("Time left: " + (15-(int)ceisec), 100, 100);
@@ -104,10 +106,11 @@ void drawceiEnd()
   image(cei, 0, -(cei.height-height));
   fill(0, 80);
   noStroke();
-  rect(width/2, height/2, 820, 580);
+  fill(38, 8, 89, 200);
+  rect(width/2, height/2, 2*width/3, height/2);
   fill(255);
-  textSize(45);
-  text("Time's up. You earned " + backpack.getPoints() + " points. Good job! Press space to play again, or press E to leave."
+  textSize(30);
+  text("Time's up.\nYou earned " + backpack.getPoints() + " points.\nGood job!\n\nPress space to play again,\nor press E to leave."
         , width/2, height/2, 800, 600);
   
 }
@@ -140,7 +143,7 @@ void ceikeyPressed()
   {
     gameState=10;
     ceigameState=0;
-    println("leaving cei");
+  
   }
   else if (keyCode == RIGHT && ceigameState==1){backpack.moveR();}
   else if (keyCode == LEFT && ceigameState==1){backpack.moveL();}
