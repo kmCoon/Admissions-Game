@@ -1,22 +1,17 @@
 TODO:
 
 - All mini games: consistent splash screen when you enter
-    - Marlborough purple background and font, consistent sizes
-    - title (Marlbots Maze, Dancing Queen, Snack Attack...)
-    - instructions
     - start game with either spacebar or mouse click
-    - calculate text size based on screen resolution
 
 - CEI game
     - purple box background for score/time to make it easier to read
 
 - Science game: 
-    - finish fixes
-    - "cell" images
+    - rescaling issue on web
 
 - English game:
     - display score as a large number in the big white space on the right
-    - advance to next book on a bad guess (?)
+    - advance to next book on a bad guess
 
 - Maze game:
     - add timer
@@ -24,14 +19,9 @@ TODO:
     - scale size of rectangles based on screen resolution
 
 - Main page:
-    - get text from Admissions
-    - add confetti
+    - fix confetti position
 
 - remove all console output -- this appears in the browser with processing.js
-
-- navigation screen:
-    - instructions
-    - mini-game titles on doors
 
 - alternate key press: q for escape button
 

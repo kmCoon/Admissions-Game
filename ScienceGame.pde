@@ -7,7 +7,8 @@
 /* @pjs preload="data/Explosion.png"; */
 /* @pjs preload="data/p1keys.png"; */
 /* @pjs preload="data/p2keys.png"; */
-
+/* @pjs preload="data/Germ.png"; */
+/* @pjs preload="data/Macropage.png"; */
 
 int r = 50;
 int minigameState = 0;
@@ -62,13 +63,13 @@ void setupScience() {
   p1pos = new PVector(300,height/2); 
   p2pos = new PVector(width-300,height/2);
   coinpos = new PVector(random(50,width-50),random(50,height-80));
-  capillary = loadImage("capillary.png");
+  capillary = loadImage("data/capillary.png");
   
-  explosion = loadImage("Explosion.png");
-  keys = loadImage("p1keys.png");
-  germ = loadImage("Germ.png");
+  explosion = loadImage("data/Explosion.png");
+  keys = loadImage("data/p1keys.png");
+  germ = loadImage("data/Germ.png");
   germ.resize(coinRad,coinRad);
-  sciPlayer = loadImage("Macrophage.png");
+  sciPlayer = loadImage("data/Macrophage.png");
   sciPlayer.resize(r,r);
   explosion.resize(95, 95);
   keys.resize(320,190);
