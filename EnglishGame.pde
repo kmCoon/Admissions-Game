@@ -95,12 +95,14 @@ void englishdraw()
   if (englishgameState==2)
     englishdrawEnd();
   
-  
   escButton.display();
 }
 
 void englishmouseClicked()
 {
+  if (englishgameState == 0)
+    englishgameState = 1;
+
   for (Author a : authors)
   {
     if (a.mouseOn())
