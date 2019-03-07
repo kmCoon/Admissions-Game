@@ -9,18 +9,21 @@
 /* @pjs preload="data/p2keys.png"; */
 
 
-int r = 45;
+int r = 50;
 int minigameState = 0;
 
-float timing;
+int time;
+int waitTime = 1000;
 
 PVector p1pos;
 PVector p2pos; 
 PVector coinpos; 
-int coinRad = 35; 
+int coinRad = 55; 
+
+PVector p1posHolder;
 
 int p1life = 3; 
-int p2life = 3;
+int p2life = 3;  
 
 PVector p1velocity = new PVector(0,.1);
 PVector p2velocity = new PVector(0,.1); 
@@ -35,8 +38,6 @@ boolean p1shootLeft = false;
 PVector p1ShotSpot;
 PVector p1shotPos;
 
-boolean timeStart;
-
 boolean p2shootLeft = false;
 PVector p2ShotSpot;
 PVector p2shotPos; 
@@ -46,8 +47,11 @@ boolean p2isShooting = false;
 
 PImage capillary;
 PImage explosion;
-PImage p1keys;
-PImage p2keys;
+PImage keys;
+PImage germ;
+PImage sciPlayer;
+
+boolean timeRunning = false;
 
 ArrayList<Bullet> bullets;
 
@@ -56,29 +60,25 @@ int offset = 20;
 void setupScience() {
   
   p1pos = new PVector(300,height/2); 
-  //p2pos = new PVector(width-300,height/2);
+  p2pos = new PVector(width-300,height/2);
   coinpos = new PVector(random(50,width-50),random(50,height-80));
-  capillary = loadImage("data/capillary.png");
+  capillary = loadImage("capillary.png");
   
-  explosion = loadImage("data/Explosion.png");
-  p1keys = loadImage("data/p1keys.png");
-  p2keys = loadImage("data/p2keys.png");
+  explosion = loadImage("Explosion.png");
+  keys = loadImage("p1keys.png");
+  germ = loadImage("Germ.png");
+  germ.resize(coinRad,coinRad);
+  sciPlayer = loadImage("Macrophage.png");
+  sciPlayer.resize(r,r);
   explosion.resize(95, 95);
-  p1keys.resize(500,500);
-  p2keys.resize(500,500);
+  keys.resize(320,190);
   
   bullets = new ArrayList<Bullet>();
-  Bullet bullet = createBullet();
   
 }
 
 // I SAW U hangin out with caiTLYN YESTERDAY!
 // RE- REBECCA IT'S NOT WHAT U THINK
-
-Bullet createBullet() {
-  Bullet bullet = new Bullet();
-  return bullet;
-}
 
 void drawScience() {
     escButton.display();
@@ -88,20 +88,19 @@ void drawScience() {
       image(capillary,0,0);
       fill(200,0,0);
       textAlign(CENTER, BOTTOM);
-      textSize(60);
+      textSize(40);
       
       fill(60,0,0);
       text("BIOLOGY - CELL DEFENSE", width/2, 100); 
       
       fill(0);
-      textSize(22);
+      textSize(15);
       text("Welcome to bio defense! As a white blood cell, it's your job to shoot the viral particle that", width/2, 150);
-      text("has infected the host body. Make sure to keep your distance; it'll hurt you if you touch it!",width/2,182);
+      text("has infected the host body. Make sure to keep your distance; it'll hurt you if you touch it! Click to start.",width/2,182);
       
-      fill(219, 208, 208);
-      textSize(34);
-      text ("IMMUNE CELL", width/2,300);
-      image(p1keys,width/2-250,280);          
+      imageMode(CENTER);
+      image(keys,width/2,height/2+50);  
+      imageMode(CORNER);
    }
    
    if (minigameState > 0 && minigameState < 10) {
@@ -114,15 +113,19 @@ void playGame() {
   
   stopQuicksand();
   
-  if (p1life <= 0) {
-      if (timeStart == false) {
-        timing = millis();
-        timeStart = true;
-      }
+  if (timeRunning && (millis()-time)>2000) {
+     gameState = 10;
+     minigameState = 0;
+     timeRunning = false;
+     p1life = 3;
+     p2life = 3;
+  }
+  
+  else if (p1life <= 0) {
       image(capillary,0,0);
       fill(200,0,0);
       textAlign(CENTER, BOTTOM);
-      textSize(60);
+      textSize(40);
       
       fill(60,0,0);
       text("THE BACTERIA CONQUER!", width/2, height/2); 
@@ -130,24 +133,16 @@ void playGame() {
       textSize(22);
       fill(0);
       text("Returning to the homescreen...",width/2,height/2+75);
-      
-      if (millis() - timing >= 2500) {
-         gameState = 40;
-         p1life = 3; 
-         p2life = 3;
-         minigameState = 0;
-      }
+      if (timeRunning == false)
+        time = millis();
+      timeRunning = true;
   }
   
   else if (p2life <= 0) {
-      if (timeStart == false) {
-        timing = millis();
-        timeStart = true;
-      }
       image(capillary,0,0);
       fill(200,0,0);
       textAlign(CENTER, BOTTOM);
-      textSize(60);
+      textSize(40);
       
       fill(60,0,0);
       text("IMMUNE SYSTEM PREVAILS", width/2, height/2);
@@ -155,16 +150,13 @@ void playGame() {
       textSize(22);
       fill(0);
       text("Returning to the homescreen...",width/2,height/2+75);
-      
-      if (millis() - timing >= 2500) {
-         gameState = 10;
-         p1life = 3; 
-         p2life = 3;
-         minigameState = 0;
-      }
+      if (timeRunning == false)
+        time = millis();
+      timeRunning = true;
   }
   
   else { 
+    p1posHolder = p1pos;
     image(capillary, 0, 0);
     
     textSize(26);
@@ -172,17 +164,16 @@ void playGame() {
     text("Macrophage: " + p1life, 120, height-100);
     fill(38, 117, 61);
     text("E. Coli: " + p2life, width-100, height-100); 
-    
-    strokeWeight(3);
-    stroke(8, 87, 31);
-    fill(38, 117, 61);
-    ellipse(coinpos.x,coinpos.y,coinRad,coinRad);
+
+    image(germ,coinpos.x,coinpos.y); // Displays germ
     
     noStroke(); 
     fill(89, 7, 7);
-    rect(0, height-70, width, 70);
-    fill(219, 208, 208);
-    ellipse(p1pos.x,p1pos.y,r,r); // Displays player 1
+    rect(0, height-70, width, 70); // Displays floor
+    
+    imageMode(CENTER);
+    image(sciPlayer,p1pos.x,p1pos.y); // Displays player
+    imageMode(CORNER);
     
      if (p1pos.y >= height-90) { // Bounce for player 1
         p1velocity.y *= -1;
@@ -214,11 +205,9 @@ void playGame() {
     if(p1velocity.x > 0)
       p1velocity.sub(airResistance);
       
-      //p2 stuff
-      
-     /*if (p2pos.x < 0) {
+     if (p2pos.x < 0) {
        p2pos.x = p2pos.x+width;
-    } */
+    }
     
     // Coin collision detection
     
@@ -228,28 +217,13 @@ void playGame() {
         p1life -= 1;
      }
      
-     // forloop for coin detection
-     
-     
-     // Old if statement: bullet.startingPos.x+bullet.currentPos.x >= coinpos.x-coinRad && p1ShotSpot.x+bullet.startingPos.x <= coinpos.x+coinRad && bullet.startingPos.y >= coinpos.y-coinRad && bullet.startingPos.y <= coinpos.y+coinRad
-     for (Bullet bullet : bullets) { 
-       if (bullet.currentPos.x >= coinpos.x-coinRad && bullet.currentPos.x <= coinpos.x+coinRad && bullet.currentPos.y >= coinpos.y-coinRad && bullet.currentPos.y <= coinpos.y+coinRad) { 
-         coinpos = new PVector(random(50,width-100),random(50,height-100));
-         p1isShooting = false;
-         bullet.isOffscreen();  
-         bullets.remove(0);
-         if (p2life > 0) 
-           p2life -= 1;
-       }
-     }
-     
-     if(p1isShooting) {
-       //p1shoot();
-       if (bullets.size() > 0 && bullets.size() < 1) {
-         for (Bullet bullet : bullets) { 
-           bullet.isShot();
-           bullet.shooting(); 
-         }
+     if (bullets.size() > 0) {
+       for (int i = 0; i < bullets.size(); i++) { // conCurrent mod exception when I try to canDestroy
+         Bullet b = bullets.get(i);
+         b.display();
+         if (b.canDestroy) {
+           bullets.remove(i);
+         } 
        }
      }
   }
@@ -258,8 +232,10 @@ void playGame() {
 void scienceKeys() {
   if (minigameState > 0) {
       if (keyCode == UP) {
-        if (p2velocity.y < 15)
+        if (p1velocity.y < 15)
          p1velocity.add(flap);
+         //swoosh.rewind();
+         //swoosh.play();
       }
       if (keyCode == LEFT) {
         if (p1velocity.x > -6)
@@ -271,52 +247,25 @@ void scienceKeys() {
       }
       
       if (keyCode == ',') {
-         Bullet b = createBullet();
-         b.setStartingPos(p1pos);
-         bullets.add(b);
-         for (Bullet bullet : bullets) {
-           bullet.setStartingPos(p1pos);
-         }
-         //shot.rewind();
-         //shot.play();
-         p1shootLeft = true;
-         p1isShooting = true;
-         p1ShotSpot = new PVector (p1pos.x,p1pos.y);
-         p1shotPos = new PVector(0,0);
-       } 
+        p1ShotSpot = new PVector(p1pos.x,p1pos.y);
+        Bullet bullet = createBullet(p1ShotSpot);
+        bullets.add(bullet);
+        bullet.setDirection("Left");
       }
       if (keyCode == '.') {
-         Bullet b = createBullet();
-         bullets.add(b);
-         for (Bullet bullet : bullets) { 
-           bullet.setStartingPos(p1pos);
-         }
-         p1shootLeft = false;
-         p1isShooting = true;
-         //p1ShotSpot = new PVector (p1pos.x,p1pos.y);
-         //p1shotPos = new PVector(0,0);
-       }
+        p1ShotSpot = new PVector(p1pos.x,p1pos.y);
+        Bullet bullet = createBullet(p1ShotSpot);
+        bullets.add(bullet);
+        bullet.setDirection("Right");
+      }
+    }
 }
 
-void p1shoot() {
-    if(p1isShooting) {
-      fill(0);
-      ellipse(p1ShotSpot.x+p1shotPos.x,p1ShotSpot.y, 10, 10);
-      if (p1shootLeft)
-        p1shotPos.x -= 5;
-      if (!p1shootLeft)
-        p1shotPos.x += 5; 
-      if (p1isShooting && p1ShotSpot.x+p1shotPos.x >= p2pos.x-r && p1ShotSpot.x+p1shotPos.x <= p2pos.x+r && p1ShotSpot.y >= p2pos.y-r && p1ShotSpot.y <= p2pos.y+r) {
-        p1isShooting = false;
-        if (p2life > 0)
-          p2life -= 1;
-        image(explosion, p2pos.x-30, p2pos.y-30);
-      }
-      if (p1ShotSpot.x+p1shotPos.x < 0 || p1ShotSpot.x+p1shotPos.x > width) {
-        p1isShooting = false;
-        p1shotPos = new PVector(0,0);
-    }  
-  }
+Bullet createBullet(PVector shotFrom) {
+   Bullet b = new Bullet();
+   b.setStartingPos(shotFrom);
+   b.isDisplayed = true;
+   return b;
 }
 
 void stopQuicksand() {
@@ -327,7 +276,7 @@ void stopQuicksand() {
 
 void scienceClicking() {
   if(mouseButton == LEFT) {
-    minigameState = 1;
+    minigameState = 1;    
   }
   if (mouseButton == RIGHT) {
     minigameState = 10;

@@ -1,48 +1,58 @@
 
 class Bullet {
-  PVector currentPos;
-  PVector startingPos;
+  PVector startingPos = new PVector(0,0);
+  PVector offset = new PVector(0,0);
   boolean isDisplayed = false;
+  boolean goingLeft = false; // two plus two is for, minus one thats 3 quICK mAFS
+  boolean canDestroy = false;
   
-  Bullet() {
-
+  PVector currentPos;
+  
+  Bullet() { 
+    
   }
   
-  void setStartingPos(PVector shotFrom) {
-    startingPos = shotFrom;
-    currentPos = shotFrom;
+  void setStartingPos(PVector start) {
+    startingPos = start;
   }
   
-  void isShot() {
-    isDisplayed = true;  
+  void setDisplayStatus(boolean dis) {
+    isDisplayed = dis;
   }
   
-  void isOffscreen() {
-    isDisplayed = false;
-    currentPos.x = 0;
+  void setDirection(String dir) {
+    if (dir == "Left")
+      goingLeft = true;
+    if (dir == "Right")
+      goingLeft = false;
   }
   
-  void shooting() {
-    if(isDisplayed) {
+  void display() {
+    if (isDisplayed) {
       fill(0);
-      ellipse(startingPos.x+currentPos.x,startingPos.y, 10, 10); //nullPointer here
-      if (p1shootLeft)
-        currentPos.x -= 5;
-      if (!p1shootLeft)
-        currentPos.x += 5; 
-      if (p1isShooting && startingPos.x+currentPos.x >= p2pos.x-r && startingPos.x+currentPos.x <= p2pos.x+r && startingPos.y >= p2pos.y-r && startingPos.y <= p2pos.y+r) {
-        p1isShooting = false;
-        if (p2life > 0)
-          p2life -= 1;
-        image(explosion, p2pos.x-30, p2pos.y-30);
-        //punch.rewind(); 
-        //punch.play();
-      }
-      if (startingPos.x+currentPos.x < 0 || startingPos.x+currentPos.x > width) {
-        p1isShooting = false;
+      currentPos = new PVector((startingPos.x+offset.x),(startingPos.y));
+      ellipse(startingPos.x+offset.x,startingPos.y, 10, 10); // mamaaaaaa, uuuuuwuuuuuu c:
+      if (goingLeft) 
+        offset.x -= 5;
+      if (!goingLeft) 
+        offset.x += 5;
+        
+      if (isDisplayed && startingPos.x+offset.x >= coinpos.x-coinRad && startingPos.x+offset.x <= coinpos.x+coinRad && startingPos.y >= coinpos.y-coinRad && startingPos.y <= coinpos.y+coinRad){
         isDisplayed = false;
-        //p1shotPos = new PVector(0,0);
+        if (p2life > 0) {
+           coinpos = new PVector(random(50,width-100),random(50,height-100));
+           p1isShooting = false;
+           p2life -= 1;
+           image(explosion, p2pos.x-30, p2pos.y-30);
+           punch.rewind(); 
+           punch.play();
+        }
+      } 
+      if (currentPos.x < 0 || currentPos.x > width) {
+          isDisplayed = false;
+          canDestroy = true;
+          currentPos = new PVector(0,0);
       }  
-    }
+    }  
   }
 }
