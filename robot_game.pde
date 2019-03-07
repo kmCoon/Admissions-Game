@@ -13,17 +13,21 @@ int purple = color(38, 8, 89);
 int blockwidth;
 int blockheight;
 
+PVector robotStartPos;
+
 
 
 void robotsetup()
 {
   initialize_game();
   
-  robot1 = new Robot(new PVector(width/10, height/10), new PVector(0, 0), yellow); 
+  robotStartPos = new PVector(width/10, height/6);
+  
+  robot1 = new Robot(robotStartPos, new PVector(0, 0), yellow); 
   
   blocks = new ArrayList<Block>();
-  blockwidth=width/10;
-  blockheight = height/10;
+  blockwidth=width/9;
+  blockheight = height/13;
   
   
   //top m left
@@ -99,8 +103,8 @@ void robotkeyPressed()
 {
   if(key == ' ' && robotstate==0)
   {
-    robot1.position.x=width/10;
-    robot1.position.y=height/10;
+    robot1.position.x=robotStartPos.x;
+    robot1.position.y=robotStartPos.y;
     robot1.heading = 0;
     robotstate = 1; 
   }

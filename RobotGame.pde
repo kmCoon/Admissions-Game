@@ -19,11 +19,11 @@ void robotdraw_game()
   background(255);
   rectMode(CORNER);
   fill(yellow); 
-  rect(width/100 + 50, height/20 - 15, 130, 50);
+  rect(width/100 + 5, height/20 - 0.15*blockheight, 1.3*blockwidth, 0.5*blockheight);
   fill(purple);
   textSize(20);
   textAlign(CENTER, CENTER);
-  text("Start", width/100 + 50, height/20 - 15, 130, 50); 
+  text("Start", width/100 + 5, height/20 - 0.15*blockheight, 1.3*blockwidth, 0.5*blockheight); 
   
   robot1.display(); 
   for(Block b : blocks)
