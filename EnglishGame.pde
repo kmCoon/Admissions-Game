@@ -105,22 +105,31 @@ void englishdraw()
 void englishmouseClicked()
 {
   if (englishgameState == 0)
-    englishgameState = 1;
-
-  for (Author a : authors)
   {
-    if (a.mouseOn())
-    {
-      if (a.num == books.get(currentBook).getNum())
-        score++;
-
-      currentBook++;
-      attempts++;
-    }
+    englishgameState = 1;
   }
+  else if (englishgameState == 1)
+  {
+    for (Author a : authors)
+    {
+      if (a.mouseOn())
+      {
+        if (a.num == books.get(currentBook).getNum())
+          score++;
 
-  if (attempts >= 5)
-    englishgameState = 2;
+        currentBook++;
+        attempts++;
+      }
+    }
+
+    if (attempts >= 5)
+      englishgameState = 2;
+  }
+  else if (englishgameState == 2)
+  {
+    key = ' ';
+    englishkeyPressed();
+  }
 }
 
 void englishkeyPressed()
