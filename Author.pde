@@ -34,8 +34,10 @@ class Author
       score++;
       currentBook++;
     }
-    else
-      score--;
+    else if (currentBook<4)
+    {
+      currentBook++;
+    }
   }
   
   boolean mouseOn()
