@@ -1,5 +1,8 @@
 TODO:
 
+- navigation:
+    - discrete positions
+
 - CEI game
     - purple box background for score/time to make it easier to read
 
@@ -11,6 +14,9 @@ TODO:
     - add timer
     - center the yellow bar
     - more scaling fixes
+    - mobile controls
+
+- bell sounds?
 
 - remove all console output
 
