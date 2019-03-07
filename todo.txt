@@ -5,6 +5,7 @@ TODO:
 
 - CEI game
     - purple box background for score/time to make it easier to read
+    - text in wrong location on web page
 
 - Science game: 
     - rescaling issue on web
@@ -12,7 +13,6 @@ TODO:
 - English game:
     - display score as a large number in the big white space on the right
     - advance to next book on a bad guess
-    - Escape button takes to wrong place
 
 - Maze game:
     - add timer

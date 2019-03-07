@@ -220,9 +220,4 @@ void mouseClicked()
   else if (gameState == 50) {
     englishmouseClicked();
   }
-  else
-  {
-    keyCode = ' ';
-    keyPressed();
-  }
 }
