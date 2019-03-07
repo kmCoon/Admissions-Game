@@ -216,9 +216,6 @@ void mousePressed()
   else if (gameState==0) {
     gameState=10;
   }
-  else if (gameState == 70) {
-    //scienceClicking();
-  }
   else if (gameState == 50) {
     englishmouseClicked();
   }
