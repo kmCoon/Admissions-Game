@@ -197,7 +197,8 @@ void keyReleased() {
      robotkeyReleased();} 
 }
 
-void mouseClicked() 
+
+void mousePressed() 
 {
   if (escButton.mouseOn() && escButton.isActive()) {
     gameState = 10;
@@ -211,10 +212,46 @@ void mouseClicked()
   else if (gameState == 50) {
     englishmouseClicked();
   }
-  else
-  {
-    key = ' ';
-    keyCode = 0;
+  else {
+    translateMouseClickToKeyPress();
     keyPressed();
   }
 }
+
+
+void mouseReleased()
+{
+    translateMouseClickToKeyPress();
+    keyReleased();
+}
+
+void translateMouseClickToKeyPress()
+{
+    if (mouseX < .2*width)
+    {
+        key = CODED;
+        keyCode = LEFT;
+    }
+    else if (mouseX > .8*width)
+    {
+        key = CODED;
+        keyCode = RIGHT;
+    }
+    else if (mouseY < .2*height)
+    {
+        key = CODED;
+        keyCode = UP;
+    }
+    else if (mouseY > .8*height)
+    {
+        key = CODED;
+        keyCode = RIGHT;
+    }
+    else
+    {
+        key = ' ';
+        keyCode = 0;
+    }
+}
+
+
