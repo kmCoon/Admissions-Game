@@ -13,6 +13,11 @@
 // x and door width
 
 
+PVector doorZero;
+PVector doorOne;
+PVector doorTwo;
+PVector doorThree;
+
 PFont benton;
 
 int gameState = 0;
@@ -23,6 +28,8 @@ Door roboDoor;
 Door scienceDoor;
 Door ceiDoor;
 Door caswellDoor;
+
+int doorPos = 0;
 
 Escape escButton;
 
@@ -56,10 +63,6 @@ void resizeImages() {
 
 
 void setup() {
-  
-  
-   
-  
    
   benton = createFont("Benton Sans Bold.otf", 20);
   textFont(benton);
@@ -84,6 +87,11 @@ void setup() {
   scienceDoor = new Door((width*sciMult), "Science"); //width/2+100
   ceiDoor = new Door((width*ceiMult), "CEI");
   
+  doorZero = new PVector((width*englishScale)+25,(height*scaleMult));
+  doorOne = new PVector((width*sparcMult)+25,(height*scaleMult));
+  doorTwo = new PVector((width*sciMult)+25,(height*scaleMult));
+  doorThree = new PVector((width*ceiMult)+25,(height*scaleMult));
+  
   escButton = new Escape("Click to return to campus!");
   
   setupScience();
@@ -97,9 +105,6 @@ void setup() {
 }
 
 void draw() {
-  
-  
-  
   
   if (sally.width != 200)
     resizeImages();
@@ -181,9 +186,13 @@ void keyPressed() {
 }
 
 void keyReleased() {
-   if (gameState > 0 && gameState != 70) {
-     player.changeVelocity(0);
-     player.applyAcc(0);      
+   if (gameState == 10) {
+     if (keyCode == LEFT && doorPos > 0) {
+       doorPos -= 1;
+     } 
+     if (keyCode == RIGHT && doorPos < 3) {
+       doorPos += 1;
+     }  
    }
      
    if (gameState == 70) {
@@ -253,5 +262,3 @@ void translateMouseClickToKeyPress()
         keyCode = 0;
     }
 }
-
-

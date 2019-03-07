@@ -79,8 +79,7 @@ void setupScience() {
 }
 
 
-void resizeScienceImages()
-{
+void resizeScienceImages(){
   explosion.resize(95, 95);
   keys.resize(320,190);
   germ.resize(coinRad,coinRad);
@@ -261,17 +260,14 @@ void scienceKeys() {
          p1velocity.add(right);
       }
       
-      if (key == ',') {
+      if (key == ' ') {
         p1ShotSpot = new PVector(p1pos.x,p1pos.y);
-        Bullet bullet = createBullet(p1ShotSpot);
-        bullets.add(bullet);
-        bullet.setDirection("Left");
-      }
-      if (key == '.') {
-        p1ShotSpot = new PVector(p1pos.x,p1pos.y);
-        Bullet bullet = createBullet(p1ShotSpot);
-        bullets.add(bullet);
-        bullet.setDirection("Right");
+        Bullet buLeft = createBullet(p1ShotSpot);
+        bullets.add(buLeft);
+        buLeft.setDirection("Left");
+        Bullet buRight = createBullet(p1ShotSpot);
+        bullets.add(buRight);
+        buRight.setDirection("Right");
       }
     }
 }
