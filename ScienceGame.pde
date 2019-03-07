@@ -113,7 +113,7 @@ void playGame() {
   
   stopQuicksand();
   
-  if (timeRunning && (millis()-time)>2000) {
+  if (timeRunning && (millis()-time)>2500) {
      gameState = 10;
      minigameState = 0;
      timeRunning = false;
