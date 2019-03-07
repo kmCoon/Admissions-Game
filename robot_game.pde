@@ -8,8 +8,10 @@ Robot robot1;
 
 ArrayList <Block> blocks; 
 
-int yellow = color(255, 255, 50);
-int purple = color(115, 0, 175); 
+int yellow = color(255, 210, 0);
+int purple = color(38, 8, 89); 
+int blockwidth;
+int blockheight;
 
 
 
@@ -19,33 +21,35 @@ void robotsetup()
   
   robot1 = new Robot(new PVector(width/10, height/10), new PVector(0, 0), yellow); 
   
-  blocks = new ArrayList<Block>(); 
+  blocks = new ArrayList<Block>();
+  blockwidth=width/10;
+  blockheight = height/10;
   
   
   //top m left
-  blocks.add(new Block(new PVector(width/4 + 100, height/5 - 25), 100 , 150 , purple)); 
+  blocks.add(new Block(new PVector(width/4 + blockwidth, height/5 - (0.25*blockheight)), blockwidth, (int)(blockheight*1.5), purple)); 
   
   // top m right
-  blocks.add(new Block(new PVector(3 * width/4 - 200, height/5 - 25), 100, 150, purple)); 
+  blocks.add(new Block(new PVector(3 * width/4 - (2*blockwidth), height/5 - (0.25*blockheight)), blockwidth, (int)(blockheight*1.5), purple)); 
    
   //center
-  blocks.add(new Block(new PVector(width/2 - 50, height/2 - 100), 100, 150, purple)); 
-  blocks.add(new Block(new PVector(width/2 - 50, height/2 + 100), 100, 200, purple));
+  blocks.add(new Block(new PVector(width/2 - (0.5*blockwidth), height/2 - blockheight), blockwidth, (int)(blockheight*1.5), purple)); 
+  blocks.add(new Block(new PVector(width/2 - (0.5*blockwidth), height/2 + blockheight), blockwidth, blockheight*2, purple));
   
   //side m left
-  blocks.add(new Block(new PVector(width/4 - 100, height/58), 100, 100, purple));
-  blocks.add(new Block(new PVector(width/4 - 100, height/2 - 200), 100, 100, purple));
-  blocks.add(new Block(new PVector(width/4 - 100, height/2), 100, 100, purple));
-  blocks.add(new Block(new PVector(width/4 - 100, height/2 + 200), 100, 100, purple));
+  blocks.add(new Block(new PVector(width/4 - blockwidth, height/58), blockwidth, blockheight, purple));
+  blocks.add(new Block(new PVector(width/4 - blockwidth, height/2 - (2*blockheight)), blockwidth, blockheight, purple));
+  blocks.add(new Block(new PVector(width/4 - blockwidth, height/2), blockwidth, blockheight, purple));
+  blocks.add(new Block(new PVector(width/4 - blockwidth, height/2 + (2*blockheight)), blockwidth, blockheight, purple));
   
   //side m right
-  blocks.add(new Block(new PVector(3 * width/4  , height/58), 100, 100, purple));
-  blocks.add(new Block(new PVector(3 * width/4 , height/2 - 200), 100, 100, purple));
-  blocks.add(new Block(new PVector(3 * width/4 , height/2), 100, 100, purple));
-  blocks.add(new Block(new PVector(3 * width/4 , height/2 + 200), 100, 100, purple));
+  blocks.add(new Block(new PVector(3 * width/4  , height/58), blockwidth, blockheight, purple));
+  blocks.add(new Block(new PVector(3 * width/4 , height/2 - (2*blockheight)), blockwidth, blockheight, purple));
+  blocks.add(new Block(new PVector(3 * width/4 , height/2), blockwidth, blockheight, purple));
+  blocks.add(new Block(new PVector(3 * width/4 , height/2 + (2*blockheight)), blockwidth, blockheight, purple));
  
   //bottom yellow line
-  blocks.add(new Block(new PVector(width/4 - 100, height - 50), 900, 50, yellow)); 
+  blocks.add(new Block(new PVector(width/4 - blockwidth, height - (0.5*blockheight)), 9*blockwidth, (int)(blockheight*0.5), yellow)); 
 
 }
 
