@@ -68,7 +68,6 @@ void setup() {
   textFont(benton);
   soundSetup();
   
-  //fullScreen();
   size(800, 600);
   background(150);
 
@@ -78,13 +77,13 @@ void setup() {
   
   sally = loadImage("data/default dance.png");
  
-  PVector startPos = new PVector(width/2,((height*scaleMult)-25)); //900
-  player = new Player(startPos); //100 so 50
+  PVector startPos = new PVector(width/2,((height*scaleMult)-25)); 
+  player = new Player(startPos); 
   
-  roboDoor = new Door((width*sparcMult), "SPARC"); //width/2-175
+  roboDoor = new Door((width*sparcMult), "SPARC"); 
   englishDoor = new Door((width*englishScale), "English"); 
   caswellDoor = new Door((width*caswellScale), "Caswell"); 
-  scienceDoor = new Door((width*sciMult), "Science"); //width/2+100
+  scienceDoor = new Door((width*sciMult), "Science"); 
   ceiDoor = new Door((width*ceiMult), "CEI");
   
   doorZero = new PVector((width*englishScale)+25,(height*scaleMult));
@@ -146,6 +145,9 @@ void keyPressed() {
     
   else if (gameState==80){
     ceikeyPressed();}
+    
+  else if (gameState==70){
+     scienceKeys();}
       
   else if (gameState > 0 && gameState != 70 && gameState != 100) {
     if (keyCode == RIGHT) {
@@ -195,13 +197,12 @@ void keyReleased() {
      }  
    }
      
-   if (gameState == 70) {
-      scienceKeys();
-   }
    if (gameState == 80)
      ceikeyReleased();
+     
    /*if (gameState==90)
      dancekeyReleased(); */
+     
    if (gameState==20){
      robotkeyReleased();} 
 }
@@ -216,7 +217,7 @@ void mousePressed()
     gameState=10;
   }
   else if (gameState == 70) {
-    scienceClicking();
+    //scienceClicking();
   }
   else if (gameState == 50) {
     englishmouseClicked();

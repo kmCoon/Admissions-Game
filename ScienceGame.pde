@@ -110,7 +110,7 @@ void drawScience() {
       fill(0);
       textSize(15);
       text("Welcome to bio defense! As a white blood cell, it's your job to shoot the viral particle that", width/2, 150);
-      text("has infected the host body. Make sure to keep your distance; it'll hurt you if you touch it! Click to start.",width/2,182);
+      text("has infected the host body. Keep your distance; it'll hurt you if you touch it! Press space to start.",width/2,182);
       
       imageMode(CENTER);
       image(keys,width/2,height/2+50);  
@@ -244,12 +244,12 @@ void playGame() {
 }
 
 void scienceKeys() {
-  if (minigameState > 0) {
+  if (key == ' ' && minigameState == 0) 
+    minigameState = 1;
+  else if (minigameState > 0) {
       if (keyCode == UP) {
         if (p1velocity.y < 15)
          p1velocity.add(flap);
-         //swoosh.rewind();
-         //swoosh.play();
       }
       if (keyCode == LEFT) {
         if (p1velocity.x > -6)
@@ -285,7 +285,7 @@ void stopQuicksand() {
   }
 }
 
-void scienceClicking() {
+/*void scienceClicking() {
   if(mouseButton == LEFT) {
     minigameState = 1;    
   }
@@ -295,4 +295,4 @@ void scienceClicking() {
   if (mouseButton == CENTER) {
     minigameState = 20;
   }
-}
+} */
