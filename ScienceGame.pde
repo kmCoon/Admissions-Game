@@ -81,7 +81,7 @@ void setupScience() {
 
 void resizeScienceImages(){
   explosion.resize(95, 95);
-  keys.resize(320,190);
+  keys.resize(360,230);
   germ.resize(coinRad,coinRad);
   sciPlayer.resize(r,r);
 }
