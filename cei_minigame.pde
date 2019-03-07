@@ -110,9 +110,9 @@ void drawceiEnd()
   rect(width/2, height/2, 2*width/3, height/2);
   fill(255);
   textSize(30);
-  text("Time's up.\nYou earned " + backpack.getPoints() + " points.\nGood job!\n\nPress space to play again,\nor press E to leave."
-        , width/2, height/2, 800, 600);
-  
+  text("Time's up.\nYou earned " + backpack.getPoints() + " points.\n" +
+       "Good job!\n\n Press space to play again, \nor press E to leave.",width/2, height/2);
+
 }
 
 void ceidraw()

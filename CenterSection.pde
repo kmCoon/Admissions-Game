@@ -13,8 +13,6 @@ void playSectionII() {
    englishDoor.open();
    roboDoor.display();
    roboDoor.open();
-   //caswellDoor.display();
-   //caswellDoor.open();
    scienceDoor.display();
    scienceDoor.open();
    ceiDoor.display();
@@ -23,6 +21,18 @@ void playSectionII() {
    player.display(); 
    textSize(25);
    fill(#FF0D82);
+
+   if (doorPos == 0)
+     player.position.x = doorZero.x; 
+   
+   if (doorPos == 1)
+     player.position.x = doorOne.x;
+     
+   if (doorPos == 2)
+     player.position.x = doorTwo.x;
+     
+   if (doorPos == 3)
+     player.position.x = doorThree.x;
 
    if (player.position.x >= width-r) {
      player.position.x = width-r;
