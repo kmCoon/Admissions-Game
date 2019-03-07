@@ -40,4 +40,10 @@ class Door {
     else
       return false;
   }
+
+  boolean isInside(float xIn, float yIn)
+  {
+    return (isDisplayed && x < xIn && xIn < x + doorWidth &&
+            floorVal < yIn && yIn < floorVal + doorHeight);
+  }
 }

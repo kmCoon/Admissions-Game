@@ -15,10 +15,12 @@ void englishsetup()
   books = new ArrayList<Book>();
   authors = new ArrayList<Author>();
   initializePairs();
+
   shuffle(books);
   shuffle(authors);
-  currentBook=0;
 
+  englishgameState = 0;
+  currentBook=0;
   score = 0;
   attempts = 0;
 }

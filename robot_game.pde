@@ -19,6 +19,7 @@ PVector robotStartPos;
 
 void robotsetup()
 {
+  robotstate = 0;
   initialize_game();
   
   robotStartPos = new PVector(width/10, height/6);
