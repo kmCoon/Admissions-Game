@@ -23,9 +23,7 @@ void playSectionII() {
    fill(#FF0D82);
 
    if (doorPos == 0)
-     println("Player pos: " + player.position.x);
-     println("Door: " + doorZero.x); // issue is here
-     player.position.x = doorZero.x; // nullPointer here
+     player.position.x = doorZero.x; 
    
    if (doorPos == 1)
      player.position.x = doorOne.x;
