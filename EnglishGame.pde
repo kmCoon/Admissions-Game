@@ -8,6 +8,7 @@ int englishgameState=0;
 int currentBook;
 
 int score = 0;
+int attempts = 0;
 
 void englishsetup()
 {
@@ -17,6 +18,9 @@ void englishsetup()
   shuffle(books);
   shuffle(authors);
   currentBook=0;
+
+  score = 0;
+  attempts = 0;
 }
 
 void englishdrawStart()
@@ -55,7 +59,7 @@ void englishdrawGame() {
   
   books.get(currentBook).display();
   fill(0);
-  text("Score: " + score, width-100, 30);
+  text("Score: " + score + "/" + attempts, width-100, 30);
   
   
   
@@ -75,12 +79,12 @@ boolean mouseOver()
 void englishdrawEnd()
 {
   cursor(ARROW);
-  background(255);
-  fill(0);
-  textSize(40);
-  text("You got " + score + " points. " + 
-       "To play again, press space. To exit this minigame, press E.",
-         width/2, height/2, width/1.25, height/2);
+  background(38, 8, 89);
+  fill(255);
+  textSize(30);
+  text("You scored " + score + "/" + attempts + "!\n\n" + 
+       "To play again, press space.\nTo exit this minigame, press E.",
+         width/2, height/2);
 }
 
 void englishdraw()
@@ -106,20 +110,32 @@ void englishmouseClicked()
   for (Author a : authors)
   {
     if (a.mouseOn())
-      a.isClicked();
+    {
+      if (a.num == books.get(currentBook).getNum())
+        score++;
+
+      currentBook++;
+      attempts++;
+    }
   }
+
+  if (attempts >= 5)
+    englishgameState = 2;
 }
 
 void englishkeyPressed()
 {
 
   if (key==' ' && englishgameState==0){englishgameState=1;}
+
   if (key==' ' && englishgameState==2)
   {
     shuffle(books);
     shuffle(authors);
-    currentBook=0;
     englishgameState=0;
+    score = 0;
+    attempts = 0;
+    currentBook = 0;
   }
   if (key=='e' && englishgameState==2)
   {
@@ -127,7 +143,9 @@ void englishkeyPressed()
     englishgameState=0;
     shuffle(books);
     shuffle(authors);
-    currentBook=0;
+    score = 0;
+    attempts = 0;
+    currentBook = 0;
   }
 }
 
