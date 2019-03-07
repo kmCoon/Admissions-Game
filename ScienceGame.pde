@@ -60,28 +60,43 @@ int offset = 20;
 
 void setupScience() {
   
+  r = width / 16;
+  coinRad = width / 17;
+
   p1pos = new PVector(300,height/2); 
   p2pos = new PVector(width-300,height/2);
   coinpos = new PVector(random(50,width-50),random(50,height-80));
+
   capillary = loadImage("data/capillary.png");
-  
   explosion = loadImage("data/Explosion.png");
   keys = loadImage("data/p1keys.png");
   germ = loadImage("data/Germ.png");
-  germ.resize(coinRad,coinRad);
   sciPlayer = loadImage("data/Macrophage.png");
-  sciPlayer.resize(r,r);
-  explosion.resize(95, 95);
-  keys.resize(320,190);
   
   bullets = new ArrayList<Bullet>();
-  
+
+  resizeScienceImages();
 }
+
+
+void resizeScienceImages()
+{
+  explosion.resize(95, 95);
+  keys.resize(320,190);
+  germ.resize(coinRad,coinRad);
+  sciPlayer.resize(r,r);
+}
+
+
 
 // I SAW U hangin out with caiTLYN YESTERDAY!
 // RE- REBECCA IT'S NOT WHAT U THINK
 
 void drawScience() {
+
+    if (sciPlayer.width != r)
+      resizeScienceImages();
+
     escButton.display();
     escButton.checkforHover();
   
