@@ -106,10 +106,9 @@ void drawceiEnd()
   noStroke();
   rect(width/2, height/2, 820, 580);
   fill(255);
-  textSize(45);
-  text("Time's up. You earned " + backpack.getPoints() + " points. Good job! Press space to play again, or press E to leave."
-        , width/2, height/2, 800, 600);
-  
+  textSize(30);
+  text("Time's up.\nYou earned " + backpack.getPoints() + " points.\n" +
+       "Good job!\n\n Press space to play again, \nor press E to leave.",width/2, height/2);
 }
 
 void ceidraw()
