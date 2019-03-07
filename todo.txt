@@ -1,14 +1,7 @@
 TODO:
 
-- All mini games: consistent splash screen when you enter
-    - start game with either spacebar or mouse click
-
 - CEI game
     - purple box background for score/time to make it easier to read
-    - text in wrong location on web page
-
-- Science game: 
-    - rescaling issue on web
 
 - English game:
     - display score as a large number in the big white space on the right
@@ -17,16 +10,7 @@ TODO:
 - Maze game:
     - add timer
     - center the yellow bar
-    - scale size of rectangles based on screen resolution
+    - more scaling fixes
 
-- Main page:
-    - fix confetti position
-
-- remove all console output -- this appears in the browser with processing.js
-
-- alternate key press: q for escape button
-
-- mobile device support (Dr. Kessner will investigate)
-    - handle mouse press, but handle as arrow keys and space bar
-        (sides of screen, center for space bar)
+- remove all console output
 
