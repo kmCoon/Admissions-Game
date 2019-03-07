@@ -12,6 +12,7 @@ TODO:
 - English game:
     - display score as a large number in the big white space on the right
     - advance to next book on a bad guess
+    - Escape button takes to wrong place
 
 - Maze game:
     - add timer
