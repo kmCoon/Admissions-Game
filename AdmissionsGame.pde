@@ -203,7 +203,23 @@ void mousePressed()
   else if (gameState == 50) {
     englishmouseClicked();
   }
-  else {
+  else if (gameState == 10) {
+    if (englishDoor.isInside(mouseX, mouseY)) {
+        englishsetup();
+        gameState = 50; 
+    }
+    else if (roboDoor.isInside(mouseX, mouseY)) {
+       robotsetup();
+       gameState = 20;
+    }
+    else if (ceiDoor.isInside(mouseX, mouseY)) {
+       gameState = 80;
+    } 
+    else if (scienceDoor.isInside(mouseX, mouseY)) {
+      gameState = 70;
+    }
+  }
+   else {
     translateMouseClickToKeyPress();
     keyPressed();
   }
