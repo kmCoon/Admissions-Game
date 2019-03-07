@@ -254,7 +254,7 @@ void translateMouseClickToKeyPress()
     else if (mouseY > .8*height)
     {
         key = CODED;
-        keyCode = RIGHT;
+        keyCode = DOWN;
     }
     else
     {
