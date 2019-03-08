@@ -138,11 +138,10 @@ void playGame() {
   
   else if (p1life <= 0) {
       background(purple);
+
       fill(yellow);
       textAlign(CENTER, BOTTOM);
       textSize(40);
-      
-      fill(60,0,0);
       text("THE VIRUS HAS CONQUERED!", width/2, height/2); 
       
       textSize(22);
