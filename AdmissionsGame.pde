@@ -81,8 +81,8 @@ void setup() {
   PVector startPos = new PVector(width/2,((height*scaleMult)-25)); 
   player = new Player(startPos); 
   
-  roboDoor = new Door((width*sparcMult), "Robo Rampage"); 
-  englishDoor = new Door((width*englishScale), "Who's That Author?"); 
+  roboDoor = new Door((width*sparcMult), "Marlbots Maze"); 
+  englishDoor = new Door((width*englishScale), "Right Writer"); 
   scienceDoor = new Door((width*sciMult), "Bio Defense"); 
   ceiDoor = new Door((width*ceiMult), "Snack Attack");
   

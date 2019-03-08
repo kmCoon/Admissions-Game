@@ -1,13 +1,5 @@
 TODO:
 
-- navigation 
-    - instructions
-    - more creative game names on doors 
-        (Marlbots Maze, Snack Attack, ...)
-
-- Science game:
-    - purple background, white text
-
 - Maze game:
     - add timer?
     - mobile controls
