@@ -1,15 +1,21 @@
 TODO:
 
-- navigation instructions
+- navigation 
+    - instructions
+    - more creative game names on doors 
+        (Marlbots Maze, Snack Attack, ...)
 
 - Science game:
     - purple background, white text
 
 - Maze game:
-    - add timer
+    - add timer?
+    - mobile controls
+
+- CEI game
     - mobile controls
 
 - bell sounds?
 
-- remove all console output
+- remove all console output?
 
