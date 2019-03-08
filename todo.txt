@@ -1,19 +1,12 @@
 TODO:
 
-- navigation:
-    - discrete positions
+- navigation instructions
 
-- CEI game
-    - purple box background for score/time to make it easier to read
-
-- English game:
-    - display score as a large number in the big white space on the right
-    - advance to next book on a bad guess
+- Science game:
+    - purple background, white text
 
 - Maze game:
     - add timer
-    - center the yellow bar
-    - more scaling fixes
     - mobile controls
 
 - bell sounds?
