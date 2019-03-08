@@ -3,35 +3,30 @@
 //
 
 
-float winX;
-float winY;
-
-
-void initialize_game()
-{
-  winX = width * .93;
-  winY = height * .05; 
-}
- 
-
 void robotdraw_game()
 {
   background(255);
-  rectMode(CORNER);
+  rectMode(CENTER);
+
+  float startX = width * .07;
+  float startY = height * .05;
 
   fill(yellow); 
-  //rect(width/100 + 5, height/20 - 0.15*blockheight, 1.3*blockwidth, 0.5*blockheight);
+  rect(startX, startY, blockwidth, blockheight);
 
   fill(purple);
   textSize(20);
   textAlign(CENTER, CENTER);
-  text("Start", width/100 + 5, height/20 - 0.15*blockheight, 1.3*blockwidth, 0.5*blockheight); 
+  text("Start", startX, startY, blockwidth, blockheight); 
   
   robot1.display(); 
   for(Block b : blocks)
   {
     b.display(); 
   }
+
+  float winX = width * .93;
+  float winY = height * .05; 
  
   rectMode(CENTER); 
   rect(winX, winY, blockwidth, blockheight); 
