@@ -148,40 +148,24 @@ void keyPressed() {
   else if (gameState==70){
      scienceKeys();}
       
-  else if (gameState > 0 && gameState != 70 && gameState != 100) {
-    if (keyCode == RIGHT) {
-      player.changeVelocity(1);
-      player.applyAcc(1);
-    }
-    else if (keyCode == LEFT) {
-      player.applyAcc(-1);
-      player.changeVelocity(-1);
-    }
-    else if (englishDoor.playerOn() == true && key == ' ' && gameState==10) {
-        englishgameState=0;
-        shuffle(books);
-        shuffle(authors);
-        currentBook=0;
+  else if (gameState == 10) {
+
+    if (key == ' ' && (englishDoor.playerOn() || englishDoor.isInside(mouseX, mouseY))) {
+        englishsetup();
         gameState = 50; 
     }
-    else if (roboDoor.playerOn() == true && key == ' ' && gameState==10) {
+    else if (key == ' ' && (roboDoor.playerOn() || roboDoor.isInside(mouseX, mouseY))) {
+       robotsetup();
        gameState = 20;
-       robotstate=0;
     }
 
-    else if (ceiDoor.playerOn() == true && key == ' ' && gameState==10) {
+    else if (key == ' ' && (ceiDoor.playerOn() || ceiDoor.isInside(mouseX, mouseY))) {
        gameState = 80;
      } 
      
-    else if (/*scienceDoor.playerOn() == true &&*/ key == ' ' && gameState==10) { // mamaaaaaaa, uuuuwuuu
+    else if (key == ' ' && (scienceDoor.playerOn() || scienceDoor.isInside(mouseX, mouseY))) {
       gameState = 70;
     }
-    /*else if (caswellDoor.playerOn() == true && keyCode == ' ' && gameState==10)
-    {
-      gameState=90;
-      dance=0;
-      danceGameState=0;
-    } */
   }
   
 }
@@ -218,7 +202,23 @@ void mousePressed()
   else if (gameState == 50) {
     englishmouseClicked();
   }
-  else {
+  else if (gameState == 10) {
+    if (englishDoor.isInside(mouseX, mouseY)) {
+        englishsetup();
+        gameState = 50; 
+    }
+    else if (roboDoor.isInside(mouseX, mouseY)) {
+       robotsetup();
+       gameState = 20;
+    }
+    else if (ceiDoor.isInside(mouseX, mouseY)) {
+       gameState = 80;
+    } 
+    else if (scienceDoor.isInside(mouseX, mouseY)) {
+      gameState = 70;
+    }
+  }
+   else {
     translateMouseClickToKeyPress();
     keyPressed();
   }

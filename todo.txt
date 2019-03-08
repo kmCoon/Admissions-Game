@@ -1,22 +1,21 @@
 TODO:
 
-- navigation:
-    - discrete positions
+- navigation 
+    - instructions
+    - more creative game names on doors 
+        (Marlbots Maze, Snack Attack, ...)
 
-- CEI game
-    - purple box background for score/time to make it easier to read
-
-- English game:
-    - display score as a large number in the big white space on the right
-    - advance to next book on a bad guess
+- Science game:
+    - purple background, white text
 
 - Maze game:
-    - add timer
-    - center the yellow bar
-    - more scaling fixes
+    - add timer?
+    - mobile controls
+
+- CEI game
     - mobile controls
 
 - bell sounds?
 
-- remove all console output
+- remove all console output?
 

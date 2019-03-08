@@ -19,7 +19,7 @@ PVector robotStartPos;
 
 void robotsetup()
 {
-  initialize_game();
+  robotstate = 0;
   
   robotStartPos = new PVector(width/10, height/6);
   
@@ -53,7 +53,8 @@ void robotsetup()
   blocks.add(new Block(new PVector(3 * width/4 , height/2 + (2*blockheight)), blockwidth, blockheight, purple));
  
   //bottom yellow line
-  blocks.add(new Block(new PVector(width/4 - blockwidth, height - (0.5*blockheight)), 9*blockwidth, (int)(blockheight*0.5), yellow)); 
+  blocks.add(new Block(new PVector(width/4 - blockwidth, height - (0.6*blockheight)), 
+        width/2 + 2*blockwidth, (int)(blockheight*0.5), yellow)); 
 
 }
 
