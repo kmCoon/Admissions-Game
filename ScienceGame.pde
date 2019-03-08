@@ -130,12 +130,11 @@ void playGame() {
   stopQuicksand(); 
   
   if (timeRunning && (millis()-time)>2500) {
-     gameState = 10;
-     timeRunning = false;
      minigameState = 0;
+     timeRunning = false;
      p1life = 3;
      p2life = 3;
-  }
+  } 
   
   else if (p1life <= 0) {
       background(purple);
@@ -148,7 +147,7 @@ void playGame() {
       
       textSize(22);
       fill(255);
-      text("Returning to the homescreen...",width/2,height/2+75);
+      text("Returning to the instruction screen...",width/2,height/2+75);
       if (timeRunning == false)
         time = millis();
       timeRunning = true;
@@ -164,7 +163,7 @@ void playGame() {
       
       textSize(22);
       fill(255);
-      text("Returning to the homescreen...",width/2,height/2+75);
+      text("Returning to the instruction screen...",width/2,height/2+75);
       if (timeRunning == false)
         time = millis();
       timeRunning = true;
