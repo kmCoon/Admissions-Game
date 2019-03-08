@@ -102,8 +102,8 @@ void drawceiStart()
   textSize(30);
   text("Catch as many snacks as you can\n" +
        "before time runs out!\n\n" + 
-       "Use the arrow keys\nto move your backpack.\n\n\n" + 
-       "Press space to start.", width/2, height/2);
+       "Use the arrow keys\nto move your backpack.\n\n" + 
+       "Press space to start.", width/2, height*.55);
 }
 
 void drawceiEnd()

@@ -39,11 +39,13 @@ void englishdrawStart()
 
   fill(yellow);
   textSize(40);
-  text("Right Writer", width/2, height*.25);
+  text("Right Writer", width/2, height*.2);
 
   fill(255);
   textSize(30);
-  text("Match each book with its author.\n\nPress space to start.", width/2, height/2);
+  text("Match each book with its author.\n\n" +
+       "One point for each correct answer,\nand no penalty for guessing.\n\n" +
+       "Press space to start.", width/2, height/2);
 }
 
 void englishdrawGame() {
