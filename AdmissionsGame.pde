@@ -113,7 +113,7 @@ void draw() {
   }
   if (doorStatus == 2 && gameState == 10) {
     doorStatus = 1;
-    playBells();
+    //playBells();
   }
   
   rectMode(CORNER);
