@@ -102,7 +102,7 @@ void robotdraw_end()
   
   rectMode(CENTER);
   textAlign(CENTER, CENTER);
-  text("Congratulations, you WIN!\n\nPress space to leave the SPARC.", 
+  text("Congratulations, you WIN!\n\nPress space to play again.", 
         width/2, height/2); 
 }
 
@@ -119,7 +119,6 @@ void robotkeyPressed()
     
   if(key == ' ' && robotstate==2)
     {
-      gameState=10;
       robotstate=0;
     }
   
