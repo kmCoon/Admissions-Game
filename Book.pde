@@ -5,6 +5,7 @@ class Book
   PImage cover;
   int num;
   String title;
+  boolean displayed = false;
   
   Book(String coverIn, int numIn, String titleIn)
   {
@@ -16,6 +17,12 @@ class Book
   
   void display()
   {
+    if (!displayed)
+    {
+        this.resize();
+        displayed = true;
+    }
+
     image(cover, 2*width/3, height/2);
   }
   
