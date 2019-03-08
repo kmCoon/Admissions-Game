@@ -78,10 +78,16 @@ void robotdraw()
 void robotdraw_start()
 {
   background(purple);
-  fill(255);
-  textSize(30); 
+
   rectMode(CENTER);
   textAlign(CENTER, CENTER);
+
+  fill(yellow);
+  textSize(40);
+  text("Marlbots Maze", width/2, height*.25);
+
+  fill(255);
+  textSize(30); 
   text("Use the arrow keys to move your robot\n" + 
        "to the end block\n\n" +
        "Press space to begin.", width/2, height/2);

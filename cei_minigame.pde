@@ -92,9 +92,14 @@ void drawceiStart()
   fill(38, 8, 89, 200);
   noStroke();
   rect(width/2, height/2, 3*width/4, 3*height/4);
+  textAlign(CENTER, CENTER);
+
+  fill(yellow);
+  textSize(40);
+  text("Snack Attack", width/2, height*.22); 
+
   fill(255);
   textSize(30);
-  textAlign(CENTER, CENTER);
   text("Catch as many snacks as you can\n" +
        "before time runs out!\n\n" + 
        "Use the arrow keys\nto move your backpack.\n\n\n" + 
