@@ -12,6 +12,7 @@
 
 // x and door width
 
+int doorStatus = 0;
 
 PVector doorZero;
 PVector doorOne;
@@ -106,6 +107,14 @@ void draw() {
   
   if (sally.width != 200)
     resizeImages();
+    
+  if (gameState > 10) {
+    doorStatus = 2;
+  }
+  if (doorStatus == 2 && gameState == 10) {
+    doorStatus = 1;
+    playBells();
+  }
   
   rectMode(CORNER);
   textAlign(LEFT, TOP);
