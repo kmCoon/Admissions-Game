@@ -136,8 +136,8 @@ void playGame() {
   }
   
   else if (p1life <= 0) {
-      image(capillary,0,0);
-      fill(200,0,0);
+      background(purple);
+      fill(yellow);
       textAlign(CENTER, BOTTOM);
       textSize(40);
       
@@ -145,7 +145,7 @@ void playGame() {
       text("THE BACTERIA CONQUER!", width/2, height/2); 
       
       textSize(22);
-      fill(0);
+      fill(255);
       text("Returning to the homescreen...",width/2,height/2+75);
       if (timeRunning == false)
         time = millis();
@@ -153,16 +153,15 @@ void playGame() {
   }
   
   else if (p2life <= 0) {
-      image(capillary,0,0);
-      fill(200,0,0);
+      background(purple);
+      fill(yellow);
       textAlign(CENTER, BOTTOM);
       textSize(40);
       
-      fill(60,0,0);
       text("IMMUNE SYSTEM PREVAILS", width/2, height/2);
       
       textSize(22);
-      fill(0);
+      fill(255);
       text("Returning to the homescreen...",width/2,height/2+75);
       if (timeRunning == false)
         time = millis();

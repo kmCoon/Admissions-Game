@@ -142,6 +142,15 @@ void keyPressed() {
     gameState=10;
   }
   
+  if (gameState == 10) {
+     if (keyCode == LEFT) {
+       player.changeVelocity(-1); // RIGHT HERE
+     } 
+     if (keyCode == RIGHT) {
+       player.changeVelocity(1);      
+     }  
+  }
+  
   if (gameState==50){
     englishkeyPressed(); } 
   
@@ -180,15 +189,10 @@ void keyPressed() {
 }
 
 void keyReleased() {
-   if (gameState == 10) {
-     if (keyCode == LEFT && doorPos > 0) {
-       doorPos -= 1;
-     } 
-     if (keyCode == RIGHT && doorPos < 3) {
-       doorPos += 1;
-     }  
-   }
      
+  if (gameState == 10) {
+    player.changeVelocity(0);
+  }
    if (gameState == 80)
      ceikeyReleased();
      
