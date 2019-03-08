@@ -21,7 +21,7 @@ void robotsetup()
 {
   robotstate = 0;
   
-  robotStartPos = new PVector(width/10, height/6);
+  robotStartPos = new PVector(width/10, height*5/6);
   
   robot1 = new Robot(robotStartPos, new PVector(0, 0), yellow); 
   
