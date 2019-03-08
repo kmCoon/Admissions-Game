@@ -101,18 +101,20 @@ void drawScience() {
    if (minigameState == 0) {
       background(purple);
       fill(yellow);
-      textAlign(CENTER, BOTTOM);
+      textAlign(CENTER, CENTER);
       textSize(40);
       
-      text("BIOLOGY - CELL DEFENSE", width/2, 100); 
+      text("Bio Defense", width/2, height*.15); 
       
       fill(255);
-      textSize(15);
-      text("Welcome to bio defense! As a white blood cell, it's your job to shoot the viral particle that", width/2, 150);
-      text("has infected the host body. Keep your distance; it'll hurt you if you touch it! Press space to start.",width/2,182);
+      textSize(20);
+      text("As a white blood cell, it's your job to shoot\n" +
+           "the viral particle that has infected the host body.\n\n" + 
+           "Keep your distance - it'll hurt you if you touch it!\n\n" +
+           "Press space to start.", width/2, height*.35);
       
       imageMode(CENTER);
-      image(keys,width/2,height/2+50);  
+      image(keys,width/2,height*.7);  
       imageMode(CORNER);
    }
    
@@ -142,7 +144,7 @@ void playGame() {
       textSize(40);
       
       fill(60,0,0);
-      text("THE BACTERIA CONQUER!", width/2, height/2); 
+      text("THE VIRUS HAS CONQUERED!", width/2, height/2); 
       
       textSize(22);
       fill(255);
@@ -176,7 +178,7 @@ void playGame() {
     fill(219, 208, 208);
     text("Macrophage: " + p1life, 120, height-100);
     fill(38, 117, 61);
-    text("E. Coli: " + p2life, width-100, height-100); 
+    text("Virus: " + p2life, width-100, height-100); 
 
     image(germ,coinpos.x,coinpos.y); // Displays germ
     

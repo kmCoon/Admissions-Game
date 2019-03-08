@@ -7,8 +7,8 @@ void robotdraw_game()
 {
   background(255);
 
-  float startX = width * .07;
-  float startY = height * .05;
+  float startX = robotStartPos.x;
+  float startY = robotStartPos.y + 70;
 
   float endX = width * .93;
   float endY = height * .05; 

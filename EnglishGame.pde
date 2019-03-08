@@ -30,19 +30,22 @@ void englishdrawStart()
   for (Book b : books)
     b.resize();
 
+  score=0;
+
   cursor(ARROW);
   background(38, 8, 89);
+
+  textAlign(CENTER, CENTER);
+
+  fill(yellow);
+  textSize(40);
+  text("Right Writer", width/2, height*.2);
+
   fill(255);
   textSize(30);
-  score=0;
-  
-  textAlign(CENTER, CENTER);
-  text("Match each book with its author.\n\nPress space to start.", width/2, height/2);
-  
-  /*text("Select the author/playwright who wrote the given book/play. " + 
-       "You will gain one point for every correct answer, " + 
-       "and lose one point for every wrong answer.\n\n" + 
-       "Press space to start.", width/2, height/2, 5*width/6, height/2);*/
+  text("Match each book with its author.\n\n" +
+       "One point for each correct answer,\nand no penalty for guessing.\n\n" +
+       "Press space to start.", width/2, height/2);
 }
 
 void englishdrawGame() {
@@ -85,7 +88,7 @@ void englishdrawEnd()
   fill(255);
   textSize(30);
   text("You scored " + score + "/" + attempts + "!\n\n" + 
-       "To play again, press space.\nTo exit this minigame, press E.",
+       "To play again, press space.",
          width/2, height/2);
 }
 

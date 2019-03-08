@@ -92,13 +92,18 @@ void drawceiStart()
   fill(38, 8, 89, 200);
   noStroke();
   rect(width/2, height/2, 3*width/4, 3*height/4);
+  textAlign(CENTER, CENTER);
+
+  fill(yellow);
+  textSize(40);
+  text("Snack Attack", width/2, height*.22); 
+
   fill(255);
   textSize(30);
-  textAlign(CENTER, CENTER);
   text("Catch as many snacks as you can\n" +
        "before time runs out!\n\n" + 
-       "Use the arrow keys\nto move your backpack.\n\n\n" + 
-       "Press space to start.", width/2, height/2);
+       "Use the arrow keys\nto move your backpack.\n\n" + 
+       "Press space to start.", width/2, height*.55);
 }
 
 void drawceiEnd()
@@ -111,7 +116,7 @@ void drawceiEnd()
   fill(255);
   textSize(30);
   text("Time's up.\nYou earned " + backpack.getPoints() + " points.\n" +
-       "Good job!\n\n Press space to play again, \nor press E to leave.",width/2, height/2);
+       "Good job!\n\n Press space to play again.",width/2, height/2);
 
 }
 
