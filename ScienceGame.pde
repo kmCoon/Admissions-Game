@@ -179,7 +179,7 @@ void playGame() {
     fill(219, 208, 208);
     text("Macrophage: " + p1life, 120, height-100);
     fill(38, 117, 61);
-    text("E. Coli: " + p2life, width-100, height-100); 
+    text("Virus: " + p2life, width-100, height-100); 
 
     image(germ,coinpos.x,coinpos.y); // Displays germ
     
