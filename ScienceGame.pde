@@ -104,7 +104,7 @@ void drawScience() {
       textAlign(CENTER, CENTER);
       textSize(40);
       
-      text("BIO DEFENSE", width/2, height*.15); 
+      text("Bio Defense", width/2, height*.15); 
       
       fill(255);
       textSize(20);

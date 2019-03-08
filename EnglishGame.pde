@@ -86,7 +86,7 @@ void englishdrawEnd()
   fill(255);
   textSize(30);
   text("You scored " + score + "/" + attempts + "!\n\n" + 
-       "To play again, press space.\nTo exit this minigame, press E.",
+       "To play again, press space.",
          width/2, height/2);
 }
 

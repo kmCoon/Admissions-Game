@@ -116,7 +116,7 @@ void drawceiEnd()
   fill(255);
   textSize(30);
   text("Time's up.\nYou earned " + backpack.getPoints() + " points.\n" +
-       "Good job!\n\n Press space to play again, \nor press E to leave.",width/2, height/2);
+       "Good job!\n\n Press space to play again.",width/2, height/2);
 
 }
 
