@@ -9,6 +9,11 @@ void playSectionII() {
    image(centerBuilding,0,0);
    fill(0,0,255);  
     
+    // For science game reset
+   minigameState = 0;
+   p1life = 3;
+   p2life = 3; 
+   
    englishDoor.display();
    englishDoor.open();
    roboDoor.display();

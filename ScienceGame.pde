@@ -129,8 +129,8 @@ void playGame() {
   
   if (timeRunning && (millis()-time)>2500) {
      gameState = 10;
-     minigameState = 0;
      timeRunning = false;
+     minigameState = 0;
      p1life = 3;
      p2life = 3;
   }
