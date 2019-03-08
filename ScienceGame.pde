@@ -99,15 +99,14 @@ void drawScience() {
     escButton.display();
   
    if (minigameState == 0) {
-      image(capillary,0,0);
-      fill(200,0,0);
+      background(purple);
+      fill(yellow);
       textAlign(CENTER, BOTTOM);
       textSize(40);
       
-      fill(60,0,0);
       text("BIOLOGY - CELL DEFENSE", width/2, 100); 
       
-      fill(0);
+      fill(255);
       textSize(15);
       text("Welcome to bio defense! As a white blood cell, it's your job to shoot the viral particle that", width/2, 150);
       text("has infected the host body. Keep your distance; it'll hurt you if you touch it! Press space to start.",width/2,182);
@@ -125,7 +124,8 @@ void drawScience() {
 
 void playGame() {
   
-  stopQuicksand();
+  image (capillary,0,0);
+  stopQuicksand(); 
   
   if (timeRunning && (millis()-time)>2500) {
      gameState = 10;
