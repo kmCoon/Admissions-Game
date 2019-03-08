@@ -18,6 +18,12 @@ void playSectionII() {
    ceiDoor.display();
    ceiDoor.open();
    
+   textAlign(CENTER);
+   fill(purple);
+   textSize(20);
+   text("Arrow keys (tap edges) to move",width/2, height-70);
+   text("Space (tap center) to select",width/2,height-40);
+   
    player.display(); 
    textSize(25);
    fill(#FF0D82);
